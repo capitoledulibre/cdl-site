@@ -13,8 +13,11 @@
    height="24.456001"
    id="svg3110"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="Nouveau document 2">
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="logo-toulibre.svg"
+   inkscape:export-filename="/home/ehe/Dev/toulibre/cdl-site-teasing/www/images/logo-toulibre.png"
+   inkscape:export-xdpi="158.75999"
+   inkscape:export-ydpi="158.75999">
   <defs
      id="defs3112" />
   <sodipodi:namedview
@@ -25,8 +28,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.959798"
-     inkscape:cx="33.978965"
-     inkscape:cy="-22.562317"
+     inkscape:cx="-15.39224"
+     inkscape:cy="-23.067393"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -35,9 +38,9 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:window-width="1920"
-     inkscape:window-height="1023"
+     inkscape:window-height="1031"
      inkscape:window-x="0"
-     inkscape:window-y="31"
+     inkscape:window-y="25"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata3115">
@@ -47,7 +50,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -73,7 +76,7 @@
          inkscape:connector-curvature="0" />
       <path
          transform="matrix(0.855571,0,0,0.855571,-60.61176,-51.73938)"
-         d="m 221.78571,216.46933 c 0,5.42422 -4.31725,9.82143 -9.64286,9.82143 -5.3256,0 -9.64285,-4.39721 -9.64285,-9.82143 0,-5.42423 4.31725,-9.82143 9.64285,-9.82143 5.32561,0 9.64286,4.3972 9.64286,9.82143 z"
+         d="m 221.78571,216.46933 a 9.6428576,9.8214283 0 0 1 -9.64286,9.82143 9.6428576,9.8214283 0 0 1 -9.64285,-9.82143 9.6428576,9.8214283 0 0 1 9.64285,-9.82143 9.6428576,9.8214283 0 0 1 9.64286,9.82143 z"
          sodipodi:ry="9.8214283"
          sodipodi:rx="9.6428576"
          sodipodi:cy="216.46933"
@@ -83,7 +86,7 @@
          sodipodi:type="arc" />
       <path
          transform="matrix(0.855571,0,0,0.855571,-23.33326,-50.66992)"
-         d="m 221.78571,216.46933 c 0,5.42422 -4.31725,9.82143 -9.64286,9.82143 -5.3256,0 -9.64285,-4.39721 -9.64285,-9.82143 0,-5.42423 4.31725,-9.82143 9.64285,-9.82143 5.32561,0 9.64286,4.3972 9.64286,9.82143 z"
+         d="m 221.78571,216.46933 a 9.6428576,9.8214283 0 0 1 -9.64286,9.82143 9.6428576,9.8214283 0 0 1 -9.64285,-9.82143 9.6428576,9.8214283 0 0 1 9.64285,-9.82143 9.6428576,9.8214283 0 0 1 9.64286,9.82143 z"
          sodipodi:ry="9.8214283"
          sodipodi:rx="9.6428576"
          sodipodi:cy="216.46933"

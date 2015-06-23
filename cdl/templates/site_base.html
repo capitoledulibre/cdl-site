@@ -9,7 +9,6 @@
 {% block viewport %}{% endblock %}
 
 {% block style_base %}
-    <link href="{% static "pinax/css/theme.css" %}" rel="stylesheet">
     <link href="{% static "css/site.css" %}" rel="stylesheet">
     {% block extra_style %}{% endblock %}
 {% endblock %}
@@ -19,7 +18,7 @@
     {% block extra_head %}{% endblock %}
 {% endblock %}
 
-{% block navbar_class %}navbar-fixed-top{% endblock %}
+{% block navbar_class %}{% endblock %}
 {% block wrapper_class %}outer-container{% endblock %}
 {% block site_brand %}
     <a class="navbar-brand" href="{% url "home" %}">{{ SITE_NAME }}</a>
@@ -57,8 +56,6 @@
         </footer>
     </div>
 {% endblock %}
-
-{% block footer_base %}{% endblock %}
 
 {% block extra_body_base %}
     {% analytics %}
