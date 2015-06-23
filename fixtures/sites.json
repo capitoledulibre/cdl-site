@@ -4,15 +4,15 @@
         "model": "sites.site",
         "fields": {
             "domain": "localhost:8000",
-            "name": "example.com [localhost]"
+            "name": "2015.capitoledulibre.org [localhost]"
         }
     },
     {
         "pk": 2,
         "model": "sites.site",
         "fields": {
-            "domain": "example.com",
-            "name": "example.com"
+            "domain": "2015.capitoledulibre.org",
+            "name": "2015.capitoledulibre.org"
         }
     }
 ]
