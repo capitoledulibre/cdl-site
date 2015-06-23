@@ -1,13 +1,266 @@
 {% extends "site_base.html" %}
 
+{% load staticfiles %}
 {% load i18n %}
 {% load boxes_tags %}
 
 {% block head_title %}{% trans "Welcome" %}{% endblock %}
 
-{% block body_class %}home{% endblock %}
+{% block body_class %}homepage{% endblock %}
 
-{% block body %}
-    {% box "homepage" %}
-    &nbsp;
+{% block header_extra %}
+<div class="row text-center" id="cta" >
+    <div class="col-md-4">
+      <a class="btn btn-lg btn-cta" href="#apropos">
+      <span class="glyphicon glyphicon-question-sign"></span>
+      Qu'est-ce que c'est ?
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a class="btn btn-lg btn-cta" href="#programme">
+        <span class="glyphicon glyphicon-bullhorn"></span>
+        Appel &agrave; conf&eacute;rence
+      </a>
+      <p>(bient&ocirc;t en ligne)</p>
+    </div>
+    <div class="col-md-4">
+      <a class="btn btn-lg btn-cta" href="#sponsoring">
+      <span class="glyphicon glyphicon-star"></span>
+      Devenez sponsor</a>
+    </div>
+</div>
+<div class="row" id="comm" >
+    <div class="col-md-12 text-center">
+        <p class="communiquer">
+            <a title="twitter" href="https://twitter.com/toulibreorg" id="twitter">Twitter</a>
+            <a title="Google+" href="https://plus.google.com/b/109128243242581226442/109128243242581226442/posts" id="google">Google+</a>
+            <a title="Diaspora" href="https://framasphere.org/u/toulibreorg" id="diaspora">Diaspora</a>
+            <a title="Facebook" href="https://www.facebook.com/pages/Toulibre/198002937051300" id="facebook">Facebook</a>
+            <a title="Flickr" href="https://www.flickr.com/groups/capitole-du-libre" id="flickr">Flickr</a>
+        </p>
+        <p>
+            <a title="Capitole du Libre sur twitter" href="https://twitter.com/hashtag/cdl2015">#cdl2015</a>
+        </p>
+    </div>
+</div>
+{% endblock %}
+
+{% block body_base %}
+        <!-- Main Content -->
+        <div id="content">
+          <section class="banner" id="apropos">
+            <div class="container">
+              <h2 class="text-center">Le Capitole du Libre, <small>L'événement du Logiciel Libre à Toulouse</small></h2>
+              <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                  <p>Cet &eacute;vènement autour du logiciel libre a lieu tous les ans fin novembre à l'<a href="http://www.enseeiht.fr/fr/index.html"
+                    title="ENSEEIHT" target="_blank">INP-ENSEEIHT</a>, il est gratuit et <strong>ouvert &agrave; toutes et &agrave; tous.</strong></p>
+                  <p>Cette ann&eacute;e il se d&eacute;roulera les <strong>samedi 21 et dimanche 22 novembre 2015</strong>. </p>
+                  <p>Organisé par l'association <a target="_blank" href="http://toulibre.org/">Toulibre</a>,
+                    avec la participation active des clubs étudiants de l'N7 : <a
+                      href="http://tvn7.fr/" title="TVn7" target="_blank">TVn7</a>, <a
+                      href="http://www.bde.enseeiht.fr/clubs/net7/" target="_blank">Net7</a>
+                    <a href="http://www.bde.enseeiht.fr/clubs/animation/" title="CAN7"
+                      target="_blank">CAn7</a> et <a href="http://www.bde.enseeiht.fr/clubs/photo/" title="CAN7"
+                      target="_blank">Photo7</a>.</p>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                  <p>Comme chaque ann&eacute;e, les thèmes seront aussi bien orientés vers le grand public que vers les plus techniques. Conférences, ateliers,
+                    animations seront au programme, ainsi que quelques surprises !</p>
+                  <p>Un appel à conférences, ateliers et stands sera lancé d'ici fin juin.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="banner" id="programme">
+            <div class="container">
+              <h2>Programme des conférences et ateliers</h2>
+              <p>Plusieurs conférences et ateliers se déroulent tout le week-end, autour de thématiques aussi bien grand public que plus techniques.</p>
+              <p>L'appel à conférence et ateliers sortira bientôt et couvrira toutes ces thématiques.</p>
+              <div class="thematiques row">
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                  <div class="thumbnail">
+                    <h3>Grand public</h3>
+                    <p>Pour découvrir l'écosystème du logiciel libre.</p></div></div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                  <div class="thumbnail">
+                    <h3>Enjeux du libre</h3>
+                    <p>Qu'est-ce que le libre transforme dans notre société.</p></div></div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                  <div class="thumbnail">
+                    <h3>l’Internet libre</h3>
+                    <p>Autohébergement, sécurité et vie privée sur l’Internet.</p></div></div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                  <div class="thumbnail">
+                    <h3>Culture libre et multimedia</h3>
+                      <p>Les arts et la culture libres, la MAO, la vidéo.</p></div></div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                  <div class="thumbnail">
+                    <h3>Poste de travail</h3>
+                    <p>Environnement de travail, bureautique, utilitaires.</p></div></div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                  <div class="thumbnail">
+                    <h3>Technique</h3>
+                    <p>Développement, bases de données, pour la beauté du code.</p></div></div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                  <div class="thumbnail">
+                    <h3>DevOps</h3>
+                    <p>Inaugurée en 2014, sera renouvelée et abordera Docker, le cloud libre.</p></div></div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                  <div class="thumbnail">
+                    <h3>Internet Of Things & Do It Yourself</h3>
+                    <p>(re)découverte des Arduino, Raspberry Pi, objets connectés.</p></div></div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                  <div class="thumbnail">
+                    <h3>Technologies Web</h3>
+                    <p>NodeJS, ReactJS, AngularJS, le Web change tous les jours.</p></div></div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                  <div class="thumbnail">
+                    <h3>Animation 2D & 3D</h3>
+                    <p>Blender, Krita, Gimp, Inkscape, Synfig, la réalisation d’œuvres artistiques avec
+                des outils libres.</p></div></div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                  <div class="thumbnail">
+                    <h3>AkademyFR</h3>
+                    <p>Le rendez-vous de la communauté francophone de KDE et de Qt.</p></div></div>
+              </div>
+                  <p>Si votre communauté souhaite se réunir à l'occasion de cet événement, <a href="mailto:contact@capitoledulibre.org">écrivez-nous</a> !
+                    Comme pour <strong>AkademyFR</strong>, nous avons la possibilité de vous mettre à disposition des salles pour des conférences et des ateliers et vous accueillir en tant qu'événement hébergé.</p>
+            </div>
+          </section>
+          <section class="banner" id="animations">
+            <div class="container">
+              <h2>Animations</h2>
+              <p>Pour illustrer le logiciel libre et au-delà, rien de tel que des animations ludiques.</p>
+              <div class="media">
+                <div class="media-left">
+                  <img class="media-object" alt="Stand Libre Office" src="{% static "images/Cdl_samedi_17-photo-freetux-cc-by-sa.jpg" %}" />
+                </div>
+                <div class="media-body">
+                  <h3>Village associatif</h3>
+                  <p>Venez rencontrer les associations qui œuvrent pour le bien commun numérique telles que l'April,
+                    Wikimedia France, Framasoft, Tetaneutral.net, ainsi que les associations qui supportrices des distributions GNU/Linux.</p>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-body">
+                  <h3>Install party</h3>
+                  <p>Vous souhaitez utiliser un système libre sur votre ordinateur, mais vous
+                  aimeriez être guidé pour vos premiers pas ? Vous avez déjà installé
+                  GNU/Linux et avez besoin d’aide pour une mise à jour ou la résolution
+                  d’un problème ?</p>
+                  <p>Alors l'Install Party est faite pour vous : apportez votre ordinateur
+                  et un expert GNU/Linux des associations <strong>Toulibre</strong>, <strong>Net7</strong> vous guidera pour procéder à l’installation
+                  et à la découverte du système libre de votre choix !</p>
+                </div>
+                <div class="media-right">
+                  <img class="media-object" alt="Installation GNU/Linux" src="{% static "images/CDL2014-2976-install-party-photo-jeanZ.jpg" %}" />
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left">
+                  <img class="media-object" alt="Imprimante 3D" src="{% static "images/CDL2014-3003-imprimante3D-photo-jeanZ.jpg" %}" />
+                </div>
+                <div class="media-body">
+                  <h3>Imprimantes 3D</h3>
+                  <p>Vous ne savez pas encore ce qu'est une imprimante 3D, venez les découvrir au Capitole du Libre, des passionnés vous montreront les dessous de cette technologie qui fait exploser l'open source des objets.
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-body">
+                  <h3>Jeux vidéo libre</h3>
+                  <p>Venez jouer en réseau avec nous ! Vous allez être étonnés de l'aboutissement des jeux vidéo libres.</p>
+                  <h3>Animations pour les enfants</h3>
+                  <p>L'an dernier un espace jeux vidéo était proposé aux enfants, l'année précédente un bac à sable en réalité augmentée réalisé par Science Animations. Cette année encore des nouveautés !</p>
+                </div>
+                <div class="media-right">
+                  <img class="media-object" alt="Jeux vidéo" src="{% static "images/Cdl_samedi_14-photo-freetux-cc-by-sa.jpg" %}" />
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="banner" id="sponsoring">
+            <div class="container">
+              <div class="media">
+                <div class="media-body">
+                  <h2>Nos partenaires</h2>
+                  <p>Le Capitole du Libre fait venir des intervenants parfois de très loin, et nous tenons à ce que l’accès aux conférences et aux ateliers soit gratuit et ouvert à tous.</p>
+                  <p>Pour cela, <strong>nous remercions nos sponsors pour le soutien qu’ils apportent à cette manifestation</strong>. Certaines entreprises soutiennent le Capitole du Libre depuis le début ou presque : <a href="http://www.kdab.com/" title="KDAB">KDAB</a>, <a href="http://www.makina-corpus.com/" title="Makina Corpus">Makina Corpus</a>, <a href="http://www.objectif-libre.com/" title="Objectif Libre">Objectif Libre</a> et <a href="http://www.solulibre.com/" title="Solulibre">Solulibre</a>.</p>
+                  <p>Pour devenir partenaire du Capitole du Libre 2015, vous pouvez
+                    <a href="capitoledulibre-devenir-sponsor-2015.pdf">consulter notre dossier de sponsoring 2015</a> ou
+                    <a href="mailto:contact@capitoledulibre.org?subject=Partenariat">nous contacter par courriel</a></p>.
+                  <p><a class="btn btn-lg btn-bred" href="capitoledulibre-devenir-sponsor-2015.pdf">
+                    <span class="glyphicon glyphicon-download"></span> Téléchargez le dossier</a>
+                </div>
+                <div class="media-right">
+                  <img class="media-object" alt="Stand Logilab et Makina Corpus" src="{% static "images/CDL2014-2918-stand-sponsor-photo-jeanZ.jpg" %}" />
+                </div>
+              </div>
+
+
+                <div class="row">
+                <div class="col-xs-6 col-sm-2">
+                    <h3>Organisation</h3>
+                    <a href="http://toulibre.org/" class="thumbnail" target="_blank">
+                    <img src="{% static "images/logo-toulibre.svg" %}" alt="Toulibre" class="logo-150px" title="Toulibre"></a>
+                </div>
+                <div class="col-xs-6 col-sm-2">
+                    <h3>Institutionnels</h3>
+                    <a href="http://enseeiht.fr/" class="thumbnail" target="_blank">
+                        <img src="{% static "images/inpn7logo.svg" %}" alt="ENSEEIHT" class="logo-150px" title="ENSEEIHT">
+                    </a>
+                </div>
+                <div class="col-xs-6 col-sm-2">
+                    <h3>Communication</h3>
+                    <div class="row">
+                    <div class="col-xs-12">
+                    <a href="http://www.editions-diamond.fr/" class="thumbnail" target="_blank">
+                        <img src="{% static "images/logo-edition-diamonds.png" %}" alt="Éditions Diamonds" class="logo-100px" title="Éditions Diamonds">
+                    </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+          </section>
+          <section id="participer">
+            <div class="container">
+              <h2>Participer</h2>
+              <p>Si vous souhaitez participer à l'organisation, inscrivez-vous sur
+                la <a href="http://www.toulibre.org/mailman/listinfo/capitoledulibre"
+                  title="Liste Capitole du Libre" target="_blank">liste de
+                  discussion dédiée</a>.</p>
+            </div>
+          </section>
+        </div>
+{% endblock %}
+
+{% block footer %}
+  <section id="mentions-legales">
+    <div class="contair">
+    <h2>Mentions légales</h2>
+      <div class="row">
+        <div class="col-sm-6">
+          <p>Le site capitoledulibre.org est hébergé en France, par
+            l'association <a href="http://tetaneutral.net/" class="reference external">tetaneutral.net</a>:</p>
+          <div>Association tetaneutral.net</div>
+          <div>c/o Laurent GUERBY</div>
+          <div>10 chemin Tricou</div>
+          <div>31200 TOULOUSE</div>
+        </div>
+        <div class="col-sm-6">
+          <p>Ce site est édité par l'association <a href="http://toulibre.org/"
+              class="reference external">Toulibre</a>:</p>
+          <p class="pull-right"><img alt="logo toulibre" src="{% static "images/logo-toulibre.png" %}" /></p>
+          <div>Association Toulibre,</div>
+          <div>57, rue Labat de Savignac,</div>
+          <div>31500 Toulouse</div>
+        </div>
+      </div>
+      <address id="about" class="vcard">Pour tout renseignement :
+        <a class="url org" href="mailto:contact@capitoledulibre.org">contactez <span class="org">Toulibre</span></a>
+      </address>
+    </div>
+  </section>
 {% endblock %}
