@@ -30,51 +30,75 @@
     <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
         <div class="{% block wrapper_class %}{% endblock %}">
 
-            {% block topbar_base %}
-                <header>
-                    <div class="navbar navbar-inverse {% block navbar_class %}navbar-fixed-top{% endblock %}">
-                        <div class="container">
-                        {% block topbar %}
-                            <div class="navbar-header">
-                                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                    <span class="fa fa-bars"></span>
-                                </button>
-                                {% block site_brand %}<a class="navbar-brand" href="{% url "home" %}">{{ SITE_NAME }}</a>{% endblock %}
-                            </div>
-                            <div class="collapse navbar-collapse navbar-responsive-collapse">
-                                {% block nav %}
-                                    {% comment %}
-                                        <ul class="nav navbar-nav">
-                                            <li><a href="#tab_one">One</a></li>
-                                            <li><a href="#tab_two">Two</a></li>
-                                        </ul>
-                                    {% endcomment %}
-                                {% endblock %}
-                                {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
-                            </div>
-                        {% endblock %}
+            {% block header_base %}
+            <div id="header-wrapper">
+                <div class="container">
+                    <header id="top" class="row">
+                        <div class="col-md-4">
+                          <h1 class="text-hide">Capitole du Libre 2015</h1>
+                          <a href="/">
+                          <img src="{% static "images/logo-cdl.png" %}" alt="logo CDL" />
+                          </a>
                         </div>
-                    </div>
-                </header>
+                        <div class="col-md-8 text-center">
+                          <h2 id="slogan" class="gray-lighter">L'événement du Logiciel Libre à Toulouse</h2>
+                          <h3 class="gray-lighter">21-22 novembre 2015</h3>
+                          <h3 class="yellow">ENSEEIHT, Toulouse, France</h3>
+                        </div>
+                    </header>
+                    {% block header_extra %}{% endblock %}
+                </div>
+            </div>
+            {% endblock %}
+            {% block topbar_base %}
+              <nav class="navbar navbar-inverse {% block navbar_class %}{% endblock %}"  role="navigation">
+                  <div class="container">
+                  {% block topbar %}
+                      <div class="navbar-header">
+                        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                          {% block site_brand %}<a class="navbar-brand" href="{% url "home" %}">{{ SITE_NAME }}</a>{% endblock %}
+                      </div>
+                      <div class="collapse navbar-collapse navbar-responsive-collapse">
+                          {% block nav %}
+                              {% comment %}
+                                  <ul class="nav navbar-nav">
+                                      <li><a href="#tab_one">One</a></li>
+                                      <li><a href="#tab_two">Two</a></li>
+                                  </ul>
+                              {% endcomment %}
+                          {% endblock %}
+                          {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
+                      </div>
+                  {% endblock %}
+                  </div>
+              </nav>
             {% endblock %}
 
             {% block body_base %}
-                <section id="content_body">
+            <div id="content">
+                <section class="banner">
                     <div class="container">
                         {% include "_messages.html" %}
                         {% block body %}
                         {% endblock %}
                     </div>
                 </section>
+            </div>
             {% endblock %}
 
             {% block footer_base %}
-                <hr />
+            <div class="banner" id="footer-wrapper">
                 <footer>
                     <div class="container">
                         {% block footer %}{% endblock %}
                     </div>
                 </footer>
+              </div>
             {% endblock %}
         </div>
 
