@@ -2,11 +2,53 @@
 // Variables
 // --------------------------------------------------
 
-@fa-font-path:       "../font-awesome/fonts";
+@font-face {
+    font-family: 'texgyreadventor';
+    src: url('../fonts/texgyreadventor/texgyreadventor-regular-webfont.eot');
+    src: url('../fonts/texgyreadventor/texgyreadventor-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/texgyreadventor/texgyreadventor-regular-webfont.woff') format('woff'),
+         url('../fonts/texgyreadventor/texgyreadventor-regular-webfont.ttf') format('truetype'),
+         url('../fonts/texgyreadventor/texgyreadventor-regular-webfont.svg#texgyreadventorregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
 
-// Global values
-// --------------------------------------------------
+@font-face {
+    font-family: 'texgyreadventor';
+    src: url('../fonts/texgyreadventor/texgyreadventor-italic-webfont.eot');
+    src: url('../fonts/texgyreadventor/texgyreadventor-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/texgyreadventor/texgyreadventor-italic-webfont.woff') format('woff'),
+         url('../fonts/texgyreadventor/texgyreadventor-italic-webfont.ttf') format('truetype'),
+         url('../fonts/texgyreadventor/texgyreadventor-italic-webfont.svg#texgyreadventoritalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'texgyreadventor';
+    src: url('../fonts/texgyreadventor/texgyreadventor-bold-webfont.eot');
+    src: url('../fonts/texgyreadventor/texgyreadventor-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/texgyreadventor/texgyreadventor-bold-webfont.woff') format('woff'),
+         url('../fonts/texgyreadventor/texgyreadventor-bold-webfont.ttf') format('truetype'),
+         url('../fonts/texgyreadventor/texgyreadventor-bold-webfont.svg#texgyreadventorbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'texgyreadventor';
+    src: url('../fonts/texgyreadventor/texgyreadventor-bolditalic-webfont.eot');
+    src: url('../fonts/texgyreadventor/texgyreadventor-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/texgyreadventor/texgyreadventor-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/texgyreadventor/texgyreadventor-bolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/texgyreadventor/texgyreadventor-bolditalic-webfont.svg#texgyreadventorbold_italic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+
+}
 
 
 //== Colors
@@ -20,7 +62,11 @@
 @gray-light:             lighten(@gray-base, 46.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         #428bca;
+@cdl-red:               #d03d00;
+@cdl-yellow:            #ffad08;
+@cdl-gray-lighter:      #E8E8E8;
+
+@brand-primary:         darken(#428bca, 6.5%); // #337ab7
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
@@ -32,12 +78,12 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+@body-bg:               #FEFEFE;
 //** Global text color on `<body>`.
 @text-color:            @gray-dark;
 
 //** Global textual link color.
-@link-color:            @brand-primary;
+@link-color:            @cdl-red;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 //** Link hover decoration.
@@ -48,20 +94,20 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  Verdena, "Lucida Grande", sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          14px;
+@font-size-base:          16px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
-@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
-@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
-@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
-@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h1:            2.4em; // floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:            2.15em; //floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:            1.5em; //ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:            1.15em; //ceil((@font-size-base * 1.25)); // ~18px
 @font-size-h5:            @font-size-base;
 @font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
 
@@ -71,7 +117,7 @@
 @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
 //** By default, this inherits from the `<body>`.
-@headings-font-family:    inherit;
+@headings-font-family:    texgyreadventor, sans-serif;
 @headings-font-weight:    500;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
@@ -105,7 +151,7 @@
 @padding-xs-vertical:       1px;
 @padding-xs-horizontal:     5px;
 
-@line-height-large:         1.33;
+@line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
 @line-height-small:         1.5;
 
 @border-radius-base:        4px;
@@ -176,6 +222,11 @@
 
 @btn-link-disabled-color:        @gray-light;
 
+// Allows for customizing button radius independently from global border radius
+@btn-border-radius-base:         @border-radius-base;
+@btn-border-radius-large:        @border-radius-large;
+@btn-border-radius-small:        @border-radius-small;
+
 
 //== Forms
 //
@@ -193,6 +244,7 @@
 
 // TODO: Rename `@input-border-radius` to `@input-border-radius-base` in v4
 //** Default `.form-control` border radius
+// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
 @input-border-radius:            @border-radius-base;
 //** Large `.form-control` border radius
 @input-border-radius-large:      @border-radius-large;
@@ -203,7 +255,7 @@
 @input-border-focus:             #66afe9;
 
 //** Placeholder text color
-@input-color-placeholder:        #999;
+@input-color-placeholder:        @gray-light;
 
 //** Default `.form-control` height
 @input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 2);
@@ -211,6 +263,9 @@
 @input-height-large:             (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
 //** Small `.form-control` height
 @input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+
+//** `.form-group` margin
+@form-group-margin-bottom:       15px;
 
 @legend-color:                   @gray-dark;
 @legend-border-color:            #e5e5e5;
@@ -271,7 +326,8 @@
 @zindex-popover:           1060;
 @zindex-tooltip:           1070;
 @zindex-navbar-fixed:      1030;
-@zindex-modal:             1040;
+@zindex-modal-background:  1040;
+@zindex-modal:             1050;
 
 
 //== Media queries breakpoints
@@ -355,7 +411,7 @@
 // Basics of a navbar
 @navbar-height:                    50px;
 @navbar-margin-bottom:             @line-height-computed;
-@navbar-border-radius:             @border-radius-base;
+@navbar-border-radius:             0; //@border-radius-base;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 @navbar-collapse-max-height:       340px;
@@ -485,6 +541,7 @@
 @jumbotron-bg:                   @gray-lighter;
 @jumbotron-heading-color:        inherit;
 @jumbotron-font-size:            ceil((@font-size-base * 1.5));
+@jumbotron-heading-font-size:    ceil((@font-size-base * 4.5));
 
 
 //== Form states and alerts
@@ -741,7 +798,7 @@
 //** Thumbnail background color
 @thumbnail-bg:                @body-bg;
 //** Thumbnail border color
-@thumbnail-border:            #ddd;
+@thumbnail-border:            transparent;
 //** Thumbnail border radius
 @thumbnail-border-radius:     @border-radius-base;
 
