@@ -4,7 +4,7 @@
         "model": "sites.site",
         "fields": {
             "domain": "localhost:8000",
-            "name": "2015.capitoledulibre.org [localhost]"
+            "name": "Capitole du Libre 2015 [localhost]"
         }
     },
     {
@@ -12,7 +12,7 @@
         "model": "sites.site",
         "fields": {
             "domain": "2015.capitoledulibre.org",
-            "name": "2015.capitoledulibre.org"
+            "name": "Capitole du Libre 2015"
         }
     }
 ]
