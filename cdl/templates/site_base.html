@@ -33,27 +33,25 @@
         {% include "_messages.html" %}
         {% block body_outer %}
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-8">
                     {% block body %}
                     {% endblock %}
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     {% block sidebar %}
                         {% include "_default_sidebar.html" %}
                     {% endblock %}
                 </div>
             </div>
         {% endblock %}
-        <hr />
-        <footer class="footer">
-            <div class="pull-left">
-                &copy;2014
+        {% block postface_outer %}
+            <div class="row">
+                <div class="col-xs-12">
+                    {% block postface %}
+                    {% endblock %}
+                </div>
             </div>
-
-            <div class="pull-right">
-                Site powered by <a href="http://eldarion.com/symposion/"><b>Symposion</b></a>.
-            </div>
-        </footer>
+        {% endblock %}
     </div>
 {% endblock %}
 
