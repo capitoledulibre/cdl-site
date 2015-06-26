@@ -4,6 +4,20 @@ from django.utils.translation import ugettext_lazy as _
 from symposion.proposals.models import ProposalBase
 
 
+
+class ProposalCategory(models.Model):
+
+    name = models.CharField(max_length=100)
+    slug = models.SlugField()
+
+    def __unicode__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _(u"Capitole du Libre proposal category")
+        verbose_name_plural = _(u"Capitole du Libre proposal categories")
+
+
 class Proposal(ProposalBase):
 
     AUDIENCE_LEVEL_NOVICE = 1
@@ -15,6 +29,8 @@ class Proposal(ProposalBase):
         (AUDIENCE_LEVEL_INTERMEDIATE, _(u"Intermediate")),
         (AUDIENCE_LEVEL_EXPERIENCED, _(u"Experienced")),
     ]
+    
+    category = models.ForeignKey(ProposalCategory)
 
     audience_level = models.IntegerField(choices=AUDIENCE_LEVELS)
 
