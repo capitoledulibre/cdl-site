@@ -57,7 +57,7 @@
                         {% endfor %}
                     </table>
                 {% else %}
-                    <p>{%trans "No proposals submitted yet." %}</p>
+                    <p>{% trans "No proposals submitted yet." %}</p>
                 {% endif %}
 
                 {% associated_proposals as associated_proposals %}
@@ -110,31 +110,64 @@
 
             <div id="collapseReview" class="panel-collapse collapse">
               <div class="panel-body">
-                <h4>Reviews by Section</h4>
+                <h4>{% trans "Review Sections" %}</h4>
 
                 <ul>
                     {% for section in review_sections %}
-                        <h5>{{ section }}</h5>
-                            <li><a href="{% url "review_section" section.section.slug %}">All</a></li>
-                            <li><a href="{% url "user_reviewed" section.section.slug %}">Reviewed by you</a></li>
-                            <li><a href="{% url "user_not_reviewed" section.section.slug %}">Not Reviewed by you</a></li>
+                        <li><a href="{% url "review_section" section.section.slug %}">{{ section }}</a></li>
                     {% endfor %}
                 </ul>
 
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                    <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#collapseVote">
+                    {% trans "Proposals you have reviewed" %}</a></h4>
+                    </div>
+                    <div id="collapseVote" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>{% trans "Speaker / Title" %}</th>
+                                    <th>{% trans "Your Vote" %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for review in user_reviews %}
+                                    <tr>
+                                        <td>{{ review.proposal.number }}</td>
+                                        <td>
+                                            <b>{{ review.proposal.speaker }}</b>
+                                            <br />
+                                            {{ review.proposal.title }}
+                                        </td>
+                                        <td>{{ review.vote }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
                 {% comment %}
-                <h4>My Assignments</h4>
+                <h4>{% trans "My Assignments %}</h4>
                 <table class="table">
                     <thead>
-                        <td>Proposal Title</td>
-                        <td>Score</td>
+                      <tr>
+                        <th>{% trans "Proposal Title" %}</th>
+                        <th>{% trans "Score</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Title Three</td>
+                            <td>{% trans "Title Three" %}</td>
                             <td>-1</td>
                         </tr>
                         <tr>
-                            <td>Title Four</td>
+                            <td>{% trans "Title Four" %}</td>
                             <td>+2</td>
                         </tr>
                     </tbody>
@@ -159,7 +192,7 @@
             <div id="collapseTeams" class="panel-collapse collapse in">
               <div class="panel-body">
                 {% if user.memberships.exists %}
-                    <h4>Your Teams</h4>
+                    <h4>{% trans "Your Teams" %}</h4>
                     <table class="table table-striped">
                         {% for membership in user.memberships.all %}
                             <tr>
@@ -171,16 +204,18 @@
                                     <span class="label{% if membership.state == 'invited' %} label-info{% endif %}">{{ membership.get_state_display }}</span>
                                 </td>
                                 <td>
-                                    {% if membership.state == "manager" or user.is_staff %}
-                                        {% if membership.team.applicants %}{{ membership.team.applicants.count }} applicant{{ membership.team.applicants.count|pluralize }}{% endif %}
-                                    {% endif %}
+                                {% if membership.state == "manager" or user.is_staff %}
+                                    {% if membership.team.applicants %}{{ membership.team.applicants.count }} applicant{{ membership.team.applicants.count|pluralize }}{% endif %}
+                                {% endif %}
+                                {% if membership.team.members %}{{ membership.team.members.count }} member{{ membership.team.members.count|pluralize }}{% endif %}
+                                {% if membership.team.managers %}{{ membership.team.managers.count }} manager{{ membership.team.managers.count|pluralize }}{% endif %}
                                 </td>
                             </tr>
                         {% endfor %}
                     </table>
                 {% endif %}
                 {% if available_teams %}
-                    <h4>Available Teams</h4>
+                    <h4>{% trans "Available Teams" %}</h4>
                     <table class="table table-striped">
                         {% for team in available_teams %}
                             <tr>
@@ -190,6 +225,10 @@
                                 </td>
                                 <td>
                                     <span class="label label-default">{{ team.get_access_display }}</span>
+                                </td>
+                                <td>
+                                {% if team.members %}{{ team.members.count }} member{{ team.members.count|pluralize }}{% endif %}
+                                {% if team.managers %}{{ team.managers.count }} manager{{ team.managers.count|pluralize }}{% endif %}
                                 </td>
                             </tr>
 

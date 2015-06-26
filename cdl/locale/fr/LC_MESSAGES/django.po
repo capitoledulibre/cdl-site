@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-24 09:43+0200\n"
+"POT-Creation-Date: 2015-06-26 21:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +17,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
-#: templates/_account_bar.html:14 templates/dashboard.html:13
+#: templates/_account_bar.html:14 templates/dashboard.html:8
+#: templates/dashboard.html.py:13
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
@@ -56,10 +56,11 @@ msgstr "Courriel"
 
 #: templates/conference/user_list.html:58
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: templates/conference/user_list.html:59
 #, fuzzy
+#| msgid "Edit Speaker Profile"
 msgid "Speaker Profile?"
 msgstr "Modifier votre profil d'intervenant"
 
@@ -120,21 +121,44 @@ msgstr "Propositions que vous avez été invité(e) à rejoindre"
 msgid "Reviews"
 msgstr "Votes"
 
-#: templates/dashboard.html:157
+#: templates/dashboard.html:113
+msgid "Review Sections"
+msgstr "Catégorie de propositions"
+
+#: templates/dashboard.html:125
+msgid "Proposals you have reviewed"
+msgstr "Propositions que vous avez évaluées"
+
+#: templates/dashboard.html:133 templates/reviews/_review_table.html:6
+#: templates/reviews/result_notification.html:45
+msgid "Speaker / Title"
+msgstr "Intervenant / Titre"
+
+#: templates/dashboard.html:134
+msgid "Your Vote"
+msgstr "Votre Vote"
+
+#: templates/dashboard.html:190
 msgid "Teams"
 msgstr "Équipes"
 
-#: templates/dashboard.html:210 templates/sponsorship/detail.html:8
+#: templates/dashboard.html:196
+msgid "Your Teams"
+msgstr "Équipes dont vous faîtes partie"
+
+#: templates/dashboard.html:219
+msgid "Available Teams"
+msgstr "Équipes disponibles"
+
+#: templates/dashboard.html:249 templates/sponsorship/detail.html:8
 msgid "Sponsorship"
 msgstr "Partenariat"
 
-#: templates/dashboard.html:218
-#, fuzzy
+#: templates/dashboard.html:257
 msgid "Apply to be a sponsor"
 msgstr "Devenir Sponsor"
 
-#: templates/dashboard.html:224
-#, fuzzy
+#: templates/dashboard.html:263
 msgid ""
 "If you or your organization would be interested in sponsorship "
 "opportunities, you will find in"
@@ -143,21 +167,17 @@ msgstr ""
 "voustrouverez toutes les informations sur <a href=\"/partenariat\">la page "
 "partenariats</a>."
 
-#: templates/dashboard.html:224
-#, fuzzy
+#: templates/dashboard.html:263
 msgid "sponsor section"
 msgstr "Partenariat"
 
-#: templates/dashboard.html:226
+#: templates/dashboard.html:265
 msgid "Your Sponsorship"
 msgstr "Partenariat"
 
-#: templates/dashboard.html:240
-#, fuzzy
+#: templates/dashboard.html:279
 msgid "As staff, you can directly"
-msgstr ""
-"En tant que membre de l'équipe, vous pouvez directement <a href="
-"\"'%(sponsor_add_url)s'\">ajouter un partenaire</a>"
+msgstr "En tant que membre de l'équipe, vous pouvez directement"
 
 #: templates/emails/teams_user_applied/message.html:3
 #, python-format
@@ -361,11 +381,6 @@ msgstr "Ajouter un autre intervenant"
 msgid "Submit A Proposal"
 msgstr "Soumettre une proposition"
 
-#: templates/reviews/_review_table.html:6
-#: templates/reviews/result_notification.html:45
-msgid "Speaker / Title"
-msgstr "Intervenant / Titre"
-
 #: templates/reviews/_review_table.html:7
 #: templates/reviews/result_notification.html:46
 msgid "Category"
@@ -440,7 +455,6 @@ msgstr ""
 "suivant, il/elle sera notifié(e) et pourra vous répondre."
 
 #: templates/schedule/_slot_edit.html:5
-#, fuzzy
 msgid "Edit Slot"
 msgstr "Modifier"
 
@@ -463,14 +477,10 @@ msgid "Apply to be a Sponsor"
 msgstr "Devenir Sponsor"
 
 #: templates/sponsorship/apply.html:17
-#, fuzzy
-#| msgid "Apply to be a Sponsor"
 msgid "Apply to Be a Sponsor"
 msgstr "Devenir Sponsor"
 
 #: templates/sponsorship/list.html:7 templates/sponsorship/list.html.py:12
-#, fuzzy
-#| msgid "Your Sponsorship"
 msgid "About Our Sponsors"
 msgstr "Partenariat"
 
@@ -498,9 +508,8 @@ msgstr "Partenariat"
 #~ msgid "Slides"
 #~ msgstr "Diaporama"
 
-#, fuzzy
 #~ msgid "Transcription"
-#~ msgstr "Description"
+#~ msgstr "Transcription"
 
 #~ msgid "Url to licence text"
 #~ msgstr "Url vers le texte de la licence"
@@ -520,17 +529,8 @@ msgstr "Partenariat"
 #~ msgid "Url to another format for audio or video media."
 #~ msgstr "URL vers un autre format pour les media audio ou vidéo"
 
-#, fuzzy
 #~ msgid "Coverage file"
 #~ msgstr "Fichier de media"
-
-#, fuzzy
-#~ msgid "Coverage has been saved successfully."
-#~ msgstr "Le formulaire d'inscription a bien été mis à jour."
-
-#, fuzzy
-#~ msgid "Coverage form has been updated successfully."
-#~ msgstr "Le formulaire d'inscription a bien été mis à jour."
 
 #~ msgid "The description must be less than 400 characters"
 #~ msgstr "La description doit être de moins de 400 caractères"
@@ -569,7 +569,6 @@ msgstr "Partenariat"
 #~ msgid "I prefer a 50 minute slot"
 #~ msgstr "Je préfère un créneau de 50 minutes"
 
-#, fuzzy
 #~ msgid "talk proposal"
 #~ msgstr "proposition de conférence"
 
@@ -582,7 +581,6 @@ msgstr "Partenariat"
 #~ msgid "tutorial proposal"
 #~ msgstr "proposition d'atelier"
 
-#, fuzzy
 #~ msgid "stand proposal"
 #~ msgstr "proposition de stand"
 
@@ -598,7 +596,6 @@ msgstr "Partenariat"
 #~ msgid "Max attendees"
 #~ msgstr "Nombre maximum d'inscrits"
 
-#, fuzzy
 #~ msgid "Subscription to %s"
 #~ msgstr "Inscription à %s"
 
@@ -629,21 +626,6 @@ msgstr "Partenariat"
 #~ msgid "Next"
 #~ msgstr "Suivant"
 
-#~ msgid "Review Sections"
-#~ msgstr "Catégorie de propositions"
-
-#~ msgid "Proposals you have reviewed"
-#~ msgstr "Propositions que vous avez évaluées"
-
-#~ msgid "Your Vote"
-#~ msgstr "Votre Vote"
-
-#~ msgid "Your Teams"
-#~ msgstr "Équipes dont vous faîtes partie"
-
-#~ msgid "Available Teams"
-#~ msgstr "Équipes disponibles"
-
 #~ msgid "Upload"
 #~ msgstr "Téléverser"
 
@@ -653,19 +635,15 @@ msgstr "Partenariat"
 #~ msgid "Save"
 #~ msgstr "Sauvegarder"
 
-#, fuzzy
 #~ msgid "Organisation"
 #~ msgstr "Durée"
 
-#, fuzzy
 #~ msgid "Proposals"
-#~ msgstr "Proposition :"
+#~ msgstr "Propositions"
 
-#, fuzzy
 #~ msgid "Annotations"
-#~ msgstr "Actions"
+#~ msgstr "Annotations"
 
-#, fuzzy
 #~ msgid "Coverage for"
 #~ msgstr "Medias"
 
@@ -684,7 +662,6 @@ msgstr "Partenariat"
 #~ msgid "Edit"
 #~ msgstr "Modifier"
 
-#, fuzzy
 #~ msgid "Manage Additional Speakers"
 #~ msgstr "Gérer les intervenants additionnels"
 
@@ -719,10 +696,6 @@ msgstr "Partenariat"
 #~ msgid "Save and Add Additional Speakers"
 #~ msgstr "Sauvegarder et ajouter des intervenants"
 
-#, fuzzy
-#~ msgid "Speaker"
-#~ msgstr "Biographie de l'Intervenant"
-
 #~ msgid ""
 #~ "\n"
 #~ "Sorry, you do not have permission to access this page. If you \n"
@@ -736,17 +709,14 @@ msgstr "Partenariat"
 #~ msgid "Result Notification"
 #~ msgstr "Notification des résultats"
 
-#, fuzzy
 #~ msgid "accepted"
-#~ msgstr "Acceptée"
+#~ msgstr "acceptée"
 
-#, fuzzy
 #~ msgid "rejected"
-#~ msgstr "Rejetée"
+#~ msgstr "rejetée"
 
-#, fuzzy
 #~ msgid "standby"
-#~ msgstr "En suspens"
+#~ msgstr "en suspens"
 
 #~ msgid "Reviewer"
 #~ msgstr "Relecteur"
@@ -760,20 +730,8 @@ msgstr "Partenariat"
 #~ msgid "You do not have any assignments."
 #~ msgstr "Vous n'avez pas encore de vote assigné"
 
-#, fuzzy
-#~ msgid "reject"
-#~ msgstr "rejeter"
-
-#, fuzzy
-#~ msgid "undecide"
-#~ msgstr "indéfini"
-
 #~ msgid "Rejected"
 #~ msgstr "Rejetée"
-
-#, fuzzy
-#~ msgid "accept"
-#~ msgstr "Accepter"
 
 #~ msgid "Standby"
 #~ msgstr "En suspens"
