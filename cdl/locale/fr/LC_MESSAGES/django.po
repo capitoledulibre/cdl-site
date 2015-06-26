@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-26 23:11+0200\n"
+"POT-Creation-Date: 2015-06-27 01:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,19 +21,27 @@ msgstr ""
 msgid "The description must be less than 400 characters"
 msgstr "La description doit être de moins de 400 caractères"
 
-#: proposals/models.py:13
+#: proposals/models.py:17
+msgid "Capitole du Libre proposal category"
+msgstr "Catégorie de propositions pour le Capitole du Libre"
+
+#: proposals/models.py:18
+msgid "Capitole du Libre proposal categories"
+msgstr "Catégories de propositions pour le Capitole du Libre"
+
+#: proposals/models.py:28
 msgid "Novice"
 msgstr "Débutant"
 
-#: proposals/models.py:14
+#: proposals/models.py:29
 msgid "Intermediate"
 msgstr "Intermédiaire"
 
-#: proposals/models.py:15
+#: proposals/models.py:30
 msgid "Experienced"
 msgstr "Expert"
 
-#: proposals/models.py:22
+#: proposals/models.py:39
 msgid ""
 "By submitting your proposal, you agree to give permission to the conference "
 "organizers to record, edit, and release audio and/or video of your "
@@ -44,35 +52,35 @@ msgstr ""
 "votre présentation. Si vous n'êtes pas d'accordavec ceci, vous pouvez "
 "décocher cette case."
 
-#: proposals/models.py:35 proposals/models.py:49
+#: proposals/models.py:52 proposals/models.py:66
 msgid "No preference"
 msgstr "Pas de préférence"
 
-#: proposals/models.py:36
+#: proposals/models.py:53
 msgid "I prefer a 20 minute slot"
 msgstr "Je préfère un créneau de 20 minutes"
 
-#: proposals/models.py:37
+#: proposals/models.py:54
 msgid "I prefer a 50 minute slot"
 msgstr "Je préfère un créneau de 50 minutes"
 
-#: proposals/models.py:43
+#: proposals/models.py:60
 msgid "talk proposal"
 msgstr "proposition de conférence"
 
-#: proposals/models.py:50
+#: proposals/models.py:67
 msgid "I prefer a 1h30 slot"
 msgstr "Je préfère un créneau d'1h30"
 
-#: proposals/models.py:51
+#: proposals/models.py:68
 msgid "I prefer a 3h slot"
 msgstr "Je préfère un créneau de 3h"
 
-#: proposals/models.py:57
+#: proposals/models.py:74
 msgid "tutorial proposal"
 msgstr "proposition d'atelier"
 
-#: proposals/models.py:68
+#: proposals/models.py:85
 msgid "stand proposal"
 msgstr "proposition de stand"
 
@@ -239,17 +247,18 @@ msgid "Apply to be a sponsor"
 msgstr "Devenir Sponsor"
 
 #: templates/dashboard.html:263
+#, fuzzy, python-format
+#| msgid ""
+#| "If you or your organization would be interested in sponsorship "
+#| "opportunities, you will find in"
 msgid ""
 "If you or your organization would be interested in sponsorship "
-"opportunities, you will find in"
+"opportunities, you will find in <a href=\"%(SITE_BASE)s/partenariat"
+"\">sponsor section</a>."
 msgstr ""
 "Si vous ou votre entreprise êtes intéressé(e) par un partenariat, "
 "voustrouverez toutes les informations sur <a href=\"/partenariat\">la page "
 "partenariats</a>."
-
-#: templates/dashboard.html:263
-msgid "sponsor section"
-msgstr "Partenariat"
 
 #: templates/dashboard.html:265
 msgid "Your Sponsorship"
@@ -308,17 +317,18 @@ msgid "Welcome"
 msgstr "Bienvenue"
 
 #: templates/proposals/_pending_proposal_row.html:12
-#: templates/proposals/_proposal_row.html:10
+#: templates/proposals/_proposal_row.html:12
+#: templates/proposals/proposal_detail.html:25
 msgid "Cancelled"
 msgstr "Annulée"
 
 #: templates/proposals/_pending_proposal_row.html:16
-#: templates/proposals/_proposal_row.html:14
+#: templates/proposals/_proposal_row.html:16
 msgid "Accepted"
 msgstr "Acceptée"
 
 #: templates/proposals/_pending_proposal_row.html:18
-#: templates/proposals/_proposal_row.html:16
+#: templates/proposals/_proposal_row.html:18
 msgid "Submitted"
 msgstr "Proposée"
 
@@ -387,19 +397,19 @@ msgstr "Documents"
 msgid "No supporting documents attached to this proposal."
 msgstr "Aucun document attaché à cette proposition."
 
-#: templates/proposals/_proposal_row.html:19
+#: templates/proposals/_proposal_row.html:21
 msgid "Associated"
 msgstr "Associé"
 
-#: templates/proposals/_proposal_row.html:28
+#: templates/proposals/_proposal_row.html:30
 msgid "Display"
 msgstr "Afficher"
 
-#: templates/proposals/_proposal_row.html:30
+#: templates/proposals/_proposal_row.html:32
 msgid "Edit"
 msgstr "Modifier"
 
-#: templates/proposals/_proposal_row.html:31
+#: templates/proposals/_proposal_row.html:33
 msgid "Manage Additional Speakers"
 msgstr "Gérer les intervenants additionnels"
 
@@ -469,11 +479,11 @@ msgstr "Vous pouvez laisser un messages aux relecteurs"
 msgid "Submit"
 msgstr "Valider"
 
-#: templates/proposals/proposal_edit.html:11
+#: templates/proposals/proposal_edit.html:12
 msgid "Manage speakers"
 msgstr "Gérer les intervenants"
 
-#: templates/proposals/proposal_edit.html:20
+#: templates/proposals/proposal_edit.html:21
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -633,6 +643,9 @@ msgstr "Devenir Sponsor"
 msgid "About Our Sponsors"
 msgstr "Partenariat"
 
+#~ msgid "sponsor section"
+#~ msgstr "Partenariat"
+
 #~ msgid "Link"
 #~ msgstr "Lien"
 
@@ -674,12 +687,6 @@ msgstr "Partenariat"
 
 #~ msgid "Coverage file"
 #~ msgstr "Fichier de media"
-
-#~ msgid "Capitole du Libre proposal category"
-#~ msgstr "Catégorie de propositions pour le Capitole du Libre"
-
-#~ msgid "Capitole du Libre proposal categories"
-#~ msgstr "Catégories de propositions pour le Capitole du Libre"
 
 #~ msgid "How much 3 + 4 makes?"
 #~ msgstr "Combien font 3 + 4 ?"
