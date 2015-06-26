@@ -1,42 +1,71 @@
 [
-    {
-        "pk": 1, 
-        "model": "symposion_proposals.proposalsection", 
-        "fields": {
-            "start": null, 
-            "section": 1, 
-            "end": null, 
-            "closed": null, 
-            "published": null
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "symposion_proposals.proposalsection", 
-        "fields": {
-            "start": null, 
-            "section": 2, 
-            "end": null, 
-            "closed": null, 
-            "published": null
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "symposion_proposals.proposalkind", 
-        "fields": {
-            "section": 1, 
-            "name": "tutorial", 
-            "slug": "tutorial"
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "symposion_proposals.proposalkind", 
-        "fields": {
-            "section": 2, 
-            "name": "talk", 
-            "slug": "talk"
-        }
-    }
+{
+    "fields": {
+        "start": "2015-06-24T22:00:00Z",
+        "section": 1,
+        "end": "2015-09-14T22:00:00Z",
+        "closed": false,
+        "published": true
+    },
+    "model": "symposion_proposals.proposalsection",
+    "pk": 1
+},
+{
+    "fields": {
+        "start": "2015-06-14T04:00:00Z",
+        "section": 2,
+        "end": "2015-09-13T04:00:00Z",
+        "closed": false,
+        "published": true
+    },
+    "model": "symposion_proposals.proposalsection",
+    "pk": 2
+},
+{
+    "fields": {
+        "start": "2015-06-21T22:00:00Z",
+        "section": 3,
+        "end": "2015-09-14T22:00:00Z",
+        "closed": false,
+        "published": true
+    },
+    "model": "symposion_proposals.proposalsection",
+    "pk": 3
+},
+{
+    "fields": {
+        "section": 2,
+        "name": "Conf\u00e9rence",
+        "slug": "conference"
+    },
+    "model": "symposion_proposals.proposalkind",
+    "pk": 1
+},
+{
+    "fields": {
+        "section": 1,
+        "name": "Atelier",
+        "slug": "atelier"
+    },
+    "model": "symposion_proposals.proposalkind",
+    "pk": 2
+},
+{
+    "fields": {
+        "section": 3,
+        "name": "Stand associatif",
+        "slug": "stand-associatif"
+    },
+    "model": "symposion_proposals.proposalkind",
+    "pk": 3
+},
+{
+    "fields": {
+        "section": 3,
+        "name": "Stand sponsor",
+        "slug": "stand-sponsor"
+    },
+    "model": "symposion_proposals.proposalkind",
+    "pk": 4
+}
 ]
