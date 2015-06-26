@@ -10,7 +10,7 @@
         {% csrf_token %}
         {{ form|bootstrap }}
         <div class="form-actions">
-            <button class="btn btn-primary" type="submit">Upload</button>
+                    <button class="btn btn-primary" type="submit">{% trans "Upload" %}</button>
         </div>
     </form>
 {% endblock %}

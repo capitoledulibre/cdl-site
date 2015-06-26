@@ -12,13 +12,13 @@
 {% block body %}
     {% if editable %}
         <div class="pull-right">
-            <a href="{% url 'cms_page_edit' page.path %}" class="btn btn-default"><i class="fa fa-pencil fa-2x"></i> Edit this page</a>
+            <a href="{% url "cms_page_edit" page.path %}" class="btn"><span class="glyphicon glyphicon-pencil"></span> Edit this page</a>
         </div>
     {% endif %}
-    <h2>{{ page.title }}</h2>
-    
+    <h1>{{ page.title }}</h1>
+
     <div class="page-content">
         {{ page.body }}
     </div>
-    
+
 {% endblock %}
