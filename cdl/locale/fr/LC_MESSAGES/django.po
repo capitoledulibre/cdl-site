@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-26 21:47+0200\n"
+"POT-Creation-Date: 2015-06-26 23:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,73 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: proposals/forms.py:15
+msgid "The description must be less than 400 characters"
+msgstr "La description doit être de moins de 400 caractères"
+
+#: proposals/models.py:13
+msgid "Novice"
+msgstr "Débutant"
+
+#: proposals/models.py:14
+msgid "Intermediate"
+msgstr "Intermédiaire"
+
+#: proposals/models.py:15
+msgid "Experienced"
+msgstr "Expert"
+
+#: proposals/models.py:22
+msgid ""
+"By submitting your proposal, you agree to give permission to the conference "
+"organizers to record, edit, and release audio and/or video of your "
+"presentation. If you do not agree to this, please uncheck this box."
+msgstr ""
+"En soumettant votre proposition, vous donnez l'autorisationaux organisateurs "
+"d'enregistrer, modifier et publier une retranscriptionaudio et/ou vidéo de "
+"votre présentation. Si vous n'êtes pas d'accordavec ceci, vous pouvez "
+"décocher cette case."
+
+#: proposals/models.py:35 proposals/models.py:49
+msgid "No preference"
+msgstr "Pas de préférence"
+
+#: proposals/models.py:36
+msgid "I prefer a 20 minute slot"
+msgstr "Je préfère un créneau de 20 minutes"
+
+#: proposals/models.py:37
+msgid "I prefer a 50 minute slot"
+msgstr "Je préfère un créneau de 50 minutes"
+
+#: proposals/models.py:43
+msgid "talk proposal"
+msgstr "proposition de conférence"
+
+#: proposals/models.py:50
+msgid "I prefer a 1h30 slot"
+msgstr "Je préfère un créneau d'1h30"
+
+#: proposals/models.py:51
+msgid "I prefer a 3h slot"
+msgstr "Je préfère un créneau de 3h"
+
+#: proposals/models.py:57
+msgid "tutorial proposal"
+msgstr "proposition d'atelier"
+
+#: proposals/models.py:68
+msgid "stand proposal"
+msgstr "proposition de stand"
+
+#: settings.py:35
+msgid "French"
+msgstr "Français"
+
+#: settings.py:36
+msgid "English"
+msgstr "Anglais"
 
 #: templates/_account_bar.html:14 templates/dashboard.html:8
 #: templates/dashboard.html.py:13
@@ -42,13 +109,26 @@ msgstr "Connexion"
 msgid "Sign up"
 msgstr "S'inscrire"
 
-#: templates/boxes/box.html:9
+#: templates/boxes/box.html:11
 msgid "Editing content:"
 msgstr "Éditer le contenu :"
+
+#: templates/cms/file_create.html:13
+msgid "Upload"
+msgstr "Téléverser"
+
+#: templates/cms/page_edit.html:9
+msgid "Create Page"
+msgstr "Créer la page"
 
 #: templates/cms/page_edit.html:11
 msgid "Edit page at:"
 msgstr "Modifier la page à :"
+
+#: templates/cms/page_edit.html:19
+#: templates/proposals/proposal_submit_kind.html:23
+msgid "Save"
+msgstr "Sauvegarder"
 
 #: templates/conference/user_list.html:57
 msgid "Email"
@@ -228,14 +308,17 @@ msgid "Welcome"
 msgstr "Bienvenue"
 
 #: templates/proposals/_pending_proposal_row.html:12
+#: templates/proposals/_proposal_row.html:10
 msgid "Cancelled"
 msgstr "Annulée"
 
 #: templates/proposals/_pending_proposal_row.html:16
+#: templates/proposals/_proposal_row.html:14
 msgid "Accepted"
 msgstr "Acceptée"
 
 #: templates/proposals/_pending_proposal_row.html:18
+#: templates/proposals/_proposal_row.html:16
 msgid "Submitted"
 msgstr "Proposée"
 
@@ -267,37 +350,66 @@ msgstr "Thématique"
 msgid "Audience Level"
 msgstr "Niveau du Public"
 
-#: templates/proposals/_proposal_fields.html:14
+#: templates/proposals/_proposal_fields.html:13
+msgid "Duration"
+msgstr "Durée"
+
+#: templates/proposals/_proposal_fields.html:17
 msgid "Additional Speakers"
 msgstr "Intervenants additionnels"
 
-#: templates/proposals/_proposal_fields.html:21
+#: templates/proposals/_proposal_fields.html:24
 msgid "Invitation Sent"
 msgstr "Invitation envoyée"
 
-#: templates/proposals/_proposal_fields.html:28
+#: templates/proposals/_proposal_fields.html:31
 msgid "Description"
 msgstr "Description"
 
-#: templates/proposals/_proposal_fields.html:31
+#: templates/proposals/_proposal_fields.html:34
 msgid "Abstract"
 msgstr "Description détaillée"
 
-#: templates/proposals/_proposal_fields.html:34
+#: templates/proposals/_proposal_fields.html:37
 msgid "Notes"
 msgstr "Notes"
 
-#: templates/proposals/_proposal_fields.html:37
+#: templates/proposals/_proposal_fields.html:40
 msgid "Speaker Bio"
 msgstr "Biographie de l'Intervenant"
 
-#: templates/proposals/_proposal_fields.html:40
+#: templates/proposals/_proposal_fields.html:43
 msgid "Documents"
 msgstr "Documents"
+
+#: templates/proposals/_proposal_fields.html:60
+#: templates/proposals/proposal_detail.html:64
+msgid "No supporting documents attached to this proposal."
+msgstr "Aucun document attaché à cette proposition."
+
+#: templates/proposals/_proposal_row.html:19
+msgid "Associated"
+msgstr "Associé"
+
+#: templates/proposals/_proposal_row.html:28
+msgid "Display"
+msgstr "Afficher"
+
+#: templates/proposals/_proposal_row.html:30
+msgid "Edit"
+msgstr "Modifier"
+
+#: templates/proposals/_proposal_row.html:31
+msgid "Manage Additional Speakers"
+msgstr "Gérer les intervenants additionnels"
 
 #: templates/proposals/proposal_cancel.html:5
 msgid "Cancel Proposal"
 msgstr "Annuler cette proposition"
+
+#: templates/proposals/proposal_cancel.html:12
+msgid "Are you sure you want to cancel <b>{{ proposal.title }}</b>?"
+msgstr "Confirmer l'annulation de <b>{{ proposal.title }}</b>? "
 
 #: templates/proposals/proposal_cancel.html:14
 msgid "No, keep it for now"
@@ -314,6 +426,10 @@ msgstr "Annuler cette proposition"
 #: templates/proposals/proposal_detail.html:21
 msgid "Remove me from this proposal"
 msgstr "Me supprimer de cette proposition"
+
+#: templates/proposals/proposal_detail.html:29
+msgid "by"
+msgstr "par"
 
 #: templates/proposals/proposal_detail.html:33
 #: templates/reviews/review_detail.html:74
@@ -332,10 +448,6 @@ msgstr "Dialogue avec les relecteurs"
 #: templates/proposals/proposal_detail.html:57
 msgid "delete"
 msgstr "supprimer"
-
-#: templates/proposals/proposal_detail.html:64
-msgid "No supporting documents attached to this proposal."
-msgstr "Aucun document attaché à cette proposition."
 
 #: templates/proposals/proposal_detail.html:66
 msgid "Add Document"
@@ -356,6 +468,14 @@ msgstr "Vous pouvez laisser un messages aux relecteurs"
 #: templates/proposals/proposal_detail.html:93
 msgid "Submit"
 msgstr "Valider"
+
+#: templates/proposals/proposal_edit.html:11
+msgid "Manage speakers"
+msgstr "Gérer les intervenants"
+
+#: templates/proposals/proposal_edit.html:20
+msgid "Cancel"
+msgstr "Annuler"
 
 #: templates/proposals/proposal_speaker_manage.html:7
 msgid "Proposal:"
@@ -378,8 +498,37 @@ msgid "Add another speaker"
 msgstr "Ajouter un autre intervenant"
 
 #: templates/proposals/proposal_submit.html:6
+#: templates/proposals/proposal_submit.html:9
 msgid "Submit A Proposal"
 msgstr "Soumettre une proposition"
+
+#: templates/proposals/proposal_submit.html:13
+msgid "Select what kind of proposal you'd like to submit:"
+msgstr "Sélectionnez le type de proposition que vous souhaitez faire :"
+
+#: templates/proposals/proposal_submit.html:21
+msgid "Proposals are not currently open for submission."
+msgstr "L'appel à propositions n'est pas ouvert actuellement."
+
+#: templates/proposals/proposal_submit_kind.html:11
+#, python-format
+msgid "Submit a Proposal for a %(kind.name)s"
+msgstr "Soumettre une proposition de type %(kind.name)s"
+
+#: templates/proposals/proposal_submit_kind.html:21
+msgid ""
+"You will be able to edit your proposal after it has been submitted. The "
+"program committee may ask questions, provide feedback, and even suggest "
+"changes to your proposal as part of the review processes."
+msgstr ""
+"Vous pourrez éditer votre proposition une fois qu'elle sera soumise. Le "
+"comité de programme pourrait vous demander des question, vous faire des "
+"commentaires et même vous suggérer des changements à votre proposition "
+"durant le processus d'évaluation."
+
+#: templates/proposals/proposal_submit_kind.html:25
+msgid "Save and Add Additional Speakers"
+msgstr "Sauvegarder et ajouter des intervenants"
 
 #: templates/reviews/_review_table.html:7
 #: templates/reviews/result_notification.html:46
@@ -484,12 +633,6 @@ msgstr "Devenir Sponsor"
 msgid "About Our Sponsors"
 msgstr "Partenariat"
 
-#~ msgid "French"
-#~ msgstr "Français"
-
-#~ msgid "English"
-#~ msgstr "Anglais"
-
 #~ msgid "Link"
 #~ msgstr "Lien"
 
@@ -532,57 +675,11 @@ msgstr "Partenariat"
 #~ msgid "Coverage file"
 #~ msgstr "Fichier de media"
 
-#~ msgid "The description must be less than 400 characters"
-#~ msgstr "La description doit être de moins de 400 caractères"
-
 #~ msgid "Capitole du Libre proposal category"
 #~ msgstr "Catégorie de propositions pour le Capitole du Libre"
 
 #~ msgid "Capitole du Libre proposal categories"
 #~ msgstr "Catégories de propositions pour le Capitole du Libre"
-
-#~ msgid "Novice"
-#~ msgstr "Débutant"
-
-#~ msgid "Intermediate"
-#~ msgstr "Intermédiaire"
-
-#~ msgid "Experienced"
-#~ msgstr "Expert"
-
-#~ msgid ""
-#~ "By submitting your proposal, you agree to give permission to the "
-#~ "conference organizers to record, edit, and release audio and/or video of "
-#~ "your presentation. If you do not agree to this, please uncheck this box."
-#~ msgstr ""
-#~ "En soumettant votre proposition, vous donnez l'autorisationaux "
-#~ "organisateurs d'enregistrer, modifier et publier une retranscriptionaudio "
-#~ "et/ou vidéo de votre présentation. Si vous n'êtes pas d'accordavec ceci, "
-#~ "vous pouvez décocher cette case."
-
-#~ msgid "No preference"
-#~ msgstr "Pas de préférence"
-
-#~ msgid "I prefer a 20 minute slot"
-#~ msgstr "Je préfère un créneau de 20 minutes"
-
-#~ msgid "I prefer a 50 minute slot"
-#~ msgstr "Je préfère un créneau de 50 minutes"
-
-#~ msgid "talk proposal"
-#~ msgstr "proposition de conférence"
-
-#~ msgid "I prefer a 1h30 slot"
-#~ msgstr "Je préfère un créneau d'1h30"
-
-#~ msgid "I prefer a 3h slot"
-#~ msgstr "Je préfère un créneau de 3h"
-
-#~ msgid "tutorial proposal"
-#~ msgstr "proposition d'atelier"
-
-#~ msgid "stand proposal"
-#~ msgstr "proposition de stand"
 
 #~ msgid "How much 3 + 4 makes?"
 #~ msgstr "Combien font 3 + 4 ?"
@@ -626,15 +723,6 @@ msgstr "Partenariat"
 #~ msgid "Next"
 #~ msgstr "Suivant"
 
-#~ msgid "Upload"
-#~ msgstr "Téléverser"
-
-#~ msgid "Create Page"
-#~ msgstr "Créer la page"
-
-#~ msgid "Save"
-#~ msgstr "Sauvegarder"
-
 #~ msgid "Organisation"
 #~ msgstr "Durée"
 
@@ -646,55 +734,6 @@ msgstr "Partenariat"
 
 #~ msgid "Coverage for"
 #~ msgstr "Medias"
-
-#~ msgid "Cancel"
-#~ msgstr "Annuler"
-
-#~ msgid "Duration"
-#~ msgstr "Durée"
-
-#~ msgid "Associated"
-#~ msgstr "Associé"
-
-#~ msgid "Display"
-#~ msgstr "Afficher"
-
-#~ msgid "Edit"
-#~ msgstr "Modifier"
-
-#~ msgid "Manage Additional Speakers"
-#~ msgstr "Gérer les intervenants additionnels"
-
-#~ msgid "Are you sure you want to cancel <b>{{ proposal.title }}</b>?"
-#~ msgstr "Confirmer l'annulation de <b>{{ proposal.title }}</b>? "
-
-#~ msgid "by"
-#~ msgstr "par"
-
-#~ msgid "Manage speakers"
-#~ msgstr "Gérer les intervenants"
-
-#~ msgid "Select what kind of proposal you'd like to submit:"
-#~ msgstr "Sélectionnez le type de proposition que vous souhaitez faire :"
-
-#~ msgid "Proposals are not currently open for submission."
-#~ msgstr "L'appel à propositions n'est pas ouvert actuellement."
-
-#~ msgid "Submit a Proposal for a %(kind.name)s"
-#~ msgstr "Soumettre une proposition de type %(kind.name)s"
-
-#~ msgid ""
-#~ "You will be able to edit your proposal after it has been submitted. The "
-#~ "program committee may ask questions, provide feedback, and even suggest "
-#~ "changes to your proposal as part of the review processes."
-#~ msgstr ""
-#~ "Vous pourrez éditer votre proposition une fois qu'elle sera soumise. Le "
-#~ "comité de programme pourrait vous demander des question, vous faire des "
-#~ "commentaires et même vous suggérer des changements à votre proposition "
-#~ "durant le processus d'évaluation."
-
-#~ msgid "Save and Add Additional Speakers"
-#~ msgstr "Sauvegarder et ajouter des intervenants"
 
 #~ msgid ""
 #~ "\n"

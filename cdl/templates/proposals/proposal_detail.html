@@ -25,9 +25,9 @@
             {% trans 'Cancelled' }
         {% endif %}
     </div>
-
-    <h3>#{{ proposal.number }}: {{ proposal.title }} ({{ proposal.speaker }}, Track: {{ proposal.track }})</h3>
-
+    
+    <h2>#{{ proposal.number }}: {{ proposal.title }} <br/><small>{{ proposal.kind }} {%trans 'by' %} <em>{{ proposal.speaker }}</em></small></h2>
+    
     <div class="tabbable">
         <ul class="nav nav-tabs">
             <li class="active"><a href="#proposal-detail" data-toggle="tab">{% trans "Proposal Details" %}</a></li>

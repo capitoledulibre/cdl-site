@@ -26,10 +26,10 @@
                         <i class="icon-plus-sign"></i>{% trans "Create a speaker profile" %}
                     </a>
                 {% else %}
-                    <a href="{% url speaker_edit %}" class="btn btn-primary">
+                    <a href="{% url "speaker_edit" %}" class="btn btn-primary">
                         <i class="icon-pencil"></i>{% trans "Edit your speaker profile" %}
                     </a>
-                    <a href="{% url proposal_submit %}" class="btn btn-primary">
+                    <a href="{% url "proposal_submit" %}" class="btn btn-primary">
                         <i class="icon-plus-sign"></i>{% trans "Submit a new proposal" %}
                     </a>
                 {% endif %}
@@ -259,7 +259,7 @@
     </p>
   {% url sponsor_add  as sponsor_add %}
         {% if not user.sponsorships.exists %}
-            <p>{% trans "If you or your organization would be interested in sponsorship opportunities, you will find in" %} <a href="{{ SITE_BASE }}/partenariat">{% trans 'sponsor section' %}</a>.</p>
+            <p>{% blocktrans %}If you or your organization would be interested in sponsorship opportunities, you will find in <a href="{{ SITE_BASE }}/partenariat">sponsor section</a>.{% endblocktrans %}</p>
         {% else %}
             <h4>{% trans "Your Sponsorship" %}</h4>
             <ul>

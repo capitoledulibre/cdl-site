@@ -4,8 +4,8 @@
 {% load bootstrap %}
 
 {% block body %}
-    <h1>{% trans 'Proposal:' %} {{ proposal.title }}</h1>
-
+    <h2>{% trans 'Proposal:' %} {{ proposal.title }}</h2>
+    
     <p>
       <a href="{% url "proposal_edit" proposal.pk %}">{% trans 'Edit proposal' %}
       </a>
