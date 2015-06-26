@@ -1,4 +1,5 @@
 import os
+from django.utils.translation import ugettext_lazy as _
 
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
@@ -29,7 +30,11 @@ TIME_ZONE = "US/Eastern"
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "fr-fr"
+LANGUAGES = (
+  ('fr', _('French')),
+  ('en', _('English')),
+)
 
 SITE_ID = int(os.environ.get("SITE_ID", 1))
 
@@ -202,10 +207,12 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 ACCOUNT_OPEN_SIGNUP = True
 ACCOUNT_EMAIL_UNIQUE = True
 ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = False
+
 ACCOUNT_LOGIN_REDIRECT_URL = "dashboard"
 ACCOUNT_SIGNUP_REDIRECT_URL = "dashboard"
 ACCOUNT_LOGOUT_REDIRECT_URL = "home"
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 2
+ACCOUNT_USER_DISPLAY = lambda user: user.email
 
 AUTHENTICATION_BACKENDS = [
     # Permissions Backends
