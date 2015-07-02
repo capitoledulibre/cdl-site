@@ -1,22 +1,27 @@
-pinax-project-symposion
-=====================
+Site du Capitole du Libre
+=========================
 
-a starter project demonstarting a minimal symposion instance
+Le site du Capitole du Libre, incluant l'appel à conférence, la gestion des propositions et des intervenants.
 
+## Installation
 
-Usage:
+Prerequis
 
-    django-admin.py startproject --extension=py,json --template=https://github.com/pinax/pinax-project-symposion/zipball/master <project_name>
+    sudo apt-get install python-dev python-setuptools python-virtualenv build-essential
 
-Getting Started:
+Environnement de développement (ou de production)
 
-    pip install virtualenv
-    virtualenv mysiteenv
-    source mysiteenv/bin/activate
-    pip install Django==1.7.1
-    django-admin.py startproject --template=https://github.com/pinax/pinax-project-account/zipball/master mysite
-    cd mysite
+    virtualenv symposion2015
+    source symposion2015/bin/activate
+    git clone git@github.com:toulibre/cdl-site.git
+
+Installation
+
+    cd cdl-site
     pip install -r requirements.txt
-    ./manage.py migrate
-    ./manage.py loaddata fixtures/*
-    ./manage.py runserver
+    python manage.py migrate
+    python manage.py loaddata fixtures/*
+
+## Démarrage
+
+    python manage.py runserver
