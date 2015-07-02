@@ -50,31 +50,58 @@
     </style>
 {% endblock %}
 
-{% block body_outer %}
+{% block body_base %}
+<section id="main-content">
+  <div class="container-fluid">
     <h1>User List</h1>
     <table class="table table-striped table-bordered table-reviews">
         <thead>
-            <th>{% trans "Email" %}</th>
-            <th>{% trans "Name" %}</th>
-            <th>{% trans "Speaker Profile?" %}</th>
+        	<th>{% trans "Email" %}</th>
+        	<th>{% trans "Speaker Profile?" %}</th>
+        	<th>{% trans "Organisation" %}</th>
+        	<th>{% trans "Proposals" %}</th>
+        	<th>{% trans "City" %}</th>
+        	<th>{% trans "Need travel ?" %}</th>
+        	<th>{% trans "Need hosting ?" %}</th>
         </thead>
 
         <tbody>
-            {% for user in users %}
-                <tr>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.get_full_name }}</td>
-                    <td>
-                        {% if user.speaker_profile %}
-                            <a href="{% url "speaker_profile" user.speaker_profile.pk %}">{{ user.speaker_profile }}</a>
-                        {% else %}
-                            <a href="{% url "speaker_create_staff" user.pk %}" class="btn btn-xs">create</a>
-                        {% endif %}
-                    </td>
-                </tr>
-            {% endfor %}
+        {% for user in users %}
+            <tr>
+                <td>{{ user.email }}</td>
+                <td>
+                    {% if user.speaker_profile %}
+                        <a href="{% url "speaker_profile" user.speaker_profile.pk %}">{{ user.speaker_profile }}</a> &mdash;
+                        <small><a href="{% url "speaker_edit_staff" user.speaker_profile.pk %}" title="Edit" alt="Edit" >
+                            <span class="glyphicon glyphicon-pencil"></span> Edit</a></small>
+                        <div><strong>{% trans "Annotations" %}</strong>
+                          {{ user.speaker_profile.annotation|linebreaks }}</div>
+                    {% else %}
+                        {{ user.get_full_name }} &mdash; <a href="{% url "speaker_create_staff" user.pk %}" class="btn btn-xs btn-default">create profile</a>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if user.speaker_profile %}
+                        {{ user.speaker_profile.organisation }}
+                    {% endif %}
+                </td>
+                <td><ul>{% for presentation in user.speaker_profile.all_presentations %}
+                <li><a href="{% url "schedule_presentation_detail" presentation.pk %}">#{{ presentation.proposal.number }}
+                &mdash; {{ presentation.title }}</a>
+                <strong>{% if not presentation.proposal.recording_release %}No video{% endif %}</strong>
+                <small>{{ presentation.proposal.kind }} {{ presentation.proposal.category }}</small>
+                <a href="/admin/schedule/presentation/{{ presentation.pk }}" title="Edit" alt="Edit" >
+                            <span class="glyphicon glyphicon-pencil"></span> Edit</a></li>
+                {% endfor %}</ul></td>
+                <td>{{ user.speaker_profile.city }}</td>
+                <td>{{ user.speaker_profile.need_travel }}</td>
+                <td>{{ user.speaker_profile.need_hosting }}</td>
+            </tr>
+        {% endfor %}
         </tbody>
-    </table>
+      </table>
+    </div>
+  </section>
 {% endblock %}
 
 {% block extra_script %}
