@@ -29,10 +29,22 @@ urlpatterns = patterns(
     url(r"^speaker/", include("symposion.speakers.urls")),
     url(r"^proposals/", include("symposion.proposals.urls")),
     url(r"^sponsors/", include("symposion.sponsorship.urls")),
+    url(r"^partenariat/", include("symposion.sponsorship.urls")),
     url(r"^boxes/", include("symposion.boxes.urls")),
+
+    # url(r"^teams/", include("cdl.teams.urls")),
     url(r"^teams/", include("symposion.teams.urls")),
+
     url(r"^reviews/", include("symposion.reviews.urls")),
+    # url(r"^coverage/", include("cdl.coverage.urls")),
+    # url(r"^subscribe/", include("cdl.subscription.urls")),
+    # url(r"^schedule/", include("cdl.schedule.urls")),
+    # url(r"^programme/", include("cdl.schedule.urls")),
+
     url(r"^schedule/", include("symposion.schedule.urls")),
+    url(r"^programme/", include("symposion.schedule.urls")),
+    url(r"^conference/", include("symposion.conference.urls")),
+    # url(r"^badges/", include("cdl.badges.urls")),
     url(r"^markitup/", include("markitup.urls")),
 
     url(r"^", include("symposion.cms.urls")),
