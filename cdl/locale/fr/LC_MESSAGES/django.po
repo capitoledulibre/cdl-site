@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-27 01:20+0200\n"
+"POT-Creation-Date: 2015-07-03 00:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,9 +47,9 @@ msgid ""
 "organizers to record, edit, and release audio and/or video of your "
 "presentation. If you do not agree to this, please uncheck this box."
 msgstr ""
-"En soumettant votre proposition, vous donnez l'autorisationaux organisateurs "
+"En soumettant votre proposition, vous donnez l'autorisation aux organisateurs "
 "d'enregistrer, modifier et publier une retranscriptionaudio et/ou vidéo de "
-"votre présentation. Si vous n'êtes pas d'accordavec ceci, vous pouvez "
+"votre présentation. Si vous n'êtes pas d'accord avec ceci, vous pouvez "
 "décocher cette case."
 
 #: proposals/models.py:52 proposals/models.py:66
@@ -135,22 +135,43 @@ msgstr "Modifier la page à :"
 
 #: templates/cms/page_edit.html:19
 #: templates/proposals/proposal_submit_kind.html:23
+#: templates/sponsorship/detail.html:39
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: templates/conference/user_list.html:57
+#: templates/conference/user_list.html:59
 msgid "Email"
 msgstr "Courriel"
 
-#: templates/conference/user_list.html:58
-msgid "Name"
-msgstr "Nom"
-
-#: templates/conference/user_list.html:59
+#: templates/conference/user_list.html:60
 #, fuzzy
 #| msgid "Edit Speaker Profile"
 msgid "Speaker Profile?"
 msgstr "Modifier votre profil d'intervenant"
+
+#: templates/conference/user_list.html:61
+msgid "Organisation"
+msgstr "Durée"
+
+#: templates/conference/user_list.html:62
+msgid "Proposals"
+msgstr "Propositions"
+
+#: templates/conference/user_list.html:63
+msgid "City"
+msgstr "Ville"
+
+#: templates/conference/user_list.html:64
+msgid "Need travel ?"
+msgstr "Défraiement pour déplacement ?"
+
+#: templates/conference/user_list.html:65
+msgid "Need hosting ?"
+msgstr "Besoin d'un hébergement ?"
+
+#: templates/conference/user_list.html:77
+msgid "Annotations"
+msgstr "Annotations"
 
 #: templates/dashboard.html:18
 msgid "Speaking"
@@ -226,27 +247,16 @@ msgstr "Intervenant / Titre"
 msgid "Your Vote"
 msgstr "Votre Vote"
 
-#: templates/dashboard.html:190
-msgid "Teams"
-msgstr "Équipes"
-
-#: templates/dashboard.html:196
-msgid "Your Teams"
-msgstr "Équipes dont vous faîtes partie"
-
-#: templates/dashboard.html:219
-msgid "Available Teams"
-msgstr "Équipes disponibles"
-
-#: templates/dashboard.html:249 templates/sponsorship/detail.html:8
+#: templates/dashboard.html:187 templates/sponsorship/detail.html:8
+#: templates/sponsorship/list.html:8
 msgid "Sponsorship"
 msgstr "Partenariat"
 
-#: templates/dashboard.html:257
+#: templates/dashboard.html:195
 msgid "Apply to be a sponsor"
 msgstr "Devenir Sponsor"
 
-#: templates/dashboard.html:263
+#: templates/dashboard.html:201
 #, fuzzy, python-format
 #| msgid ""
 #| "If you or your organization would be interested in sponsorship "
@@ -257,16 +267,28 @@ msgid ""
 "\">sponsor section</a>."
 msgstr ""
 "Si vous ou votre entreprise êtes intéressé(e) par un partenariat, "
-"voustrouverez toutes les informations sur <a href=\"/partenariat\">la page "
+"voustrouverez toutes les informations sur <a href=\"%(SITE_BASE)s/partenariat\">la page "
 "partenariats</a>."
 
-#: templates/dashboard.html:265
+#: templates/dashboard.html:203
 msgid "Your Sponsorship"
 msgstr "Partenariat"
 
-#: templates/dashboard.html:279
+#: templates/dashboard.html:217
 msgid "As staff, you can directly"
 msgstr "En tant que membre de l'équipe, vous pouvez directement"
+
+#: templates/dashboard.html:229
+msgid "Teams"
+msgstr "Équipes"
+
+#: templates/dashboard.html:235
+msgid "Your Teams"
+msgstr "Équipes dont vous faîtes partie"
+
+#: templates/dashboard.html:258
+msgid "Available Teams"
+msgstr "Équipes disponibles"
 
 #: templates/emails/teams_user_applied/message.html:3
 #, python-format
@@ -288,7 +310,7 @@ msgstr ""
 #: templates/emails/teams_user_applied/subject.txt:1
 #, python-format
 msgid "%(username)s has applied to to join \"%(team)s\""
-msgstr ""
+msgstr "%(username)s a rejoint l'équipe \"%(team)s\""
 
 #: templates/emails/teams_user_invited/message.html:3
 #, python-format
@@ -483,7 +505,8 @@ msgstr "Valider"
 msgid "Manage speakers"
 msgstr "Gérer les intervenants"
 
-#: templates/proposals/proposal_edit.html:21
+#: templates/proposals/proposal_edit.html:21 templates/sponsorship/add.html:19
+#: templates/sponsorship/detail.html:40
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -627,21 +650,39 @@ msgstr "Créer votre profil d'intervenant"
 msgid "Edit Speaker Profile"
 msgstr "Modifier votre profil d'intervenant"
 
-#: templates/sponsorship/add.html:7 templates/sponsorship/add.html.py:14
+#: templates/sponsorship/add.html:7 templates/sponsorship/add.html.py:12
+#: templates/sponsorship/add.html:15
 msgid "Add a Sponsor"
 msgstr "Ajouter Sponsor"
 
-#: templates/sponsorship/apply.html:7
+#: templates/sponsorship/apply.html:7 templates/sponsorship/apply.html:13
 msgid "Apply to be a Sponsor"
 msgstr "Devenir Sponsor"
 
-#: templates/sponsorship/apply.html:17
+#: templates/sponsorship/apply.html:18
 msgid "Apply to Be a Sponsor"
 msgstr "Devenir Sponsor"
 
-#: templates/sponsorship/list.html:7 templates/sponsorship/list.html.py:12
+#: templates/sponsorship/detail.html:17
+msgid "Contact information"
+msgstr "Informations du contact"
+
+#: templates/sponsorship/detail.html:22
+msgid "sponsor benefits"
+msgstr "avantages"
+
+#: templates/sponsorship/list.html:13
 msgid "About Our Sponsors"
 msgstr "Partenariat"
+
+#: templates/sponsorship/list.html:15
+#, fuzzy
+#| msgid "Apply to be a sponsor"
+msgid "Learn how to become a sponsor"
+msgstr "Devenir Sponsor"
+
+#~ msgid "Name"
+#~ msgstr "Nom"
 
 #~ msgid "sponsor section"
 #~ msgstr "Partenariat"
@@ -730,15 +771,6 @@ msgstr "Partenariat"
 #~ msgid "Next"
 #~ msgstr "Suivant"
 
-#~ msgid "Organisation"
-#~ msgstr "Durée"
-
-#~ msgid "Proposals"
-#~ msgstr "Propositions"
-
-#~ msgid "Annotations"
-#~ msgstr "Annotations"
-
 #~ msgid "Coverage for"
 #~ msgstr "Medias"
 
@@ -799,12 +831,6 @@ msgstr "Partenariat"
 
 #~ msgid "See more"
 #~ msgstr "Voir plus"
-
-#~ msgid "Contact information"
-#~ msgstr "Informations du contact"
-
-#~ msgid "sponsor benefits"
-#~ msgstr "avantages"
 
 #~ msgid "Nos partenaires"
 #~ msgstr "Nos partenaires"
