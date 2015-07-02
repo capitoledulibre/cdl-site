@@ -1,4 +1,4 @@
-{% extends "site_base.html" %}
+{% extends "site_base_onecolumn.html" %}
 
 {% load i18n %}
 {% load proposal_tags %}
@@ -180,6 +180,45 @@
     </div>
     {% endif %}
 
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="icon-briefcase"></i>
+            <h3 class="panel-title"><a data-toggle="collapse" href="#collapseSponsorship">{% trans "Sponsorship" %}</a></h3>
+        </div>
+
+        <div id="collapseSponsorship" class="panel-collapse collapse in">
+        <div class="panel-body">
+        <p class="header-actions">
+            {% if not user.sponsorships.exists %}
+                <a href="{% url "sponsor_apply" %}" class="btn btn-primary">
+                    <i class="icon-plus-sign"></i> {% trans "Apply to be a sponsor" %}
+                </a>
+            {% endif %}
+        </p>
+      {% url sponsor_add  as sponsor_add %}
+            {% if not user.sponsorships.exists %}
+                <p>{% blocktrans %}If you or your organization would be interested in sponsorship opportunities, you will find in <a href="{{ SITE_BASE }}/partenariat">sponsor section</a>.{% endblocktrans %}</p>
+            {% else %}
+                <h4>{% trans "Your Sponsorship" %}</h4>
+                <ul>
+                    {% for sponsorship in user.sponsorships.all %}
+                        <li>
+                            <a href="{% url "sponsor_detail" sponsorship.pk %}"><b>{{ sponsorship.name }}</b></a>
+                            ({{ sponsorship.level }})
+                            {% if not sponsorship.active %}
+                                <span class="label label-warning">awaiting approval</span>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if user.is_staff %}
+                <p>{% trans "As staff, you can directly" %} <a href="{% url "sponsor_add" %}">add a sponsor</a></p>
+            {% endif %}
+        </div>
+        </div>
+    </div>
+
     {% available_teams as available_teams %}
     {% if user.memberships.exists or available_teams %}
         <div class="panel panel-default">
@@ -239,45 +278,4 @@
             </div>
         </div>
     {% endif %}
-{% endblock %}
-
-{% block sidebar %}
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <i class="icon-briefcase"></i>
-        <h3 class="panel-title"><a data-toggle="collapse" href="#collapseSponsorship">{% trans "Sponsorship" %}</a></h3>
-    </div>
-
-    <div id="collapseSponsorship" class="panel-collapse collapse in">
-    <div class="panel-body">
-    <p class="header-actions">
-        {% if not user.sponsorships.exists %}
-            <a href="{% url "sponsor_apply" %}" class="btn btn-primary">
-                <i class="icon-plus-sign"></i> {% trans "Apply to be a sponsor" %}
-            </a>
-        {% endif %}
-    </p>
-  {% url sponsor_add  as sponsor_add %}
-        {% if not user.sponsorships.exists %}
-            <p>{% blocktrans %}If you or your organization would be interested in sponsorship opportunities, you will find in <a href="{{ SITE_BASE }}/partenariat">sponsor section</a>.{% endblocktrans %}</p>
-        {% else %}
-            <h4>{% trans "Your Sponsorship" %}</h4>
-            <ul>
-                {% for sponsorship in user.sponsorships.all %}
-                    <li>
-                        <a href="{% url sponsor_detail sponsorship.pk %}"><b>{{ sponsorship.name }}</b></a>
-                        ({{ sponsorship.level }})
-                        {% if not sponsorship.active %}
-                            <span class="label label-warning">awaiting approval</span>
-                        {% endif %}
-                    </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-        {% if user.is_staff %}
-            <p>{% trans "As staff, you can directly" %} <a href="{% url "sponsor_add" %}">add a sponsor</a></p>
-        {% endif %}
-    </div>
-    </div>
-</div>
 {% endblock %}

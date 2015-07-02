@@ -1,4 +1,4 @@
-{% extends "site_base.html" %}
+{% extends "site_base_onecolumn.html" %}
 
 {% load bootstrap %}
 {% load i18n %}
@@ -8,15 +8,18 @@
 {% block page_title %}{% trans "Sponsorship" %}{% endblock %}
 
 {% block body %}
-    <h2>{{ sponsor.name }} ({{ sponsor.level }})</h2>
-
-    <form enctype="multipart/form-data" method="POST" action="" class="form-horizontal">
+    <h1>{{ sponsor.name }} <small>({{ sponsor.level }})</small></h1>
+    <div class="row">
+    <form enctype="multipart/form-data" method="POST" action="">
         {% csrf_token %}
+        <div class="col-md-5 col-md-push-7">
         <fieldset>
-            {{ form|bootstrap_horizontal }}
+        <legend>{% trans "Contact information" %}</legend>
+            {{ form|bootstrap }}
         </fieldset>
-
-        <h3>{{ sponsor.level }} Sponsor Benefits</h3>
+        </div>
+        <div class="col-md-7 col-md-pull-5">
+        <h2>{{ sponsor.level }} {% trans "sponsor benefits" %}</h2>
 
         {{ formset.management_form }}
         {{ formset.non_form_errors }}
@@ -30,11 +33,16 @@
                 </div>
             </div>
         {% endfor %}
+        </div>
 
-        <div class="form-actions">
-            <input class="btn btn-primary" type="submit" value="Save" />
-            <a class="btn btn-default" href="{% url "dashboard" %}">Cancel</a>
+        <div class="form-actions col-md-5 col-md-push-7">
+            <input class="btn btn-primary" type="submit" value="{% trans "Save" %}" />
+            <a class="btn btn-default" href="{% url "dashboard" %}">{% trans "Cancel" %}</a>
         </div>
 
     </form>
+    </div>
+{% endblock %}
+
+{% block postface_outer %}
 {% endblock %}
