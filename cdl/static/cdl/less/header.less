@@ -13,11 +13,13 @@
     }
 }
 
-#top {
-    margin-bottom: 80px;
-    h2, h3 {
-      text-align: center;
-    }
+.homepage {
+  #top {
+      margin-bottom: 80px;
+      h2, h3 {
+        text-align: center;
+      }
+  }
 }
 #cta {
     margin-bottom: 3em;
@@ -40,4 +42,28 @@
             margin-bottom: 0.5em;
         }
     }
+}
+
+#header-wrapper {
+  h2, h3 {
+    font-size: 1.5em;
+  }
+}
+#site-logo img {
+  width: 200px;
+}
+@media (min-width: @screen-md-min) {
+  .homepage {
+    #header-wrapper {
+        h2 {
+          font-size: 2.15em;
+        }
+        h3 {
+          font-size: 1.85em;
+        }
+    }
+    #site-logo img {
+      width: 320px;
+    }
+  }
 }
