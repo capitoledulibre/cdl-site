@@ -1,0 +1,101 @@
+[
+{
+    "fields": {
+        "name": "Grand Public",
+        "slug": "enjeux",
+        "description": "Pour découvrir l'écosystème du logiciel libre."
+    },
+    "model": "proposals.proposalcategory",
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "Enjeux du Libre",
+        "slug": "enjeux",
+        "description": "Qu'est-ce que le libre transforme dans notre société."
+    },
+    "model": "proposals.proposalcategory",
+    "pk": 2
+},
+{
+    "fields": {
+        "name": "Internet Libre",
+        "slug": "internet",
+        "description": "Autohébergement, sécurité et vie privée sur l’Internet."
+    },
+    "model": "proposals.proposalcategory",
+    "pk": 3
+},
+{
+    "fields": {
+        "name": "Culture libre et multimedia",
+        "slug": "culture-libre",
+        "description": "Les arts et la culture libres, la MAO, la vidéo."
+    },
+    "model": "proposals.proposalcategory",
+    "pk": 4
+},
+{
+    "fields": {
+        "name": "Poste de travail et bureautique",
+        "slug": "poste-bureautique",
+        "description": "Environnement de travail, bureautique, utilitaires."
+    },
+    "model": "proposals.proposalcategory",
+    "pk": 5
+},
+{
+    "fields": {
+        "name": "Technique",
+        "slug": "technique",
+        "description": "Développement, bases de données, pour la beauté du code."
+    },
+    "model": "proposals.proposalcategory",
+    "pk": 6
+},
+{
+    "fields": {
+        "name": "DevOps",
+        "slug": "devops",
+        "description": "Inaugurée en 2014, sera renouvelée et abordera Docker, le cloud libre."
+    },
+    "model": "proposals.proposalcategory",
+    "pk": 7
+},
+{
+    "fields": {
+        "name": "Internet Of Things & Do It Yourself",
+        "slug": "iot-diy",
+        "description": "(re)découverte des Arduino, Raspberry Pi, objets connectés."
+    },
+    "model": "proposals.proposalcategory",
+    "pk": 8
+},
+{
+    "fields": {
+        "name": "Technologies Web",
+        "slug": "web",
+        "description": "NodeJS, ReactJS, AngularJS, le Web change tous les jours."
+    },
+    "model": "proposals.proposalcategory",
+    "pk": 9
+},
+{
+    "fields": {
+        "name": "Akademy-FR",
+        "slug": "akademy-fr",
+        "description": "Environnement de travail, bureautique, utilitaires."
+    },
+    "model": "proposals.proposalcategory",
+    "pk": 10
+},
+{
+    "fields": {
+        "name": "Animation 2D & 3D",
+        "slug": "animation",
+        "description": "Blender, Krita, Gimp, Inkscape, Synfig, la réalisation d’œuvres artistiques avec des outils libres."
+    },
+    "model": "proposals.proposalcategory",
+    "pk": 11
+}
+]

@@ -9,6 +9,7 @@ class ProposalCategory(models.Model):
 
     name = models.CharField(max_length=100)
     slug = models.SlugField()
+    description = models.CharField(max_length=680, blank=True)
 
     def __unicode__(self):
         return self.name
@@ -29,7 +30,7 @@ class Proposal(ProposalBase):
         (AUDIENCE_LEVEL_INTERMEDIATE, _(u"Intermediate")),
         (AUDIENCE_LEVEL_EXPERIENCED, _(u"Experienced")),
     ]
-    
+
     category = models.ForeignKey(ProposalCategory)
 
     audience_level = models.IntegerField(choices=AUDIENCE_LEVELS)
@@ -38,7 +39,7 @@ class Proposal(ProposalBase):
         default=True,
         help_text=_(u"By submitting your proposal, you agree to give permission to the conference organizers to record, edit, and release audio and/or video of your presentation. If you do not agree to this, please uncheck this box.")
     )
-    
+
     def __unicode__(self):
         return u"#%s - %s (%s)" % (self.number, self.title, self.speaker)
 
