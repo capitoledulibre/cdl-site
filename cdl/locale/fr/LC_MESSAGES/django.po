@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-03 00:37+0200\n"
+"POT-Creation-Date: 2015-07-07 00:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,66 +21,66 @@ msgstr ""
 msgid "The description must be less than 400 characters"
 msgstr "La description doit être de moins de 400 caractères"
 
-#: proposals/models.py:17
+#: proposals/models.py:18
 msgid "Capitole du Libre proposal category"
 msgstr "Catégorie de propositions pour le Capitole du Libre"
 
-#: proposals/models.py:18
+#: proposals/models.py:19
 msgid "Capitole du Libre proposal categories"
 msgstr "Catégories de propositions pour le Capitole du Libre"
 
-#: proposals/models.py:28
+#: proposals/models.py:29
 msgid "Novice"
 msgstr "Débutant"
 
-#: proposals/models.py:29
+#: proposals/models.py:30
 msgid "Intermediate"
 msgstr "Intermédiaire"
 
-#: proposals/models.py:30
+#: proposals/models.py:31
 msgid "Experienced"
 msgstr "Expert"
 
-#: proposals/models.py:39
+#: proposals/models.py:40
 msgid ""
 "By submitting your proposal, you agree to give permission to the conference "
 "organizers to record, edit, and release audio and/or video of your "
 "presentation. If you do not agree to this, please uncheck this box."
 msgstr ""
-"En soumettant votre proposition, vous donnez l'autorisation aux organisateurs "
-"d'enregistrer, modifier et publier une retranscriptionaudio et/ou vidéo de "
-"votre présentation. Si vous n'êtes pas d'accord avec ceci, vous pouvez "
-"décocher cette case."
+"En soumettant votre proposition, vous donnez l'autorisation aux "
+"organisateurs d'enregistrer, modifier et publier une retranscriptionaudio et/"
+"ou vidéo de votre présentation. Si vous n'êtes pas d'accord avec ceci, vous "
+"pouvez décocher cette case."
 
-#: proposals/models.py:52 proposals/models.py:66
+#: proposals/models.py:53 proposals/models.py:67
 msgid "No preference"
 msgstr "Pas de préférence"
 
-#: proposals/models.py:53
+#: proposals/models.py:54
 msgid "I prefer a 20 minute slot"
 msgstr "Je préfère un créneau de 20 minutes"
 
-#: proposals/models.py:54
+#: proposals/models.py:55
 msgid "I prefer a 50 minute slot"
 msgstr "Je préfère un créneau de 50 minutes"
 
-#: proposals/models.py:60
+#: proposals/models.py:61
 msgid "talk proposal"
 msgstr "proposition de conférence"
 
-#: proposals/models.py:67
+#: proposals/models.py:68
 msgid "I prefer a 1h30 slot"
 msgstr "Je préfère un créneau d'1h30"
 
-#: proposals/models.py:68
+#: proposals/models.py:69
 msgid "I prefer a 3h slot"
 msgstr "Je préfère un créneau de 3h"
 
-#: proposals/models.py:74
+#: proposals/models.py:75
 msgid "tutorial proposal"
 msgstr "proposition d'atelier"
 
-#: proposals/models.py:85
+#: proposals/models.py:86
 msgid "stand proposal"
 msgstr "proposition de stand"
 
@@ -91,6 +91,18 @@ msgstr "Français"
 #: settings.py:36
 msgid "English"
 msgstr "Anglais"
+
+#: speakers/monkey_patching.py:9 templates/conference/user_list.html:63
+msgid "City"
+msgstr "Ville"
+
+#: speakers/monkey_patching.py:10
+msgid "Need travel?"
+msgstr "Défraiement pour déplacement ?"
+
+#: speakers/monkey_patching.py:11
+msgid "Need hosting?"
+msgstr "Besoin d'un hébergement ?"
 
 #: templates/_account_bar.html:14 templates/dashboard.html:8
 #: templates/dashboard.html.py:13
@@ -156,10 +168,6 @@ msgstr "Durée"
 #: templates/conference/user_list.html:62
 msgid "Proposals"
 msgstr "Propositions"
-
-#: templates/conference/user_list.html:63
-msgid "City"
-msgstr "Ville"
 
 #: templates/conference/user_list.html:64
 msgid "Need travel ?"
@@ -267,8 +275,8 @@ msgid ""
 "\">sponsor section</a>."
 msgstr ""
 "Si vous ou votre entreprise êtes intéressé(e) par un partenariat, "
-"voustrouverez toutes les informations sur <a href=\"%(SITE_BASE)s/partenariat\">la page "
-"partenariats</a>."
+"voustrouverez toutes les informations sur <a href=\"%(SITE_BASE)s/partenariat"
+"\">la page partenariats</a>."
 
 #: templates/dashboard.html:203
 msgid "Your Sponsorship"
@@ -334,7 +342,7 @@ msgstr ""
 msgid "You have been invited to join \"%(team)s\""
 msgstr "Propositions que vous avez été invité(e) à rejoindre"
 
-#: templates/homepage.html:7
+#: templates/homepage.html:8
 msgid "Welcome"
 msgstr "Bienvenue"
 
