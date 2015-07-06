@@ -17,4 +17,4 @@ easy-thumbnails==2.2
 html5lib==0.999
 
 # @@@ Pin this once we get to stable release
--e git+git@github.com:toulibre/symposion.git@master#egg=symposion
+-e git+git@github.com:toulibre/symposion.git@cdl#egg=symposion
