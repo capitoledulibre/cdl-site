@@ -1,0 +1,210 @@
+[
+{
+    "fields": {
+        "description": "Tous les b\u00e9n\u00e9voles du Capitole du Libre. Rejoignez cette \u00e9quipe pour avoir un t-shirt et un badge \u00e0 votre nom :)",
+        "manager_permissions": [],
+        "name": "B\u00e9n\u00e9voles",
+        "access": "open",
+        "slug": "benevoles",
+        "permissions": [
+            130,
+            133,
+            139
+        ]
+    },
+    "model": "teams.team",
+    "pk": 1
+},
+{
+    "fields": {
+        "description": "2 personnes pour tenir le stand Toulibre: pr\u00e9senter les activit\u00e9s, r\u00e9colter \u00e9ventuellement les dons",
+        "manager_permissions": [],
+        "name": "Stand Toulibre",
+        "access": "open",
+        "slug": "stand-toulibre",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 2
+},
+{
+    "fields": {
+        "description": "15-20 personnes, \u00e0 l'N7 partir de 16h-17h",
+        "manager_permissions": [],
+        "name": "Mise en place vendredi",
+        "access": "open",
+        "slug": "mise-en-place-vendredi",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 3
+},
+{
+    "fields": {
+        "description": "10-15 personnes, \u00e0 partir de 8h pour finir la mise en place",
+        "manager_permissions": [],
+        "name": "Mise en place Samedi",
+        "access": "open",
+        "slug": "mise-en-place-samedi",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 4
+},
+{
+    "fields": {
+        "description": "3 personnes, samedi et dimanche. \u00c7a peut tourner.",
+        "manager_permissions": [],
+        "name": "Buvette",
+        "access": "open",
+        "slug": "buvette",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 5
+},
+{
+    "fields": {
+        "description": "3 personnes, samedi et dimanche",
+        "manager_permissions": [],
+        "name": "Boutique",
+        "access": "open",
+        "slug": "boutique",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 6
+},
+{
+    "fields": {
+        "description": "G\u00e9r\u00e9 par le club vid\u00e9o N7 et Alub",
+        "manager_permissions": [],
+        "name": "Captation Vid\u00e9o",
+        "access": "application",
+        "slug": "captation-video",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 7
+},
+{
+    "fields": {
+        "description": "1 personne par salle de conf\u00e9rence. 9 le samedi, 3 le dimanche.",
+        "manager_permissions": [],
+        "name": "Gestion des salles",
+        "access": "open",
+        "slug": "gestion-des-salles",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 8
+},
+{
+    "fields": {
+        "description": "\u00c9quipe optimale : 10 personnes minimum \u00e0 toute heures de la journ\u00e9e.\r\nInstallation propos\u00e9es : Ubuntu, Fedora, Debian et openSUSE. Des gens sachant g\u00e9rer l'UEFI Windows 8 sont la bienvenue :-). Inscription plus d\u00e9taill\u00e9e sur le calc : http://framacalc.org/install-parteam",
+        "manager_permissions": [],
+        "name": "Install party",
+        "access": "open",
+        "slug": "install-party",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 9
+},
+{
+    "fields": {
+        "description": "4 minimum",
+        "manager_permissions": [],
+        "name": "LAN Party",
+        "access": "open",
+        "slug": "lan-party",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 10
+},
+{
+    "fields": {
+        "description": "1~2 personnes",
+        "manager_permissions": [],
+        "name": "Accueil a\u00e9roport gare",
+        "access": "open",
+        "slug": "accueil-aeroport-gare",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 11
+},
+{
+    "fields": {
+        "description": "10 personnes, au Foy' de l'N7, pendant la conf\u00e9rence de Adrienne Charmet et Benjamin Bayart",
+        "manager_permissions": [],
+        "name": "R\u00e9ception pr\u00e9paration ap\u00e9ro",
+        "access": "open",
+        "slug": "reception-preparation-apero",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 12
+},
+{
+    "fields": {
+        "description": "10 personnes, apr\u00e8s l'ap\u00e9ro",
+        "manager_permissions": [],
+        "name": "Nettoyage Foy' samedi soir",
+        "access": "open",
+        "slug": "nettoyage-foy-samedi-soir",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 13
+},
+{
+    "fields": {
+        "description": "10 personnes \u00e0 partir de 16h30 le dimanche",
+        "manager_permissions": [],
+        "name": "Rangement du Hall et nettoyage dimanche",
+        "access": "open",
+        "slug": "rangement-du-hall-et-nettoyage",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 16
+},
+{
+    "fields": {
+        "description": "10 personnes le dimanche \u00e0 partir de 17h",
+        "manager_permissions": [],
+        "name": "Rangement des salles dimanche",
+        "access": "open",
+        "slug": "rangement-des-salles-dimanche",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 17
+},
+{
+    "fields": {
+        "description": "Quelque part en ville, pour accompagner les intervenants arriv\u00e9s d\u00e8s le vendredi",
+        "manager_permissions": [],
+        "name": "Soir\u00e9e du vendredi soir",
+        "access": "open",
+        "slug": "soiree-du-vendredi-soir",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 18
+},
+{
+    "fields": {
+        "description": "1~2 b\u00e9n\u00e9voles. Charg\u00e9 d'accompagner les personnes ayant besoin de passer par les ascenseurs dont l'acc\u00e8s se fait par une cl\u00e9.",
+        "manager_permissions": [],
+        "name": "Acc\u00e8s Ascenseur",
+        "access": "open",
+        "slug": "acces-ascenseur",
+        "permissions": []
+    },
+    "model": "teams.team",
+    "pk": 19
+}
+]
