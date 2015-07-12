@@ -1,0 +1,117 @@
+[
+    {
+        "pk": 2,
+        "model": "symposion_schedule.day",
+        "fields": {
+            "date": "2014-11-15",
+            "schedule": 2
+        }
+    },
+    {
+        "pk": 4,
+        "model": "symposion_schedule.day",
+        "fields": {
+            "date": "2014-11-15",
+            "schedule": 9
+        }
+    },
+    {
+        "pk": 6,
+        "model": "symposion_schedule.day",
+        "fields": {
+            "date": "2014-11-15",
+            "schedule": 4
+        }
+    },
+    {
+        "pk": 1,
+        "model": "symposion_schedule.day",
+        "fields": {
+            "date": "2014-11-16",
+            "schedule": 4
+        }
+    },
+    {
+        "pk": 3,
+        "model": "symposion_schedule.day",
+        "fields": {
+            "date": "2014-11-16",
+            "schedule": 2
+        }
+    },
+    {
+        "pk": 5,
+        "model": "symposion_schedule.day",
+        "fields": {
+            "date": "2014-11-16",
+            "schedule": 9
+        }
+    },
+    {
+        "pk": 2,
+        "model": "symposion_schedule.schedule",
+        "fields": {
+            "section": 3,
+            "hidden": true,
+            "published": true
+        }
+    },
+    {
+        "pk": 9,
+        "model": "symposion_schedule.schedule",
+        "fields": {
+            "section": 1,
+            "hidden": false,
+            "published": true
+        }
+    },
+    {
+        "pk": 4,
+        "model": "symposion_schedule.schedule",
+        "fields": {
+            "section": 2,
+            "hidden": false,
+            "published": true
+        }
+    },
+    {
+        "pk": 1,
+        "model": "symposion_schedule.slotkind",
+        "fields": {
+            "label": "Atelier 1h30",
+            "schedule": 4
+        }
+    },
+    {
+        "pk": 2,
+        "model": "symposion_schedule.slotkind",
+        "fields": {
+            "label": "Atelier 3h",
+            "schedule": 4
+        }
+    },
+    {
+        "pk": 3,
+        "model": "symposion_schedule.slotkind",
+        "fields": {
+            "label": "Stand",
+            "schedule": 2
+        }
+    },
+    {
+        "pk": 4,
+        "model": "symposion_schedule.slotkind",
+        "fields": {
+            "label": "Conf 50 mins",
+            "schedule": 9
+        }
+    },
+    {
+        "pk": 5,
+        "model": "symposion_schedule.slotkind",
+        "fields": {
+            "label": "Conf 20 mins",
+            "schedule": 9
+        }
+    }
+]
