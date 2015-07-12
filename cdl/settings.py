@@ -167,7 +167,6 @@ INSTALLED_APPS = [
     # project
     "cdl",
     "cdl.proposals",
-    "cdl.speakers",
 ]
 
 # A sample logging configuration. The only tangible logging

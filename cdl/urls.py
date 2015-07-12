@@ -23,9 +23,9 @@ urlpatterns = patterns(
     url(r"^conference/", include("symposion.conference.urls")),
 
     url(r"^dashboard/", symposion.views.dashboard, name="dashboard"),
-    url(r"^intervenant/", include("cdl.speakers.urls")),
+    # url(r"^intervenant/", include("cdl.speakers.urls")),
     url(r"^intervenant/", include("symposion.speakers.urls")),
-    url(r"^speaker/", include("cdl.speakers.urls")),
+    # url(r"^speaker/", include("cdl.speakers.urls")),
     url(r"^speaker/", include("symposion.speakers.urls")),
     url(r"^proposals/", include("symposion.proposals.urls")),
     url(r"^sponsors/", include("symposion.sponsorship.urls")),
