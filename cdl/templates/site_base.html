@@ -20,6 +20,7 @@
 
 {% block navbar_class %}{% endblock %}
 {% block wrapper_class %}outer-container{% endblock %}
+
 {% block site_brand %}
     <a class="navbar-brand text-hide" href="{% url "home" %}">{{ SITE_NAME }}</a>
 {% endblock %}
@@ -44,10 +45,12 @@
                 </div>
             </div>
         {% endblock %}
+
         {% block postface_outer %}
             <div class="row">
                 <div class="col-xs-12">
                     {% block postface %}
+                {% include "_default_postface.html" %}
                     {% endblock %}
                 </div>
             </div>
@@ -60,6 +63,18 @@
     {% block extra_body %}{% endblock %}
 {% endblock %}
 
+
+{% block footer %}
+    <div class="pull-left">
+        {% sitetree_menu from "footer" include "trunk" template "sitetree/menu_bootstrap.html" %}
+    </div>
+
+    <div class="site-info pull-right">
+        <address id="about" class="vcard pull-left">
+            Pour tout renseignement : <a class="url org" href="mailto:contact@capitoledulibre.org">contactez <span class="org">Toulibre</span></a>
+        </address>&nbsp;—&nbsp;Site propulsé par <a href="http://eldarion.com/symposion/"><b>Symposion</b></a>.
+    </div>
+{% endblock %}
 
 {% block script_base %}
     <script src="{% block jquery_src %}{% static "jquery/js/jquery-2.1.1.min.js" %}{% endblock %}"></script>

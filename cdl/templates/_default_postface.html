@@ -1,0 +1,46 @@
+{% load sponsorship_tags %}
+{% load thumbnail %}
+{% load boxes_tags %}
+
+{% sponsor_levels as levels %}
+
+{% if sponsors %}
+<h2><a href="/sponsors">Nos Partenaires</a> </h2>
+<div class="clearfix"></div>
+    {% for level in levels %}
+        {% if level.sponsors and level.name != "Bronze" %}
+            <div class="col-xs-12 col-sm-6">
+            <h3 class="h4">{{ level }}</h3>
+            <div class="row">
+            {% for sponsor in level.sponsors|dictsort:"name" %}
+                <div class="col-xs-6 col-md-4">
+                <a class="thumbnail" href="{{ sponsor.external_url }}">
+                    {% if level.name == "Or" %}
+                    <img class="img-responsive logo-150" src="{{ sponsor.website_logo.url }}" alt="{{ sponsor.name }}" />
+                    {% elif level.name == "Argent" %}
+                    <img class="img-responsive logo-120" src="{{ sponsor.website_logo.url }}" alt="{{ sponsor.name }}" />
+                    {% elif level.name == "Bronze" %}
+                    {% endif %}
+                </a>
+                </div>
+            {% endfor %}
+            </div>
+            </div>
+        {% elif level.sponsors and level.name == "Bronze" %}
+            <div class="col-xs-12">
+            <h3 class="h4">{{ level }}</h3>
+            <div class="row">
+            {% for sponsor in level.sponsors|dictsort:"name" %}
+                <div class="col-xs-4 col-md-2">
+                <a class="thumbnail" href="{{ sponsor.external_url }}">
+                    <img class="img-responsive logo-80" src="{{ sponsor.website_logo.url }}" alt="{{ sponsor.name }}" />
+                </a>
+                </div>
+            {% endfor %}
+            </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+<p><a href="{% url "sponsor_list" %}" alt="Partenaires">Voir tous nos soutiens</a></p>
+{% endif %}
