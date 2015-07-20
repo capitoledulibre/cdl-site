@@ -19,7 +19,7 @@ Installation
 
     cd cdl-site
     pip install -r requirements.txt
-    python manage.py migrate
+    python manage.py syncdb
     python manage.py loaddata fixtures/*
 
 ## Démarrage
