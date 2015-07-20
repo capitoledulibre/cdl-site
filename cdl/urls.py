@@ -16,6 +16,7 @@ urlpatterns = patterns(
     url(r"^$", TemplateView.as_view(template_name="homepage.html"), name="home"),
     url(r"^admin/", include(admin.site.urls)),
 
+    url(r"^robots\.txt$", TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
     url(r"^account/signup/$", symposion.views.SignupView.as_view(), name="account_signup"),
     url(r"^account/login/$", symposion.views.LoginView.as_view(), name="account_login"),
     url(r"^account/", include("account.urls")),
