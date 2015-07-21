@@ -65,8 +65,8 @@ class TutorialProposal(Proposal):
 
     DURATION_CHOICES = [
         (0, _(u"No preference")),
-        (1, _(u"I prefer a 1h30 slot")),
-        (2, _(u"I prefer a 3h slot")),
+        (1, _(u"I prefer a 1h20 slot")),
+        (2, _(u"I prefer a 2h50 slot")),
     ]
 
     duration = models.IntegerField(choices=DURATION_CHOICES)

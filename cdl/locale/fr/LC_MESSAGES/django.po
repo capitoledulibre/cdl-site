@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-07 00:37+0200\n"
+"POT-Creation-Date: 2015-07-22 00:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,12 +69,12 @@ msgid "talk proposal"
 msgstr "proposition de conférence"
 
 #: proposals/models.py:68
-msgid "I prefer a 1h30 slot"
-msgstr "Je préfère un créneau d'1h30"
+msgid "I prefer a 1h20 slot"
+msgstr "Je préfère un créneau d'1h20"
 
 #: proposals/models.py:69
-msgid "I prefer a 3h slot"
-msgstr "Je préfère un créneau de 3h"
+msgid "I prefer a 2h50 slot"
+msgstr "Je préfère un créneau d'2h50"
 
 #: proposals/models.py:75
 msgid "tutorial proposal"
@@ -91,18 +91,6 @@ msgstr "Français"
 #: settings.py:36
 msgid "English"
 msgstr "Anglais"
-
-#: speakers/monkey_patching.py:9 templates/conference/user_list.html:63
-msgid "City"
-msgstr "Ville"
-
-#: speakers/monkey_patching.py:10
-msgid "Need travel?"
-msgstr "Défraiement pour déplacement ?"
-
-#: speakers/monkey_patching.py:11
-msgid "Need hosting?"
-msgstr "Besoin d'un hébergement ?"
 
 #: templates/_account_bar.html:14 templates/dashboard.html:8
 #: templates/dashboard.html.py:13
@@ -121,13 +109,23 @@ msgstr "Administration"
 msgid "Log out"
 msgstr "Déconnexion"
 
-#: templates/_account_bar.html:29
+#: templates/_account_bar.html:29 templates/account/login.html:7
+#: templates/account/login.html.py:19
 msgid "Log in"
 msgstr "Connexion"
 
-#: templates/_account_bar.html:31
+#: templates/_account_bar.html:31 templates/account/signup.html:7
+#: templates/account/signup.html.py:12 templates/account/signup.html:18
 msgid "Sign up"
 msgstr "S'inscrire"
+
+#: templates/account/login.html:12
+msgid "Log in to an existing account"
+msgstr ""
+
+#: templates/account/login.html:18
+msgid "Forgot your password?"
+msgstr ""
 
 #: templates/boxes/box.html:11
 msgid "Editing content:"
@@ -168,6 +166,10 @@ msgstr "Durée"
 #: templates/conference/user_list.html:62
 msgid "Proposals"
 msgstr "Propositions"
+
+#: templates/conference/user_list.html:63
+msgid "City"
+msgstr "Ville"
 
 #: templates/conference/user_list.html:64
 msgid "Need travel ?"
@@ -688,6 +690,15 @@ msgstr "Partenariat"
 #| msgid "Apply to be a sponsor"
 msgid "Learn how to become a sponsor"
 msgstr "Devenir Sponsor"
+
+#~ msgid "I prefer a 3h slot"
+#~ msgstr "Je préfère un créneau de 3h"
+
+#~ msgid "Need travel?"
+#~ msgstr "Défraiement pour déplacement ?"
+
+#~ msgid "Need hosting?"
+#~ msgstr "Besoin d'un hébergement ?"
 
 #~ msgid "Name"
 #~ msgstr "Nom"
