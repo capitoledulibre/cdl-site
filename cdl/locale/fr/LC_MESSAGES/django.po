@@ -39,7 +39,7 @@ msgstr "Intermédiaire"
 
 #: proposals/models.py:31
 msgid "Experienced"
-msgstr "Expert"
+msgstr "Confirmé"
 
 #: proposals/models.py:40
 msgid ""
