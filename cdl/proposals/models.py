@@ -33,7 +33,19 @@ class Proposal(ProposalBase):
 
     category = models.ForeignKey(ProposalCategory)
 
-    audience_level = models.IntegerField(choices=AUDIENCE_LEVELS)
+    audience_level = models.IntegerField(
+        _("Audience level"),
+        choices=AUDIENCE_LEVELS)
+
+    prerequistes = models.TextField(
+        _("Prerequistes"),
+        help_text=_("If Prerequistes are needed to follow this talk or workshop."),
+        blank=True)
+
+    technical_information = models.TextField(
+        _("Technical information"),
+        help_text=_("Specify definition screen, computer output, if you need a computer. Won't be public."),
+        blank=True)
 
     recording_release = models.BooleanField(
         default=True,
@@ -55,7 +67,7 @@ class TalkProposal(Proposal):
         (2, _(u"I prefer a 50 minute slot")),
     ]
 
-    duration = models.IntegerField(choices=DURATION_CHOICES)
+    duration = models.IntegerField(_("Duration"), choices=DURATION_CHOICES)
 
     class Meta:
         verbose_name = _(u"talk proposal")
@@ -69,7 +81,7 @@ class TutorialProposal(Proposal):
         (2, _(u"I prefer a 2h50 slot")),
     ]
 
-    duration = models.IntegerField(choices=DURATION_CHOICES)
+    duration = models.IntegerField(_("Duration"), choices=DURATION_CHOICES)
 
     class Meta:
         verbose_name = _(u"tutorial proposal")
