@@ -2,3 +2,5 @@ _build
 *.pyc
 dev.db
 site_media
+local_settings.py
+
