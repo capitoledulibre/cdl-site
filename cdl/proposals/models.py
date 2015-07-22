@@ -1,8 +1,9 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from symposion.proposals.models import ProposalBase
+from multiselectfield.db.fields import MultiSelectField
 
+from symposion.proposals.models import ProposalBase
 
 
 class ProposalCategory(models.Model):
@@ -31,6 +32,14 @@ class Proposal(ProposalBase):
         (AUDIENCE_LEVEL_EXPERIENCED, _(u"Experienced")),
     ]
 
+    VIDEO_OUTPUT = (
+        ("VGA", u"VGA"),
+        ("DVI", u"DVI"),
+        ("HDMI", u"HDMI"),
+        ("DPORT", u"Display Port"),
+        ("MDPORT", u" Mini Display Port"),
+    )
+
     category = models.ForeignKey(ProposalCategory)
 
     audience_level = models.IntegerField(
@@ -43,10 +52,17 @@ class Proposal(ProposalBase):
         blank=True
     )
 
-    technical_information = models.TextField(
-        _("Technical information"),
-        help_text=_("Specify definition screen, computer output, if you need a computer. Won't be public."),
-        blank=True
+    video_output = MultiSelectField(
+        _("Video output"),
+        choices=VIDEO_OUTPUT,
+        help_text=_("Specify video output."),
+        blank=True,
+    )
+
+    broadcast_audio = models.BooleanField(
+        _("Broadcast audio"),
+        default=None,
+        help_text=_(u"Do you need audio material to broadcast audio ?")
     )
 
     recording_release = models.BooleanField(

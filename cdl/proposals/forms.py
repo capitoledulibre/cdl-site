@@ -30,7 +30,8 @@ class TalkProposalForm(ProposalForm):
             "prerequistes",
             "duration",
             "additional_notes",
-            "technical_information",
+            "video_output",
+            "broadcast_audio",
             "recording_release",
         ]
         widgets = {
@@ -52,7 +53,8 @@ class TutorialProposalForm(ProposalForm):
             "prerequistes",
             "duration",
             "additional_notes",
-            "technical_information",
+            "video_output",
+            "broadcast_audio",
             "recording_release",
         ]
         widgets = {
