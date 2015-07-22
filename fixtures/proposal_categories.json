@@ -1,8 +1,8 @@
 [
 {
     "fields": {
-        "name": "Grand Public",
-        "slug": "enjeux",
+        "name": "Découverte",
+        "slug": "decouverte",
         "description": "Pour découvrir l'écosystème du logiciel libre."
     },
     "model": "proposals.proposalcategory",
@@ -19,7 +19,7 @@
 },
 {
     "fields": {
-        "name": "Internet Libre",
+        "name": "Internet Libre et vie privée",
         "slug": "internet",
         "description": "Autohébergement, sécurité et vie privée sur l’Internet."
     },
@@ -64,9 +64,9 @@
 },
 {
     "fields": {
-        "name": "Internet Of Things & Do It Yourself",
-        "slug": "iot-diy",
-        "description": "(re)découverte des Arduino, Raspberry Pi, objets connectés."
+        "name": "Internet Of Things & embarqué",
+        "slug": "iot-embarque",
+        "description": "(Re)découverte des Arduino, Raspberry Pi, objets connectés, mais aussi l'embarqué."
     },
     "model": "proposals.proposalcategory",
     "pk": 8

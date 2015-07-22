@@ -27,8 +27,11 @@ class TalkProposalForm(ProposalForm):
             "audience_level",
             "description",
             "abstract",
+            "prerequistes",
             "duration",
             "additional_notes",
+            "video_output",
+            "broadcast_audio",
             "recording_release",
         ]
         widgets = {
@@ -47,8 +50,11 @@ class TutorialProposalForm(ProposalForm):
             "audience_level",
             "description",
             "abstract",
+            "prerequistes",
             "duration",
             "additional_notes",
+            "video_output",
+            "broadcast_audio",
             "recording_release",
         ]
         widgets = {

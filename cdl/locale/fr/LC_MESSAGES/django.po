@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-07 00:37+0200\n"
+"POT-Creation-Date: 2015-07-22 10:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,9 +39,39 @@ msgstr "Intermédiaire"
 
 #: proposals/models.py:31
 msgid "Experienced"
-msgstr "Expert"
+msgstr "Confirmé"
 
-#: proposals/models.py:40
+#: proposals/models.py:37
+msgid "Audience level"
+msgstr "Niveau du Public"
+
+#: proposals/models.py:41
+msgid "Prerequistes"
+msgstr "Prérequis"
+
+#: proposals/models.py:42
+msgid "If Prerequistes are needed to follow this talk or workshop."
+msgstr ""
+"Indiquez si des pré-requis sont nécessaires pour suivre cette conférence ou "
+"atelier."
+
+#: proposals/models.py:47
+msgid "Technical information"
+msgstr "Informations techniques"
+
+#: proposals/models.py:48
+msgid ""
+"Specify definition screen, computer output, if you need a computer. Won't be "
+"public."
+msgstr ""
+"Indiquez si vous avez besoin d'un PC, et sinon la définition d'écran, la "
+"sortie vidéo."
+
+#: proposals/models.py:53
+msgid "Recording release"
+msgstr "Enregistrement vidéo"
+
+#: proposals/models.py:55
 msgid ""
 "By submitting your proposal, you agree to give permission to the conference "
 "organizers to record, edit, and release audio and/or video of your "
@@ -52,35 +82,40 @@ msgstr ""
 "ou vidéo de votre présentation. Si vous n'êtes pas d'accord avec ceci, vous "
 "pouvez décocher cette case."
 
-#: proposals/models.py:53 proposals/models.py:67
+#: proposals/models.py:68 proposals/models.py:82
 msgid "No preference"
 msgstr "Pas de préférence"
 
-#: proposals/models.py:54
+#: proposals/models.py:69
 msgid "I prefer a 20 minute slot"
 msgstr "Je préfère un créneau de 20 minutes"
 
-#: proposals/models.py:55
+#: proposals/models.py:70
 msgid "I prefer a 50 minute slot"
 msgstr "Je préfère un créneau de 50 minutes"
 
-#: proposals/models.py:61
+#: proposals/models.py:73 proposals/models.py:87
+#: templates/proposals/_proposal_fields.html:13
+msgid "Duration"
+msgstr "Durée"
+
+#: proposals/models.py:76
 msgid "talk proposal"
 msgstr "proposition de conférence"
 
-#: proposals/models.py:68
-msgid "I prefer a 1h30 slot"
-msgstr "Je préfère un créneau d'1h30"
+#: proposals/models.py:83
+msgid "I prefer a 1h20 slot"
+msgstr "Je préfère un créneau d'1h20"
 
-#: proposals/models.py:69
-msgid "I prefer a 3h slot"
-msgstr "Je préfère un créneau de 3h"
+#: proposals/models.py:84
+msgid "I prefer a 2h50 slot"
+msgstr "Je préfère un créneau d'2h50"
 
-#: proposals/models.py:75
+#: proposals/models.py:90
 msgid "tutorial proposal"
 msgstr "proposition d'atelier"
 
-#: proposals/models.py:86
+#: proposals/models.py:101
 msgid "stand proposal"
 msgstr "proposition de stand"
 
@@ -91,18 +126,6 @@ msgstr "Français"
 #: settings.py:36
 msgid "English"
 msgstr "Anglais"
-
-#: speakers/monkey_patching.py:9 templates/conference/user_list.html:63
-msgid "City"
-msgstr "Ville"
-
-#: speakers/monkey_patching.py:10
-msgid "Need travel?"
-msgstr "Défraiement pour déplacement ?"
-
-#: speakers/monkey_patching.py:11
-msgid "Need hosting?"
-msgstr "Besoin d'un hébergement ?"
 
 #: templates/_account_bar.html:14 templates/dashboard.html:8
 #: templates/dashboard.html.py:13
@@ -121,13 +144,23 @@ msgstr "Administration"
 msgid "Log out"
 msgstr "Déconnexion"
 
-#: templates/_account_bar.html:29
+#: templates/_account_bar.html:29 templates/account/login.html:7
+#: templates/account/login.html.py:19
 msgid "Log in"
 msgstr "Connexion"
 
-#: templates/_account_bar.html:31
+#: templates/_account_bar.html:31 templates/account/signup.html:7
+#: templates/account/signup.html.py:12 templates/account/signup.html:18
 msgid "Sign up"
 msgstr "S'inscrire"
+
+#: templates/account/login.html:12
+msgid "Log in to an existing account"
+msgstr "Connexion à un compte existant"
+
+#: templates/account/login.html:18
+msgid "Forgot your password?"
+msgstr "Mot de passe oublié ?"
 
 #: templates/boxes/box.html:11
 msgid "Editing content:"
@@ -156,10 +189,8 @@ msgid "Email"
 msgstr "Courriel"
 
 #: templates/conference/user_list.html:60
-#, fuzzy
-#| msgid "Edit Speaker Profile"
 msgid "Speaker Profile?"
-msgstr "Modifier votre profil d'intervenant"
+msgstr "Profil d'intervenant"
 
 #: templates/conference/user_list.html:61
 msgid "Organisation"
@@ -168,6 +199,10 @@ msgstr "Durée"
 #: templates/conference/user_list.html:62
 msgid "Proposals"
 msgstr "Propositions"
+
+#: templates/conference/user_list.html:63
+msgid "City"
+msgstr "Ville"
 
 #: templates/conference/user_list.html:64
 msgid "Need travel ?"
@@ -265,10 +300,7 @@ msgid "Apply to be a sponsor"
 msgstr "Devenir Sponsor"
 
 #: templates/dashboard.html:201
-#, fuzzy, python-format
-#| msgid ""
-#| "If you or your organization would be interested in sponsorship "
-#| "opportunities, you will find in"
+#, python-format
 msgid ""
 "If you or your organization would be interested in sponsorship "
 "opportunities, you will find in <a href=\"%(SITE_BASE)s/partenariat"
@@ -389,10 +421,6 @@ msgstr "Thématique"
 #: templates/proposals/_proposal_fields.html:10
 msgid "Audience Level"
 msgstr "Niveau du Public"
-
-#: templates/proposals/_proposal_fields.html:13
-msgid "Duration"
-msgstr "Durée"
 
 #: templates/proposals/_proposal_fields.html:17
 msgid "Additional Speakers"
@@ -684,10 +712,17 @@ msgid "About Our Sponsors"
 msgstr "Partenariat"
 
 #: templates/sponsorship/list.html:15
-#, fuzzy
-#| msgid "Apply to be a sponsor"
 msgid "Learn how to become a sponsor"
-msgstr "Devenir Sponsor"
+msgstr "Découvrez comment devenir Sponsor"
+
+#~ msgid "I prefer a 3h slot"
+#~ msgstr "Je préfère un créneau de 3h"
+
+#~ msgid "Need travel?"
+#~ msgstr "Défraiement pour déplacement ?"
+
+#~ msgid "Need hosting?"
+#~ msgstr "Besoin d'un hébergement ?"
 
 #~ msgid "Name"
 #~ msgstr "Nom"
@@ -742,9 +777,6 @@ msgstr "Devenir Sponsor"
 
 #~ msgid "Softwares to be installed, version, etc."
 #~ msgstr "Logiciels à installer, version, etc."
-
-#~ msgid "Prerequistes"
-#~ msgstr "Prérequis"
 
 #~ msgid "Max attendees"
 #~ msgstr "Nombre maximum d'inscrits"
