@@ -40,14 +40,17 @@ class Proposal(ProposalBase):
     prerequistes = models.TextField(
         _("Prerequistes"),
         help_text=_("If Prerequistes are needed to follow this talk or workshop."),
-        blank=True)
+        blank=True
+    )
 
     technical_information = models.TextField(
         _("Technical information"),
         help_text=_("Specify definition screen, computer output, if you need a computer. Won't be public."),
-        blank=True)
+        blank=True
+    )
 
     recording_release = models.BooleanField(
+        _("Recording release"),
         default=True,
         help_text=_(u"By submitting your proposal, you agree to give permission to the conference organizers to record, edit, and release audio and/or video of your presentation. If you do not agree to this, please uncheck this box.")
     )

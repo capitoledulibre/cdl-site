@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-22 00:52+0200\n"
+"POT-Creation-Date: 2015-07-22 10:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,9 +42,7 @@ msgid "Experienced"
 msgstr "Confirmé"
 
 #: proposals/models.py:37
-#, fuzzy
-#| msgid "Audience Level"
-msgid "Audience lever"
+msgid "Audience level"
 msgstr "Niveau du Public"
 
 #: proposals/models.py:41
@@ -57,11 +55,11 @@ msgstr ""
 "Indiquez si des pré-requis sont nécessaires pour suivre cette conférence ou "
 "atelier."
 
-#: proposals/models.py:46
+#: proposals/models.py:47
 msgid "Technical information"
 msgstr "Informations techniques"
 
-#: proposals/models.py:47
+#: proposals/models.py:48
 msgid ""
 "Specify definition screen, computer output, if you need a computer. Won't be "
 "public."
@@ -69,7 +67,11 @@ msgstr ""
 "Indiquez si vous avez besoin d'un PC, et sinon la définition d'écran, la "
 "sortie vidéo."
 
-#: proposals/models.py:52
+#: proposals/models.py:53
+msgid "Recording release"
+msgstr "Enregistrement vidéo"
+
+#: proposals/models.py:55
 msgid ""
 "By submitting your proposal, you agree to give permission to the conference "
 "organizers to record, edit, and release audio and/or video of your "
@@ -80,40 +82,40 @@ msgstr ""
 "ou vidéo de votre présentation. Si vous n'êtes pas d'accord avec ceci, vous "
 "pouvez décocher cette case."
 
-#: proposals/models.py:65 proposals/models.py:79
+#: proposals/models.py:68 proposals/models.py:82
 msgid "No preference"
 msgstr "Pas de préférence"
 
-#: proposals/models.py:66
+#: proposals/models.py:69
 msgid "I prefer a 20 minute slot"
 msgstr "Je préfère un créneau de 20 minutes"
 
-#: proposals/models.py:67
+#: proposals/models.py:70
 msgid "I prefer a 50 minute slot"
 msgstr "Je préfère un créneau de 50 minutes"
 
-#: proposals/models.py:70 proposals/models.py:84
+#: proposals/models.py:73 proposals/models.py:87
 #: templates/proposals/_proposal_fields.html:13
 msgid "Duration"
 msgstr "Durée"
 
-#: proposals/models.py:73
+#: proposals/models.py:76
 msgid "talk proposal"
 msgstr "proposition de conférence"
 
-#: proposals/models.py:80
+#: proposals/models.py:83
 msgid "I prefer a 1h20 slot"
 msgstr "Je préfère un créneau d'1h20"
 
-#: proposals/models.py:81
+#: proposals/models.py:84
 msgid "I prefer a 2h50 slot"
 msgstr "Je préfère un créneau d'2h50"
 
-#: proposals/models.py:87
+#: proposals/models.py:90
 msgid "tutorial proposal"
 msgstr "proposition d'atelier"
 
-#: proposals/models.py:98
+#: proposals/models.py:101
 msgid "stand proposal"
 msgstr "proposition de stand"
 
@@ -187,10 +189,8 @@ msgid "Email"
 msgstr "Courriel"
 
 #: templates/conference/user_list.html:60
-#, fuzzy
-#| msgid "Edit Speaker Profile"
 msgid "Speaker Profile?"
-msgstr "Modifier votre profil d'intervenant"
+msgstr "Profil d'intervenant"
 
 #: templates/conference/user_list.html:61
 msgid "Organisation"
@@ -300,10 +300,7 @@ msgid "Apply to be a sponsor"
 msgstr "Devenir Sponsor"
 
 #: templates/dashboard.html:201
-#, fuzzy, python-format
-#| msgid ""
-#| "If you or your organization would be interested in sponsorship "
-#| "opportunities, you will find in"
+#, python-format
 msgid ""
 "If you or your organization would be interested in sponsorship "
 "opportunities, you will find in <a href=\"%(SITE_BASE)s/partenariat"
@@ -715,10 +712,8 @@ msgid "About Our Sponsors"
 msgstr "Partenariat"
 
 #: templates/sponsorship/list.html:15
-#, fuzzy
-#| msgid "Apply to be a sponsor"
 msgid "Learn how to become a sponsor"
-msgstr "Devenir Sponsor"
+msgstr "Découvrez comment devenir Sponsor"
 
 #~ msgid "I prefer a 3h slot"
 #~ msgstr "Je préfère un créneau de 3h"
