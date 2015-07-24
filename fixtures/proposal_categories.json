@@ -1,99 +1,99 @@
 [
 {
     "fields": {
-        "name": "Découverte",
-        "slug": "decouverte",
-        "description": "Pour découvrir l'écosystème du logiciel libre."
+        "description": "Pour d\u00e9couvrir l'\u00e9cosyst\u00e8me du logiciel libre.",
+        "name": "D\u00e9couverte",
+        "slug": "decouverte"
     },
     "model": "proposals.proposalcategory",
     "pk": 1
 },
 {
     "fields": {
+        "description": "Qu'est-ce que le libre transforme dans notre soci\u00e9t\u00e9.",
         "name": "Enjeux du Libre",
-        "slug": "enjeux",
-        "description": "Qu'est-ce que le libre transforme dans notre société."
+        "slug": "enjeux"
     },
     "model": "proposals.proposalcategory",
     "pk": 2
 },
 {
     "fields": {
-        "name": "Internet Libre et vie privée",
-        "slug": "internet",
-        "description": "Autohébergement, sécurité et vie privée sur l’Internet."
+        "description": "Autoh\u00e9bergement, s\u00e9curit\u00e9 et vie priv\u00e9e sur l\u2019Internet.",
+        "name": "Internet Libre et vie priv\u00e9e",
+        "slug": "internet"
     },
     "model": "proposals.proposalcategory",
     "pk": 3
 },
 {
     "fields": {
+        "description": "Les arts et la culture libres, la MAO, la vid\u00e9o.",
         "name": "Culture libre et multimedia",
-        "slug": "culture-libre",
-        "description": "Les arts et la culture libres, la MAO, la vidéo."
+        "slug": "culture-libre"
     },
     "model": "proposals.proposalcategory",
     "pk": 4
 },
 {
     "fields": {
+        "description": "Environnement de travail, bureautique, utilitaires.",
         "name": "Poste de travail et bureautique",
-        "slug": "poste-bureautique",
-        "description": "Environnement de travail, bureautique, utilitaires."
+        "slug": "poste-bureautique"
     },
     "model": "proposals.proposalcategory",
     "pk": 5
 },
 {
     "fields": {
+        "description": "D\u00e9veloppement, bases de donn\u00e9es, pour la beaut\u00e9 du code.",
         "name": "Technique",
-        "slug": "technique",
-        "description": "Développement, bases de données, pour la beauté du code."
+        "slug": "technique"
     },
     "model": "proposals.proposalcategory",
     "pk": 6
 },
 {
     "fields": {
+        "description": "Inaugur\u00e9e en 2014, sera renouvel\u00e9e et abordera Docker, le cloud libre.",
         "name": "DevOps",
-        "slug": "devops",
-        "description": "Inaugurée en 2014, sera renouvelée et abordera Docker, le cloud libre."
+        "slug": "devops"
     },
     "model": "proposals.proposalcategory",
     "pk": 7
 },
 {
     "fields": {
-        "name": "Internet Of Things & embarqué",
-        "slug": "iot-embarque",
-        "description": "(Re)découverte des Arduino, Raspberry Pi, objets connectés, mais aussi l'embarqué."
+        "description": "(Re)d\u00e9couverte des Arduino, Raspberry Pi, objets connect\u00e9s, mais aussi l'embarqu\u00e9.",
+        "name": "Internet Of Things & embarqu\u00e9",
+        "slug": "iot-embarque"
     },
     "model": "proposals.proposalcategory",
     "pk": 8
 },
 {
     "fields": {
+        "description": "NodeJS, ReactJS, AngularJS, le Web change tous les jours.",
         "name": "Technologies Web",
-        "slug": "web",
-        "description": "NodeJS, ReactJS, AngularJS, le Web change tous les jours."
+        "slug": "web"
     },
     "model": "proposals.proposalcategory",
     "pk": 9
 },
 {
     "fields": {
+        "description": "Environnement de travail, bureautique, utilitaires.",
         "name": "Akademy-FR",
-        "slug": "akademy-fr",
-        "description": "Environnement de travail, bureautique, utilitaires."
+        "slug": "akademy-fr"
     },
     "model": "proposals.proposalcategory",
     "pk": 10
 },
 {
     "fields": {
-        "name": "Animation 2D & 3D",
-        "slug": "animation",
-        "description": "Blender, Krita, Gimp, Inkscape, Synfig, la réalisation d’œuvres artistiques avec des outils libres."
+        "description": "Blender, Krita, Gimp, Inkscape, Freecad, Synfig, la réalisation d'oeuvres artistiques avec des outils libres.",
+        "name": "Création graphique avec des outils libres",
+        "slug": "animation"
     },
     "model": "proposals.proposalcategory",
     "pk": 11
