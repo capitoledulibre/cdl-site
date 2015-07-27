@@ -166,6 +166,7 @@ INSTALLED_APPS = [
 
     # project
     "cdl",
+    "cdl.conference",
     "cdl.proposals",
 ]
 

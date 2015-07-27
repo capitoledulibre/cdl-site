@@ -4,20 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 from multiselectfield.db.fields import MultiSelectField
 
 from symposion.proposals.models import ProposalBase
-
-
-class ProposalCategory(models.Model):
-
-    name = models.CharField(max_length=100)
-    slug = models.SlugField()
-    description = models.CharField(max_length=680, blank=True)
-
-    def __unicode__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = _(u"Capitole du Libre proposal category")
-        verbose_name_plural = _(u"Capitole du Libre proposal categories")
+from cdl.conference.models import ConferenceCategory
 
 
 class Proposal(ProposalBase):
@@ -40,7 +27,7 @@ class Proposal(ProposalBase):
         ("MDPORT", u" Mini Display Port"),
     )
 
-    category = models.ForeignKey(ProposalCategory)
+    category = models.ForeignKey(ConferenceCategory)
 
     audience_level = models.IntegerField(
         _("Audience level"),

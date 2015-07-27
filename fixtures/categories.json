@@ -1,101 +1,112 @@
 [
 {
     "fields": {
+        "conference": 1,
         "description": "Pour d\u00e9couvrir l'\u00e9cosyst\u00e8me du logiciel libre.",
         "name": "D\u00e9couverte",
         "slug": "decouverte"
     },
-    "model": "proposals.proposalcategory",
+    "model": "conference_conferencecategory",
     "pk": 1
 },
 {
     "fields": {
+        "conference": 1,
         "description": "Qu'est-ce que le libre transforme dans notre soci\u00e9t\u00e9.",
         "name": "Enjeux du Libre",
         "slug": "enjeux"
     },
-    "model": "proposals.proposalcategory",
+    "model": "conference_conferencecategory",
     "pk": 2
 },
 {
     "fields": {
+        "conference": 1,
         "description": "Autoh\u00e9bergement, s\u00e9curit\u00e9 et vie priv\u00e9e sur l\u2019Internet.",
         "name": "Internet Libre et vie priv\u00e9e",
         "slug": "internet"
     },
-    "model": "proposals.proposalcategory",
+    "model": "conference_conferencecategory",
     "pk": 3
 },
 {
     "fields": {
+        "conference": 1,
         "description": "Les arts et la culture libres, la MAO, la vid\u00e9o.",
         "name": "Culture libre et multimedia",
         "slug": "culture-libre"
     },
-    "model": "proposals.proposalcategory",
+    "model": "conference_conferencecategory",
     "pk": 4
 },
 {
     "fields": {
+        "conference": 1,
         "description": "Environnement de travail, bureautique, utilitaires.",
         "name": "Poste de travail et bureautique",
         "slug": "poste-bureautique"
     },
-    "model": "proposals.proposalcategory",
+    "model": "conference_conferencecategory",
     "pk": 5
 },
 {
     "fields": {
+        "conference": 1,
         "description": "D\u00e9veloppement, bases de donn\u00e9es, pour la beaut\u00e9 du code.",
         "name": "Technique",
         "slug": "technique"
     },
-    "model": "proposals.proposalcategory",
+    "model": "conference_conferencecategory",
     "pk": 6
 },
 {
     "fields": {
+        "conference": 1,
         "description": "Inaugur\u00e9e en 2014, sera renouvel\u00e9e et abordera Docker, le cloud libre.",
         "name": "DevOps",
         "slug": "devops"
     },
-    "model": "proposals.proposalcategory",
+    "model": "conference_conferencecategory",
     "pk": 7
 },
 {
     "fields": {
+        "conference": 1,
         "description": "(Re)d\u00e9couverte des Arduino, Raspberry Pi, objets connect\u00e9s, mais aussi l'embarqu\u00e9.",
         "name": "Internet Of Things & embarqu\u00e9",
         "slug": "iot-embarque"
     },
-    "model": "proposals.proposalcategory",
+    "model": "conference_conferencecategory",
     "pk": 8
 },
 {
     "fields": {
+        "conference": 1,
         "description": "NodeJS, ReactJS, AngularJS, le Web change tous les jours.",
         "name": "Technologies Web",
         "slug": "web"
     },
-    "model": "proposals.proposalcategory",
+    "model": "conference_conferencecategory",
     "pk": 9
 },
 {
     "fields": {
+        "conference": 1,
         "description": "Environnement de travail, bureautique, utilitaires.",
         "name": "Akademy-FR",
         "slug": "akademy-fr"
     },
-    "model": "proposals.proposalcategory",
+    "model": "conference_conferencecategory",
     "pk": 10
 },
 {
     "fields": {
+        "conference": 1,
         "description": "Blender, Krita, Gimp, Inkscape, Freecad, Synfig, la réalisation d'oeuvres artistiques avec des outils libres.",
         "name": "Création graphique avec des outils libres",
         "slug": "animation"
     },
-    "model": "proposals.proposalcategory",
+    "model": "conference_conferencecategory",
     "pk": 11
 }
 ]
