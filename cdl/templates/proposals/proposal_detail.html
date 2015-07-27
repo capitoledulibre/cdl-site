@@ -3,8 +3,11 @@
 {% load i18n %}
 {% load account_tags %}
 {% load bootstrap %}
+{% load markitup_tags %}
 
 {% block head_title %}{{ proposal.title }}{% endblock %}
+
+{% block extra_head %}{% markitup_media %}{% endblock %}
 
 {% block body %}
     <div class="pull-right">

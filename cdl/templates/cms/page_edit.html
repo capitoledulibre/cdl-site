@@ -3,10 +3,13 @@
 {% load sitetree %}
 {% load i18n %}
 {% load bootstrap %}
+{% load markitup_tags %}
 
 {% block body_class %}cms-page{% endblock %}
 
 {% block head_title %}{% trans "Create Page" %}{% endblock %}
+
+{% block extra_head %}{% markitup_media %}{% endblock %}
 
 {% block page_title %}{% trans "Edit page at:" %} {{ path }}{% endblock %}
 {% block breadcrumbs %}{% sitetree_breadcrumbs from "main" %}{% endblock %}

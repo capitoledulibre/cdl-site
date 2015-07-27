@@ -2,6 +2,8 @@
 {% load i18n %}
 
 {% if form %}
+{% block extra_head %}{% markitup_media %}{% endblock %}
+
     <div id="edit_{{ label }}" class="modal fade">
         <div class="modal-dialog modal-lg">
         <div class="modal-content">

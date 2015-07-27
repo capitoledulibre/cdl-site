@@ -6,6 +6,8 @@
 
 {% block head_title %}Editing {{ proposal.title }}{% endblock %}
 
+{% block extra_head %}{% markitup_media %}{% endblock %}
+
 {% block body %}
     <h1>Edit: {{ proposal.title }}</h1>
 

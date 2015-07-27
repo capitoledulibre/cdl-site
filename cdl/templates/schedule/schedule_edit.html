@@ -1,8 +1,11 @@
 {% extends "site_base.html" %}
 
 {% load i18n %}
+{% load markitup_tags %}
 
 {% block head_title %}Conference Schedule Edit{% endblock %}
+
+{% block extra_head %}{% markitup_media %}{% endblock %}
 
 {% block body_class %}full{% endblock %}
 

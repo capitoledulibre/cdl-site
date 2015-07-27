@@ -12,8 +12,9 @@
             height: 100px;
         }
     </style>
-
 {% endblock %}
+
+{% block extra_head %}{% markitup_media %}{% endblock %}
 
 {% block body %}
     {% if request.user.is_staff %}
