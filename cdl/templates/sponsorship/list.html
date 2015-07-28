@@ -9,44 +9,82 @@
 
 {% block body_class %}sponsorships{% endblock %}
 
-{% block body_outer %}
+{% block body %}
     <h1>{% trans "About Our Sponsors" %}</h1>
     {% box "sponsor_before" %}
-    <a href="{% url "cms_page" "partenariat/devenir-sponsor/" %}" class="btn">{% trans "Learn how to become a sponsor" %} <span class="glyphicon glyphicon-arrow"></span></a>
 
-    {% sponsor_levels as levels %}
-    {% for level in levels %}
-      {% if level.sponsors %}
-      <h2><small>Sponsor</small> {{ level.name }}</h2>
+    {% sponsors "Diamant" as sponsors_diamant %}
+    {% sponsors "Platine" as sponsors_platine %}
+    {% sponsors "Or" as sponsors_or %}
+    {% sponsors "Argent" as sponsors_argent %}
+    {% sponsors "Bronze" as sponsors_bronze %}
+
+    {% if sponsors_diamant %}
+      <h2><small>Sponsor</small> Diamant</h2>
       <div class="row">
-
-        {% for sponsor in level.sponsors|dictsort:"name"  %}
-          {% if sponsor.website_logo %}
-            {% if level.name == "Or" %}{{ sponsor }}
-              <div class="col-sm-4 col-lg-3">
-                <h3>{% include "sponsorship/_sponsor_logo_or_name.html" %}</h3>
-              </div>
-              <div class="col-sm-8 col-lg-9">
-                <div>{{ sponsor.listing_text|urlize|linebreaks }}</div>
-                <p><a href="{{ sponsor.external_url }}" target="_blank">{{ sponsor.external_url }}</a></p>
-              </div>
-            {% elif level.name == "Argent" %}
-              <div class="col-sm-6">
-                    <h3>{% include "sponsorship/_sponsor_logo_or_name.html" %}</h3>
-                <div>{{ sponsor.listing_text|urlize|linebreaks }}</div>
-                <p><a href="{{ sponsor.external_url }}" target="_blank">{{ sponsor.external_url }}</a></p>
-              </div>
-
-            {% elif level.name == "Bronze" %}
-              <div class="col-xs-6 col-sm-3">
-                <h3>{% include "sponsorship/_sponsor_logo_or_name.html" %}</h3>
-              </div>
-            {% endif %}
-          {% endif %}
+        {% for sponsor in sponsors_diamant|dictsort:"name"  %}
+          <div class="col-sm-3 col-lg-2">
+            <h3>{% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="220x220" %}</h3>
+          </div>
+          <div class="col-sm-9 col-lg-10">
+            <div>{{ sponsor.listing_text|urlize|linebreaks }}</div>
+            <p><a href="{{ sponsor.external_url }}" target="_blank">{{ sponsor.external_url }}</a></p>
+          </div>
         {% endfor %}
       </div>
-      {% endif %}
-    {% endfor %}
+    {% endif %}
+    {% if sponsors_platine %}
+      <h2><small>Sponsor</small> Platine</h2>
+      <div class="row">
+        {% for sponsor in sponsors_platine|dictsort:"name"  %}
+          <div class="col-sm-3 col-lg-2">
+            <h3>{% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="180x180" %}</h3>
+          </div>
+          <div class="col-sm-9 col-lg-10">
+            <div>{{ sponsor.listing_text|urlize|linebreaks }}</div>
+            <p><a href="{{ sponsor.external_url }}" target="_blank">{{ sponsor.external_url }}</a></p>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if sponsors_or %}
+      <h2><small>Sponsor</small> Or</h2>
+      <div class="row">
+        {% for sponsor in sponsors_or|dictsort:"name"  %}
+          <div class="col-sm-6 col-lg-4">
+            <h3>{% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="120x120" %}</h3>
+            <div>{{ sponsor.listing_text|urlize|linebreaks }}</div>
+            <p><a href="{{ sponsor.external_url }}" target="_blank">{{ sponsor.external_url }}</a></p>
+          </div>
+          <div class="{% cycle '' 'clearfix' %} visible-sm visible-md"></div>
+          <div class="{% cycle '' '' 'clearfix' %} visible-lg"></div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+
+    {% if sponsors_argent %}
+      <h2><small>Sponsor</small> Argent</h2>
+      <div class="row">
+        {% for sponsor in sponsors_argent|dictsort:"name"  %}
+          <div class="col-xs-6 col-sm-4 col-lg-3">
+            <h3>{% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="200x200" %}</h3>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if sponsors_bronze %}
+      <h2><small>Sponsor</small> Bronze</h2>
+      <div class="row">
+        {% for sponsor in sponsors_bronze|dictsort:"name"  %}
+          <div class="col-xs-6 col-sm-3 col-lg-2">
+            <h3>{% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="140x140" %}</h3>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
 
 {% endblock %}
 

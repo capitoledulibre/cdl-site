@@ -8,17 +8,31 @@
 
 <div class="sponsor-list">
     {% box "sponsor-top" %}
-    {% for level in levels %}
-        {% if level.sponsors %}
-            <h3 style="margin-top: 3em;">{{ level.name }}</h3>
-\
-            {% for sponsor in level.sponsors %}
-                <div style="margin: 10px 0;">
-                    <a href="{{ sponsor.external_url }}">
-                        <img src="{% thumbnail sponsor.website_logo '100x60' %}" alt="{{ sponsor.name }}" />
-                    </a>
-                </div>
-            {% endfor %}
-        {% endif %}
-    {% endfor %}
+    {% sponsors "Diamant" as sponsors_diamant %}
+    {% sponsors "Platine" as sponsors_platine %}
+    {% sponsors "Or" as sponsors_or %}
+    {% if sponsors_diamant %}
+      <h3>Diamant</h3>
+      {% for sponsor in sponsors_diamant %}
+          <div>
+              {% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="180x180" %}
+          </div>
+      {% endfor %}
+    {% endif %}
+    {% if sponsors_platines %}
+      <h3>Platine</h3>
+      {% for sponsor in sponsors_platine %}
+          <div>
+              {% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="150x150" %}
+          </div>
+      {% endfor %}
+    {% endif %}
+    {% if sponsors_or %}
+      <h3>Or</h3>
+      {% for sponsor in sponsors_or %}
+          <div>
+              {% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="100x100" %}
+          </div>
+      {% endfor %}
+    {% endif %}
 </div>
