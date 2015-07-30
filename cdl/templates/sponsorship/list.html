@@ -24,7 +24,8 @@
       <div class="row">
         {% for sponsor in sponsors_diamant|dictsort:"name"  %}
           <div class="col-sm-3 col-lg-2">
-            <h3>{% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="220x220" %}</h3>
+            <!-- <h3>{% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="220x220" %}</h3> -->
+            <h3>{% include "sponsorship/_sponsor_logo_or_name.html" with sponsor=sponsor width="220" %}</h3>
           </div>
           <div class="col-sm-9 col-lg-10">
             <div>{{ sponsor.listing_text|urlize|linebreaks }}</div>
@@ -38,7 +39,8 @@
       <div class="row">
         {% for sponsor in sponsors_platine|dictsort:"name"  %}
           <div class="col-sm-3 col-lg-2">
-            <h3>{% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="180x180" %}</h3>
+            <!-- <h3>{% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="180x180" %}</h3> -->
+            <h3>{% include "sponsorship/_sponsor_logo_or_name.html" with sponsor=sponsor width="180" %}</h3>
           </div>
           <div class="col-sm-9 col-lg-10">
             <div>{{ sponsor.listing_text|urlize|linebreaks }}</div>
@@ -53,7 +55,8 @@
       <div class="row">
         {% for sponsor in sponsors_or|dictsort:"name"  %}
           <div class="col-sm-3 col-lg-2">
-            <h3>{% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="120x120" %}</h3>
+            <!-- <h3>{% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="120x120" %}</h3> -->
+            <h3>{% include "sponsorship/_sponsor_logo_or_name.html" with sponsor=sponsor width="120" %}</h3>
           </div>
           <div class="col-sm-9 col-lg-10">
             <div>{{ sponsor.listing_text|urlize|linebreaks }}</div>
@@ -71,7 +74,8 @@
       <div class="row">
         {% for sponsor in sponsors_argent|dictsort:"name"  %}
           <div class="col-xs-6 col-sm-4 col-lg-3">
-            <h3>{% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="200x200" %}</h3>
+            <!-- <h3>{% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="200x200" %}</h3> -->
+            <h3>{% include "sponsorship/_sponsor_logo_or_name.html" %}</h3>
           </div>
         {% endfor %}
       </div>
@@ -82,7 +86,8 @@
       <div class="row">
         {% for sponsor in sponsors_bronze|dictsort:"name"  %}
           <div class="col-xs-6 col-sm-3 col-lg-2">
-            <h3>{% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="140x140" %}</h3>
+            <!-- <h3>{% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="140x140" %}</h3> -->
+            <h3>{% include "sponsorship/_sponsor_logo_or_name.html" %}</h3>
           </div>
         {% endfor %}
       </div>
