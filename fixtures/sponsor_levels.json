@@ -7,7 +7,7 @@
             "description": "",
             "cost": 1000,
             "name": "Or",
-            "order": 0
+            "order": 30
         }
     },
     {
@@ -18,7 +18,7 @@
             "description": "",
             "cost": 4000,
             "name": "Institutionnel",
-            "order": 0
+            "order": 5
         }
     },
     {
@@ -29,7 +29,7 @@
             "description": "",
             "cost": 600,
             "name": "Argent",
-            "order": 1
+            "order": 40
         }
     },
     {
@@ -40,7 +40,29 @@
             "description": "",
             "cost": 250,
             "name": "Bronze",
-            "order": 2
+            "order": 50
+        }
+    },
+    {
+        "pk": 4,
+        "model": "symposion_sponsorship.sponsorlevel",
+        "fields": {
+            "conference": 1,
+            "description": "",
+            "cost": 2000,
+            "name": "Platine",
+            "order": 20
+        }
+    },
+    {
+        "pk": 5,
+        "model": "symposion_sponsorship.sponsorlevel",
+        "fields": {
+            "conference": 1,
+            "description": "",
+            "cost": 4000,
+            "name": "Diamant",
+            "order": 10
         }
     }
 ]
