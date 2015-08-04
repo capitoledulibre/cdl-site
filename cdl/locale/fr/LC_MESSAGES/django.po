@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-22 10:47+0200\n"
+"POT-Creation-Date: 2015-08-04 15:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,57 +21,53 @@ msgstr ""
 msgid "The description must be less than 400 characters"
 msgstr "La description doit être de moins de 400 caractères"
 
-#: proposals/models.py:18
+#: proposals/models.py:19
 msgid "Capitole du Libre proposal category"
 msgstr "Catégorie de propositions pour le Capitole du Libre"
 
-#: proposals/models.py:19
+#: proposals/models.py:20
 msgid "Capitole du Libre proposal categories"
 msgstr "Catégories de propositions pour le Capitole du Libre"
 
-#: proposals/models.py:29
+#: proposals/models.py:30
 msgid "Novice"
 msgstr "Débutant"
 
-#: proposals/models.py:30
+#: proposals/models.py:31
 msgid "Intermediate"
 msgstr "Intermédiaire"
 
-#: proposals/models.py:31
+#: proposals/models.py:32
 msgid "Experienced"
 msgstr "Confirmé"
 
-#: proposals/models.py:37
+#: proposals/models.py:46
 msgid "Audience level"
 msgstr "Niveau du Public"
 
-#: proposals/models.py:41
+#: proposals/models.py:50
 msgid "Prerequistes"
 msgstr "Prérequis"
 
-#: proposals/models.py:42
+#: proposals/models.py:51
 msgid "If Prerequistes are needed to follow this talk or workshop."
 msgstr ""
 "Indiquez si des pré-requis sont nécessaires pour suivre cette conférence ou "
 "atelier."
 
-#: proposals/models.py:47
-msgid "Technical information"
-msgstr "Informations techniques"
-
-#: proposals/models.py:48
-msgid ""
-"Specify definition screen, computer output, if you need a computer. Won't be "
-"public."
+#: proposals/models.py:63
+msgid "Broadcast audio"
 msgstr ""
-"Indiquez si vous avez besoin d'un PC, et sinon la définition d'écran, la "
-"sortie vidéo."
 
-#: proposals/models.py:53
+#: proposals/models.py:65
+msgid "Do you need audio material to broadcast audio ?"
+msgstr ""
+
+#: proposals/models.py:69
 msgid "Recording release"
 msgstr "Enregistrement vidéo"
 
-#: proposals/models.py:55
+#: proposals/models.py:71
 msgid ""
 "By submitting your proposal, you agree to give permission to the conference "
 "organizers to record, edit, and release audio and/or video of your "
@@ -82,40 +78,40 @@ msgstr ""
 "ou vidéo de votre présentation. Si vous n'êtes pas d'accord avec ceci, vous "
 "pouvez décocher cette case."
 
-#: proposals/models.py:68 proposals/models.py:82
+#: proposals/models.py:84 proposals/models.py:98
 msgid "No preference"
 msgstr "Pas de préférence"
 
-#: proposals/models.py:69
+#: proposals/models.py:85
 msgid "I prefer a 20 minute slot"
 msgstr "Je préfère un créneau de 20 minutes"
 
-#: proposals/models.py:70
+#: proposals/models.py:86
 msgid "I prefer a 50 minute slot"
 msgstr "Je préfère un créneau de 50 minutes"
 
-#: proposals/models.py:73 proposals/models.py:87
+#: proposals/models.py:89 proposals/models.py:103
 #: templates/proposals/_proposal_fields.html:13
 msgid "Duration"
 msgstr "Durée"
 
-#: proposals/models.py:76
+#: proposals/models.py:92
 msgid "talk proposal"
 msgstr "proposition de conférence"
 
-#: proposals/models.py:83
+#: proposals/models.py:99
 msgid "I prefer a 1h20 slot"
 msgstr "Je préfère un créneau d'1h20"
 
-#: proposals/models.py:84
+#: proposals/models.py:100
 msgid "I prefer a 2h50 slot"
 msgstr "Je préfère un créneau d'2h50"
 
-#: proposals/models.py:90
+#: proposals/models.py:106
 msgid "tutorial proposal"
 msgstr "proposition d'atelier"
 
-#: proposals/models.py:101
+#: proposals/models.py:117
 msgid "stand proposal"
 msgstr "proposition de stand"
 
@@ -127,8 +123,8 @@ msgstr "Français"
 msgid "English"
 msgstr "Anglais"
 
-#: templates/_account_bar.html:14 templates/dashboard.html:8
-#: templates/dashboard.html.py:13
+#: templates/_account_bar.html:14 templates/dashboard.html:9
+#: templates/dashboard.html.py:14
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
@@ -162,7 +158,7 @@ msgstr "Connexion à un compte existant"
 msgid "Forgot your password?"
 msgstr "Mot de passe oublié ?"
 
-#: templates/boxes/box.html:11
+#: templates/boxes/box.html:13
 msgid "Editing content:"
 msgstr "Éditer le contenu :"
 
@@ -170,15 +166,15 @@ msgstr "Éditer le contenu :"
 msgid "Upload"
 msgstr "Téléverser"
 
-#: templates/cms/page_edit.html:9
+#: templates/cms/page_edit.html:10
 msgid "Create Page"
 msgstr "Créer la page"
 
-#: templates/cms/page_edit.html:11
+#: templates/cms/page_edit.html:14
 msgid "Edit page at:"
 msgstr "Modifier la page à :"
 
-#: templates/cms/page_edit.html:19
+#: templates/cms/page_edit.html:22
 #: templates/proposals/proposal_submit_kind.html:23
 #: templates/sponsorship/detail.html:39
 msgid "Save"
@@ -216,90 +212,90 @@ msgstr "Besoin d'un hébergement ?"
 msgid "Annotations"
 msgstr "Annotations"
 
-#: templates/dashboard.html:18
+#: templates/dashboard.html:19
 msgid "Speaking"
 msgstr "Conférence"
 
-#: templates/dashboard.html:26
+#: templates/dashboard.html:27
 msgid "Create a speaker profile"
 msgstr "Créer votre profil d'intervenant"
 
-#: templates/dashboard.html:30
+#: templates/dashboard.html:31
 msgid "Edit your speaker profile"
 msgstr "Modifier votre profil d'intervenant"
 
-#: templates/dashboard.html:33
+#: templates/dashboard.html:34
 msgid "Submit a new proposal"
 msgstr "Soumettre une proposition"
 
-#: templates/dashboard.html:40
+#: templates/dashboard.html:41
 msgid "Your Proposals"
 msgstr "Vos propositions"
 
-#: templates/dashboard.html:45 templates/dashboard.html.py:69
-#: templates/dashboard.html:87
+#: templates/dashboard.html:46 templates/dashboard.html.py:70
+#: templates/dashboard.html:88
 msgid "Title"
 msgstr "Titre"
 
-#: templates/dashboard.html:46 templates/dashboard.html.py:70
-#: templates/dashboard.html:88
+#: templates/dashboard.html:47 templates/dashboard.html.py:71
+#: templates/dashboard.html:89
 msgid "Session type"
 msgstr "Type de session"
 
-#: templates/dashboard.html:47 templates/dashboard.html.py:71
-#: templates/dashboard.html:89 templates/reviews/result_notification.html:47
+#: templates/dashboard.html:48 templates/dashboard.html.py:72
+#: templates/dashboard.html:90 templates/reviews/result_notification.html:47
 msgid "Status"
 msgstr "Statut"
 
-#: templates/dashboard.html:48 templates/dashboard.html.py:72
-#: templates/dashboard.html:90
+#: templates/dashboard.html:49 templates/dashboard.html.py:73
+#: templates/dashboard.html:91
 msgid "Actions"
 msgstr "Actions"
 
-#: templates/dashboard.html:60
+#: templates/dashboard.html:61
 msgid "No proposals submitted yet."
 msgstr "Aucune proposition pour le moment."
 
-#: templates/dashboard.html:65
+#: templates/dashboard.html:66
 msgid "Proposals you have joined as an additional speaker"
 msgstr ""
 "Propositions auxquelles vous avez participé en tant qu'intervenant addionnel"
 
-#: templates/dashboard.html:83
+#: templates/dashboard.html:84
 msgid "Proposals you have been invited to join"
 msgstr "Propositions que vous avez été invité(e) à rejoindre"
 
-#: templates/dashboard.html:108 templates/reviews/review_detail.html:75
+#: templates/dashboard.html:109 templates/reviews/review_detail.html:76
 msgid "Reviews"
 msgstr "Votes"
 
-#: templates/dashboard.html:113
+#: templates/dashboard.html:114
 msgid "Review Sections"
 msgstr "Catégorie de propositions"
 
-#: templates/dashboard.html:125
+#: templates/dashboard.html:126
 msgid "Proposals you have reviewed"
 msgstr "Propositions que vous avez évaluées"
 
-#: templates/dashboard.html:133 templates/reviews/_review_table.html:6
+#: templates/dashboard.html:134 templates/reviews/_review_table.html:6
 #: templates/reviews/result_notification.html:45
 msgid "Speaker / Title"
 msgstr "Intervenant / Titre"
 
-#: templates/dashboard.html:134
+#: templates/dashboard.html:135
 msgid "Your Vote"
 msgstr "Votre Vote"
 
-#: templates/dashboard.html:187 templates/sponsorship/detail.html:8
+#: templates/dashboard.html:188 templates/sponsorship/detail.html:8
 #: templates/sponsorship/list.html:8
 msgid "Sponsorship"
 msgstr "Partenariat"
 
-#: templates/dashboard.html:195
+#: templates/dashboard.html:196
 msgid "Apply to be a sponsor"
 msgstr "Devenir Sponsor"
 
-#: templates/dashboard.html:201
+#: templates/dashboard.html:202
 #, python-format
 msgid ""
 "If you or your organization would be interested in sponsorship "
@@ -310,23 +306,27 @@ msgstr ""
 "voustrouverez toutes les informations sur <a href=\"%(SITE_BASE)s/partenariat"
 "\">la page partenariats</a>."
 
-#: templates/dashboard.html:203
+#: templates/dashboard.html:204
 msgid "Your Sponsorship"
-msgstr "Partenariat"
+msgstr "Votre partenariat"
 
-#: templates/dashboard.html:217
+#: templates/dashboard.html:218
 msgid "As staff, you can directly"
 msgstr "En tant que membre de l'équipe, vous pouvez directement"
 
-#: templates/dashboard.html:229
+#: templates/dashboard.html:221
+msgid "All Sponsorship"
+msgstr "Tous les partenaires"
+
+#: templates/dashboard.html:246
 msgid "Teams"
 msgstr "Équipes"
 
-#: templates/dashboard.html:235
+#: templates/dashboard.html:252
 msgid "Your Teams"
 msgstr "Équipes dont vous faîtes partie"
 
-#: templates/dashboard.html:258
+#: templates/dashboard.html:275
 msgid "Available Teams"
 msgstr "Équipes disponibles"
 
@@ -380,7 +380,7 @@ msgstr "Bienvenue"
 
 #: templates/proposals/_pending_proposal_row.html:12
 #: templates/proposals/_proposal_row.html:12
-#: templates/proposals/proposal_detail.html:25
+#: templates/proposals/proposal_detail.html:28
 msgid "Cancelled"
 msgstr "Annulée"
 
@@ -451,7 +451,7 @@ msgid "Documents"
 msgstr "Documents"
 
 #: templates/proposals/_proposal_fields.html:60
-#: templates/proposals/proposal_detail.html:64
+#: templates/proposals/proposal_detail.html:67
 msgid "No supporting documents attached to this proposal."
 msgstr "Aucun document attaché à cette proposition."
 
@@ -483,65 +483,65 @@ msgstr "Confirmer l'annulation de <b>{{ proposal.title }}</b>? "
 msgid "No, keep it for now"
 msgstr "Non, maintenir la proposition"
 
-#: templates/proposals/proposal_detail.html:14
+#: templates/proposals/proposal_detail.html:17
 msgid "Edit this proposal"
 msgstr "Modifier cette proposition"
 
-#: templates/proposals/proposal_detail.html:17
+#: templates/proposals/proposal_detail.html:20
 msgid "Cancel this proposal"
 msgstr "Annuler cette proposition"
 
-#: templates/proposals/proposal_detail.html:21
+#: templates/proposals/proposal_detail.html:24
 msgid "Remove me from this proposal"
 msgstr "Me supprimer de cette proposition"
 
-#: templates/proposals/proposal_detail.html:29
+#: templates/proposals/proposal_detail.html:32
 msgid "by"
 msgstr "par"
 
-#: templates/proposals/proposal_detail.html:33
-#: templates/reviews/review_detail.html:74
+#: templates/proposals/proposal_detail.html:36
+#: templates/reviews/review_detail.html:75
 msgid "Proposal Details"
 msgstr "Détail de la proposition"
 
-#: templates/proposals/proposal_detail.html:35
-#: templates/proposals/proposal_detail.html:47
+#: templates/proposals/proposal_detail.html:38
+#: templates/proposals/proposal_detail.html:50
 msgid "Supporting Documents"
 msgstr "Documents de Support"
 
-#: templates/proposals/proposal_detail.html:38
+#: templates/proposals/proposal_detail.html:41
 msgid "Reviewer Feedback"
 msgstr "Dialogue avec les relecteurs"
 
-#: templates/proposals/proposal_detail.html:57
+#: templates/proposals/proposal_detail.html:60
 msgid "delete"
 msgstr "supprimer"
 
-#: templates/proposals/proposal_detail.html:66
+#: templates/proposals/proposal_detail.html:69
 msgid "Add Document"
 msgstr "Ajouter un Document"
 
-#: templates/proposals/proposal_detail.html:73
+#: templates/proposals/proposal_detail.html:76
 msgid "Conversation with Reviewers"
 msgstr "Discussion avec le comité"
 
-#: templates/proposals/proposal_detail.html:83
+#: templates/proposals/proposal_detail.html:86
 msgid "Leave a Message"
 msgstr "Laisser un message"
 
-#: templates/proposals/proposal_detail.html:85
+#: templates/proposals/proposal_detail.html:88
 msgid "You can leave a message for the reviewers here."
 msgstr "Vous pouvez laisser un messages aux relecteurs"
 
-#: templates/proposals/proposal_detail.html:93
+#: templates/proposals/proposal_detail.html:96
 msgid "Submit"
 msgstr "Valider"
 
-#: templates/proposals/proposal_edit.html:12
+#: templates/proposals/proposal_edit.html:14
 msgid "Manage speakers"
 msgstr "Gérer les intervenants"
 
-#: templates/proposals/proposal_edit.html:21 templates/sponsorship/add.html:19
+#: templates/proposals/proposal_edit.html:23 templates/sponsorship/add.html:19
 #: templates/sponsorship/detail.html:40
 msgid "Cancel"
 msgstr "Annuler"
@@ -636,31 +636,31 @@ msgstr "Statut du vote"
 msgid "Notified?"
 msgstr "Notifié ?"
 
-#: templates/reviews/review_detail.html:76
+#: templates/reviews/review_detail.html:77
 msgid "Speaker Feedback"
 msgstr "Dialogue avec l'intervenant"
 
-#: templates/reviews/review_detail.html:84
+#: templates/reviews/review_detail.html:85
 msgid "Current Results"
 msgstr "Résultats courants"
 
-#: templates/reviews/review_detail.html:91
+#: templates/reviews/review_detail.html:92
 msgid "Total Responses"
 msgstr "Total des réponses"
 
-#: templates/reviews/review_detail.html:108
+#: templates/reviews/review_detail.html:109
 msgid "Submit Review"
 msgstr "Soumettre le vote"
 
-#: templates/reviews/review_detail.html:148
+#: templates/reviews/review_detail.html:149
 msgid "Conversation with the submitter"
 msgstr "Discussion avec le soumetteur"
 
-#: templates/reviews/review_detail.html:162
+#: templates/reviews/review_detail.html:163
 msgid "Send a message"
 msgstr "Envoyer un message"
 
-#: templates/reviews/review_detail.html:164
+#: templates/reviews/review_detail.html:165
 msgid ""
 "\n"
 "                            If you'd like to communicate with the submitter, "
@@ -711,9 +711,18 @@ msgstr "avantages"
 msgid "About Our Sponsors"
 msgstr "Partenariat"
 
-#: templates/sponsorship/list.html:15
-msgid "Learn how to become a sponsor"
-msgstr "Découvrez comment devenir Sponsor"
+#~ msgid "Technical information"
+#~ msgstr "Informations techniques"
+
+#~ msgid ""
+#~ "Specify definition screen, computer output, if you need a computer. Won't "
+#~ "be public."
+#~ msgstr ""
+#~ "Indiquez si vous avez besoin d'un PC, et sinon la définition d'écran, la "
+#~ "sortie vidéo."
+
+#~ msgid "Learn how to become a sponsor"
+#~ msgstr "Découvrez comment devenir Sponsor"
 
 #~ msgid "I prefer a 3h slot"
 #~ msgstr "Je préfère un créneau de 3h"

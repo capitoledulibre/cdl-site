@@ -4,6 +4,7 @@
 {% load proposal_tags %}
 {% load review_tags %}
 {% load teams_tags %}
+{% load sponsorship_tags %}
 
 {% block head_title %}{% trans "Dashboard" %}{% endblock %}
 
@@ -215,6 +216,22 @@
             {% if user.is_staff %}
                 <p>{% trans "As staff, you can directly" %} <a href="{% url "sponsor_add" %}">add a sponsor</a></p>
             {% endif %}
+            {% if user.is_superuser %}
+                <h4>{% trans "All Sponsorship" %}</h4>
+                <ul>
+                  {% sponsors as sponsors %}
+                    {% for sponsorship in sponsors %}
+                        <li>
+                            <a href="{% url "sponsor_detail" sponsorship.pk %}"><b>{{ sponsorship.name }}</b></a>
+                            ({{ sponsorship.level }})
+                            {% if not sponsorship.active %}
+                                <span class="label label-warning">awaiting approval</span>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+
+            {% endif %}
         </div>
         </div>
     </div>
@@ -228,7 +245,7 @@
                     <a data-toggle="collapse" href="#collapseTeams">{% trans "Teams" %}</a></h3>
             </div>
 
-            <div id="collapseTeams" class="panel-collapse collapse in">
+            <div id="collapseTeams" class="panel-collapse collapse">
               <div class="panel-body">
                 {% if user.memberships.exists %}
                     <h4>{% trans "Your Teams" %}</h4>
