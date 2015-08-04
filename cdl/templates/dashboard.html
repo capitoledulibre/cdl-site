@@ -227,6 +227,9 @@
                             {% if not sponsorship.active %}
                                 <span class="label label-warning">awaiting approval</span>
                             {% endif %}
+                            {% if sponsorship.applicant.speaker_profile %}
+                              <em><small>suivi par {{ sponsorship.applicant.speaker_profile }}</small></em>
+                            {% endif %}
                         </li>
                     {% endfor %}
                 </ul>
