@@ -16,17 +16,17 @@
       {% for sponsor in sponsors_diamant %}
           <div>
               {# {% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="180x180" %} #}
-              {% include "sponsorship/_sponsor_logo_or_name.html" with sponsor=sponsor %} 
-		
+              {% include "sponsorship/_sponsor_logo_or_name.html" with sponsor=sponsor %}
+
           </div>
       {% endfor %}
     {% endif %}
-    {% if sponsors_platines %}
+    {% if sponsors_platine %}
       <h3>Platine</h3>
       {% for sponsor in sponsors_platine %}
           <div>
               {# {% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="150x150" %} #}
-              {% include "sponsorship/_sponsor_logo_or_name.html" with sponsor=sponsor %} 
+              {% include "sponsorship/_sponsor_logo_or_name.html" with sponsor=sponsor %}
           </div>
       {% endfor %}
     {% endif %}
@@ -35,7 +35,7 @@
       {% for sponsor in sponsors_or %}
           <div>
               {# {% include "sponsorship/_sponsor_link.html" with sponsor=sponsor dimensions="100x100" %} #}
-              {% include "sponsorship/_sponsor_logo_or_name.html" with sponsor=sponsor width="100" %} 
+              {% include "sponsorship/_sponsor_logo_or_name.html" with sponsor=sponsor width="100" %}
           </div>
       {% endfor %}
     {% endif %}
