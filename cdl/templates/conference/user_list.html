@@ -71,8 +71,8 @@
                 <td>{{ user.email }}</td>
                 <td>
                     {% if user.speaker_profile %}
-                        <a href="{% url "speaker_profile" user.speaker_profile.pk %}">{{ user.speaker_profile }}</a> &mdash;
-                        <small><a href="{% url "speaker_edit_staff" user.speaker_profile.pk %}" title="Edit" alt="Edit" >
+                        <a href="{% url "speaker_profile" pk=user.speaker_profile.pk %}">{{ user.speaker_profile }}</a> &mdash;
+                        <small><a href="{% url "speaker_edit" pk=user.speaker_profile.pk %}" title="Edit" alt="Edit" >
                             <span class="glyphicon glyphicon-pencil"></span> Edit</a></small>
                         <div><strong>{% trans "Annotations" %}</strong>
                           {{ user.speaker_profile.annotation|linebreaks }}</div>
