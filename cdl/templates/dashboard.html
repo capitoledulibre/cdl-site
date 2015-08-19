@@ -118,7 +118,7 @@
               <div class="panel-body">
                 <h4>{% trans "Review Sections" %}</h4>
 
-                <ul>
+                <ul class="nav inline">
                     {% for section in review_sections %}
                         <li><a href="{% url "review_section" section.section.slug %}">{{ section }}</a>  {{ section.proposals }}</li>
                     {% endfor %}
