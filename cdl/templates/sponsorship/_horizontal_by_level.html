@@ -4,9 +4,15 @@
 
 <div class="sponsor-list">
 {% for level in levels %}
+    {% if level.sponsors %}
     <h3>{{ level.name }}</h3>
-    {% for sponsor in level.sponsors %}
-        {% include "sponsorship/_sponsor_link.html" with sponsor=sponsor %}
-    {% endfor %}
+    <div class="row">
+      {% for sponsor in level.sponsors %}
+        <div class="col-xs-6 col-sm-3 col-lg-2">
+          {% include "sponsorship/_sponsor_logo_or_name.html" with sponsor=sponsor %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
 {% endfor %}
 </div>
