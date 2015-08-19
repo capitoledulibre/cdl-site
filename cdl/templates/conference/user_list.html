@@ -61,8 +61,8 @@
         	<th>{% trans "Organisation" %}</th>
         	<th>{% trans "Proposals" %}</th>
         	<th>{% trans "City" %}</th>
-        	<th>{% trans "Need travel ?" %}</th>
-        	<th>{% trans "Need hosting ?" %}</th>
+        	<th width="1%">{% trans "Need travel ?" %}</th>
+        	<th width="1%">{% trans "Need hosting ?" %}</th>
         </thead>
 
         <tbody>
@@ -74,8 +74,10 @@
                         <a href="{% url "speaker_profile" pk=user.speaker_profile.pk %}">{{ user.speaker_profile }}</a> &mdash;
                         <small><a href="{% url "speaker_edit" pk=user.speaker_profile.pk %}" title="Edit" alt="Edit" >
                             <span class="glyphicon glyphicon-pencil"></span> Edit</a></small>
+                          {% if user.speaker_profile.annotation %}
                         <div><strong>{% trans "Annotations" %}</strong>
                           {{ user.speaker_profile.annotation|linebreaks }}</div>
+                          {% endif %}
                     {% else %}
                         {{ user.get_full_name }} &mdash; <a href="{% url "speaker_create_staff" user.pk %}" class="btn btn-xs btn-default">create profile</a>
                     {% endif %}
@@ -88,14 +90,14 @@
                 <td><ul>{% for presentation in user.speaker_profile.all_presentations %}
                 <li><a href="{% url "schedule_presentation_detail" presentation.pk %}">#{{ presentation.proposal.number }}
                 &mdash; {{ presentation.title }}</a>
-                <strong>{% if not presentation.proposal.recording_release %}No video{% endif %}</strong>
                 <small>{{ presentation.proposal.kind }} {{ presentation.proposal.category }}</small>
+                <strong>{% if not presentation.proposal.recording_release %}No video{% endif %}</strong>
                 <a href="/admin/schedule/presentation/{{ presentation.pk }}" title="Edit" alt="Edit" >
                             <span class="glyphicon glyphicon-pencil"></span> Edit</a></li>
                 {% endfor %}</ul></td>
                 <td>{{ user.speaker_profile.city }}</td>
-                <td>{{ user.speaker_profile.need_travel }}</td>
-                <td>{{ user.speaker_profile.need_hosting }}</td>
+                <td>{% if user.speaker_profile.need_travel %}x{% endif %}</td>
+                <td>{% if user.speaker_profile.need_hosting %}x{% endif %}</td>
             </tr>
         {% endfor %}
         </tbody>

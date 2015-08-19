@@ -190,7 +190,7 @@ msgstr "Profil d'intervenant"
 
 #: templates/conference/user_list.html:61
 msgid "Organisation"
-msgstr "Durée"
+msgstr "Organisation"
 
 #: templates/conference/user_list.html:62
 msgid "Proposals"
