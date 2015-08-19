@@ -11,15 +11,17 @@
 {% block body_class %}auth{% endblock %}
 
 {% block body %}
-    <h2>{% trans "Dashboard" %}</h2>
+<h2>{% trans "Dashboard" %}</h2>
 
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title"><span class="glyphicon glyphicon-bullhorn"></span>
-              <a data-toggle="collapse" href="#collapseSpeaker">{% trans "Speaking" %}</a></h3>
+        <div class="panel-heading" role="tab" id="headingSpeaker">
+            <h3 class="panel-title">
+              <span class="glyphicon glyphicon-bullhorn"></span>
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSpeaker" aria-expanded="true" aria-controls="collapseSpeaker">{% trans "Speaking" %}</a></h3>
         </div>
 
-        <div id="collapseSpeaker" class="panel-collapse collapse in">
+        <div id="collapseSpeaker" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSpeaker">
         <div class="panel-body">
             <div class="pull-right header-actions">
                 {% if not user.speaker_profile %}
@@ -106,19 +108,19 @@
 
     {% if review_sections %}
         <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" role="tab" id="headingReview">
                 <h3 class="panel-title">
                     <i class="glyphicon glyphicon-briefcase"></i>
-                    <a data-toggle="collapse" href="#collapseReview">{% trans "Reviews" %}</a></h3>
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseReview" aria-expanded="false" aria-controls="collapseReview">{% trans "Reviews" %}</a></h3>
             </div>
 
-            <div id="collapseReview" class="panel-collapse collapse in">
+            <div id="collapseReview" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingReview">
               <div class="panel-body">
                 <h4>{% trans "Review Sections" %}</h4>
 
                 <ul>
                     {% for section in review_sections %}
-                        <li><a href="{% url "review_section" section.section.slug %}">{{ section }}</a></li>
+                        <li><a href="{% url "review_section" section.section.slug %}">{{ section }}</a>  {{ section.proposals }}</li>
                     {% endfor %}
                 </ul>
 
@@ -185,12 +187,14 @@
     {% endif %}
 
     <div class="panel panel-default">
-        <div class="panel-heading">
-            <i class="icon-briefcase"></i>
-            <h3 class="panel-title"><a data-toggle="collapse" href="#collapseSponsorship">{% trans "Sponsorship" %}</a></h3>
+        <div class="panel-heading" role="tab" id="headingSponsorship">
+          <h3 class="panel-title">
+            <i class="glyphicon glyphicon-briefcase"></i>
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSponsorship" aria-expanded="false" aria-controls="collapseSponsorship">
+              {% trans "Sponsorship" %}</a></h3>
         </div>
 
-        <div id="collapseSponsorship" class="panel-collapse collapse in">
+        <div id="collapseSponsorship" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSponsorship">
         <div class="panel-body">
         <p class="header-actions">
             {% if not user.sponsorships.exists %}
@@ -245,13 +249,13 @@
     {% available_teams as available_teams %}
     {% if user.memberships.exists or available_teams %}
         <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" role="tab" id="headingTeams">
                 <h3 class="panel-title">
                     <i class="fa fa-group"></i>
-                    <a data-toggle="collapse" href="#collapseTeams">{% trans "Teams" %}</a></h3>
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTeams" aria-expanded="false" aria-controls="collapseTeams">{% trans "Teams" %}</a></h3>
             </div>
 
-            <div id="collapseTeams" class="panel-collapse collapse">
+            <div id="collapseTeams" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTeams">
               <div class="panel-body">
                 {% if user.memberships.exists %}
                     <h4>{% trans "Your Teams" %}</h4>
@@ -301,4 +305,6 @@
             </div>
         </div>
     {% endif %}
+
+</div>
 {% endblock %}

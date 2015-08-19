@@ -271,7 +271,7 @@ msgstr "Votes"
 
 #: templates/dashboard.html:114
 msgid "Review Sections"
-msgstr "Catégorie de propositions"
+msgstr "Types de propositions"
 
 #: templates/dashboard.html:126
 msgid "Proposals you have reviewed"
