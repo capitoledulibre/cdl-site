@@ -100,7 +100,10 @@
                 {% endif %}
             {% endif %}
             {% if user.is_staff %}
-                <p>En tant qu'administrateur, vous pouvez avoir accès à la <a href="{% url "user_list" %}">liste de tous les utilisateurs</a></p>
+                <p>En tant qu'administrateur, vous pouvez avoir accès à la
+                  <a href="{% url "user_list" %}">liste de tous les utilisateurs</a>
+                  ou encore la
+                  <a href="{% url "speaker_list" %}">liste des intervenants seulement</a>.</p>
             {% endif %}
         </div>
         </div>
