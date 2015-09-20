@@ -65,6 +65,7 @@
         </thead>
 
         <tbody>
+          {{ additional_speakers }}
         {% for speaker in speakers %}
             <tr>
                 <td>
@@ -79,20 +80,42 @@
                 {{ speaker.organisation }}
                 </td>
                 <td>
-                  <ul>{% for presentation in speaker.all_presentations %}
-                <li>#{{ presentation.proposal.number }}
-                {{ presentation.proposal.kind }} &mdash; {{ presentation.title }}
-                <a href="{% url "schedule_presentation_detail" presentation.pk %}"><span class="glyphicon glyphicon-link"></span></a>
-                <small>{{ presentation.proposal.category }}</small>
-                <strong>{% if not presentation.proposal.recording_release %}No video{% endif %}</strong>
-                <a href="/admin/schedule/presentation/{{ presentation.pk }}" title="Edit" alt="Edit" >
-                            <span class="glyphicon glyphicon-pencil"></span> Edit</a></li>
-                {% endfor %}</ul>
-                <hr/>
-                  <ul>Propositions {% for proposal in speaker.proposals.all %}
-                    <li class="text-muted"><small>{{ proposal.kind }} : {{ proposal.title }}
-                      <a href="{% url "review_detail" proposal.pk %}"><span class="glyphicon glyphicon-link"></span></a></small></li>
-                    {% endfor %}</ul>
+                  {% if speaker.all_presentations or speaker.copresentations_set %}
+                    <strong>Présentations validées</strong>
+                    <ul>
+                      {% for presentation in speaker.all_presentations %}
+                        <li>
+                          #{{ presentation.proposal.number }}
+                          {{ presentation.proposal.kind }} &mdash; {{ presentation.title }}
+                          <a href="{% url "schedule_presentation_detail" presentation.pk %}"><span class="glyphicon glyphicon-link"></span></a>
+                          <small>{{ presentation.proposal.category }}</small>
+                          <strong>{% if not presentation.proposal.recording_release %}No video{% endif %}</strong>
+                          <a href="/admin/schedule/presentation/{{ presentation.pk }}" title="Edit" alt="Edit" >
+                          <span class="glyphicon glyphicon-pencil"></span> Edit</a>
+                        </li>
+                      {% endfor %}
+                      {% for presentation in speaker.copresentations_set.all %}
+                        <li>
+                          #{{ presentation.proposal.number }}
+                          {{ presentation.proposal.kind }} &mdash; {{ presentation.title }} (with {{ presentation.speaker }})
+                        </li>
+                      {% endfor %}
+                    </ul>
+                    <hr/>
+                  {% endif %}
+                  {% if speaker.proposals %}
+                    <strong>Propositions</strong>
+                    <ul>
+                      {% for proposal in speaker.proposals.all %}
+                      <li class="text-muted"><small>{{ proposal.kind }} : {{ proposal.title }}
+                        <a href="{% url "review_detail" proposal.pk %}"><span class="glyphicon glyphicon-link"></span></a></small></li>
+                      {% endfor %}
+                      {% for proposal in speaker.proposalbase_set.all %}
+                      <li class="text-muted"><small>{{ proposal.kind }} : {{ proposal.title }} (invité)
+                        <a href="{% url "review_detail" proposal.pk %}"><span class="glyphicon glyphicon-link"></span></a></small></li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
                 </td>
                 <td>{{ speaker.city }}</td>
                 <td>{% if speaker.need_travel %}x{% endif %}</td>
