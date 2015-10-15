@@ -23,11 +23,23 @@
         Appel &agrave; propositions
       </a>
     </div>
+    <!-- <div class="col-md-4">
+      <a class="btn btn-lg btn-cta" href="{% url "cms_page" "communication/" %}">
+        <span class="glyphicon glyphicon-bullhorn"></span>
+        Communiquez !
+      </a>
+    </div> -->
+    <div class="col-md-4">
+      <a class="btn btn-lg btn-cta" href="#participer">
+      <span class="glyphicon glyphicon-heart"></span>
+      Devenez bénévole</a>
+    </div>
+    <!--
     <div class="col-md-4">
       <a class="btn btn-lg btn-cta" href="#sponsoring">
       <span class="glyphicon glyphicon-star"></span>
       Devenez sponsor</a>
-    </div>
+    </div>-->
 </div>
 <div class="row" id="comm" >
     <div class="col-md-12 text-center">
@@ -224,10 +236,31 @@
           <section id="participer">
             <div class="container">
               <h2>Participer</h2>
-              <p>Si vous souhaitez participer à l'organisation, inscrivez-vous sur
-                la <a href="http://www.toulibre.org/mailman/listinfo/capitoledulibre"
-                  title="Liste Capitole du Libre" target="_blank">liste de
-                  discussion dédiée</a>.</p>
+
+              <div class="media">
+                <div class="media-body">
+                  <p>Le Capitole du Libre est un événement <strong>entièrement organisé par des bénévoles</strong>.
+                    Cet événement n'aurait pas lieu sans les quelques 80 personnes
+                    qui sont présentes à chaque édition.</p>
+                  <p>Pour participer comme bénévole au Capitole du Libre,
+                    rien de plus simple, <a href="/account/signup/" title="S'inscrire">inscrivez-vous</a>
+                    (si ce n'est déjà fait) sur le site.</p>
+                  <p>Ensuite, il suffit de rejoindre
+                    <a href="/teams/benevoles/" title="Équipe bénévoles">l'équipe "Bénévoles"</a>,
+                    dans la section "Équipes" de votre tableau de bord.</p>
+
+                  <p>Si vous souhaitez participer à l'organisation, inscrivez-vous sur
+                    la <a href="http://www.toulibre.org/mailman/listinfo/capitoledulibre"
+                      title="Liste Capitole du Libre" target="_blank">liste de
+                      discussion dédiée</a>.</p>
+                  <p>Nous vous attendons nombreuses et nombreux !</p>
+                </div>
+                  <div class="media-right">
+                  <img src="{% static "images/benevoles-flev4081-photo-flev-cc-by-nc-sa-1024.png" %}"
+                      alt="Bénévoles 2014"
+                      class="media-object" />
+                  </div>
+                </div>
             </div>
           </section>
         </div>
