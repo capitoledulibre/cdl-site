@@ -6,46 +6,85 @@
 
 {% block head_title %}Presentation Listing{% endblock %}
 
-{% block extra_head %}
-    <style>
-        .presentation {
-
-        }
-        .presentation h3 {
-            line-height: 1.1em;
-            font-weight: bold;
-        }
-        .presentation h4 {
-
-        }
-        .presentation p {
-            margin-bottom: 0.5em;
-            line-height: 1.2em;
-        }
-    </style>
-{% endblock %}
 
 {% block breadcrumbs %}{% sitetree_breadcrumbs from "main" %}{% endblock %}
 
 {% block body %}
-    <h2>Accepted {{ schedule.section.name }}</h2>
+    <h1>{{ schedule.section.name }}</h1>
     {% cache 600 "schedule-list" schedule.section.name %}
+    {% comment "Category nav" %}{% if schedule.section.slug != "stand-associatif" %}
+        <ul class="nav nav-tabs">
+            <li {% if not category %}class="active"{% endif %}><a href="{% url "schedule_list" schedule.section.slug %}"><small>&laquo;</small></a></li>
+            {% for categ in categories %}
+            <li {% if category and categ == category %}class="active"{% endif %}><a href="{% url "schedule_list_category" schedule.section.slug categ.slug %}">{{ categ }}</a></li>
+            {% endfor %}
+        </ul>
+        {% if category  %}
+            <h2>{{ category }}</h2>
+            {% if not presentations %}<p>Pas de pr&eacute;sentations dans cette th&eacute;matique. <a href="{% url "schedule_list" schedule.section.slug %}">Retour &agrave; toutes les th&eacute;matiques</a></p>{% endif %}
+
+        {% else %}
+            <h2>Toutes th&eacute;matiques</h2>
+        {% endif %}
+    {% endif %}
+
+    {% endcomment %}
+    <div class="row">
         {% for presentation in presentations %}
-            <div class="row">
-                <div class="col-md-8 presentation well">
-                    <h3><a href="{% url "schedule_presentation_detail" presentation.pk %}">{{ presentation.title }}</a></h3>
-                    <h4>{{ presentation.speakers|join:", " }}</h4>
-                    {{ presentation.description }}
-                    {% if presentation.slot %}
-                        <h4>
-                            {{ presentation.slot.day.date|date:"l" }}
-                            {{ presentation.slot.start}}&ndash;{{ presentation.slot.end }}
-                            in
-                            {{ presentation.slot.rooms|join:", " }}
-                        </h4>
-                    {% endif %}
+        <div class="col-sm-6 presentation" id="presentation-{{ presentation.pk }}">
+            <div class=" well">
+                <h2><a href="{% url "schedule_presentation_detail" presentation.pk %}">{{ presentation.title }}</a>
+                   &ndash; <small>{{ presentation.speakers|join:", " }}</small></h2>
+
+                <div class="presentation-category">
+                  <span class="label label-tag">{{ presentation.proposal.category }}</span>
+                  {% if presentation.proposal.audience_level %}
+                  <br />
+                  <em class="label label-primary">{{ presentation.proposal.get_audience_level_display }}</em>{% endif %}
+                </div>
+
+                {% if presentation.session %}
+                <p class="session">
+                  <span class="date">{{ presentation.session.day.date|date:"l d b" }}</span>,
+                  <span class="time label label-warning"><span class="start">{{ presentation.session.start|date:"H:i" }}</span> &ndash; <span class="start">{{ presentation.session.end|date:"H:i" }}</span></span>
+                  <span class="label label-default">{{ presentation.session.room }}</span>
+                </p>
+                {% endif %}
+
+                {{ presentation.description }}
+                {% if presentation.slot %}
+                    <h4>
+                        {{ presentation.slot.day.date|date:"l" }}
+                        {{ presentation.slot.start}}&ndash;{{ presentation.slot.end }}
+                        in
+                        {{ presentation.slot.rooms|join:", " }}
+                    </h4>
+                {% endif %}
+
+                {% if presentation.coverages.count > 0 %}
+                    <div class="coverages text-right text-muted">
+                    <a href="{% url "schedule_presentation_detail" presentation.pk %}" alt="voir les media sur la presentation">
+                        <span class="glyphicon glyphicon-chevron-right"></span> {% trans "Coverage" %}</a>
+                    {% for coverage in presentation.coverages.all %}
+                        {% if coverage.coverage_type == 'video' %}
+                        <span class="glyphicon glyphicon-film"></span>
+                        {% elif coverage.coverage_type == 'audio' %}
+                        <span class="glyphicon glyphicon-headphones"></span>
+                        {% elif coverage.coverage_type == 'photos' %}
+                        <span class="glyphicon glyphicon-picture"></span>
+                        {% elif coverage.coverage_type == 'slides' %}
+                        <span class="glyphicon glyphicon-file"></span>
+                        {% elif coverage.coverage_type == 'link' %}
+                        <span class="glyphicon glyphicon-link"></span>
+                        {% else %}
+                        <span class="glyphicon glyphicon-file"></span>
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                {% endif %}
                 </div>
             </div>
         {% endfor %}
     {% endcache %}
+    </div>
 {% endblock %}
