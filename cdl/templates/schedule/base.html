@@ -1,0 +1,36 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+{% load cache %}
+{% load boxes_tags %}
+{% load sitetree %}
+
+{% block head_title %}{% trans "Schedule" %}{% endblock %}
+
+{% block body_class %}full{% endblock %}
+
+{% block breadcrumbs %}{% sitetree_breadcrumbs from "main" %}{% endblock %}
+
+{% block body %}
+    <h1>{% trans "Programmation" %}</h1>
+
+    {% box "schedule_top" %}
+
+    <div class="row">
+    {% for category in categories %}
+    <div class="col-xs-6 col-md-3">
+      <div class="thumbnail">
+        <h3>{{ category.name }}</h3>
+        <p>{{ category.description }}</p>
+        <p>
+          <a href="{% url "schedule_list" "conferences" category.slug %}">Conférences</a>
+            |
+          <a href="{% url "schedule_list" "ateliers" category.slug %}">Ateliers</a>
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+
+    {% box "schedule_bottom" %}
+{% endblock %}

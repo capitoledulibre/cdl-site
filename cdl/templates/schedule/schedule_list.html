@@ -7,16 +7,24 @@
 {% block head_title %}Presentation Listing{% endblock %}
 
 
-{% block breadcrumbs %}{% sitetree_breadcrumbs from "main" %}{% endblock %}
+{% block breadcrumbs %}<ol class="breadcrumb">
+<li><a href="{% url "home" %}"><span class="fa fa-home"></span><span class="sr-only">Accueil</span></a></li>
+<li><a href="{% url "schedule_base" %}">Programme</a></li>
+<li><a href="{% url "schedule_list" schedule.section.slug %}">{{ schedule.section.name }}</a></li>
+{% if category  %}<li>{{ category }}</li>{% endif %}
+</ol>
+{% endblock %}
 
 {% block body %}
     <h1>{{ schedule.section.name }}</h1>
 
     {% if schedule.section.slug != "stand-associatif" %}
         <ul class="nav nav-tabs">
-            <li {% if not category %}class="active"{% endif %}><a href="{% url "schedule_list" schedule.section.slug %}"><small>&laquo;</small></a></li>
+            <li {% if not category %}class="active"{% endif %}>
+              <a href="{% url "schedule_list" schedule.section.slug %}"><small>&laquo;</small></a></li>
             {% for categ in categories %}
-            <li {% if category and categ == category %}class="active"{% endif %}><a href="{% url "schedule_list" schedule.section.slug categ.slug %}">{{ categ }}</a></li>
+            <li {% if category and categ == category %}class="active"{% endif %}>
+              <a href="{% url "schedule_list" schedule.section.slug categ.slug %}">{{ categ }}</a></li>
             {% endfor %}
         </ul>
         {% if category  %}
