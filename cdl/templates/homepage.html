@@ -84,55 +84,10 @@
             <div class="container">
               <h2>Programme des conférences et ateliers</h2>
               <p>Plusieurs conférences et ateliers se déroulent tout le week-end, autour de thématiques aussi bien grand public que plus techniques.</p>
-              <div class="thematiques row">
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="thumbnail">
-                    <h3>Découverte</h3>
-                    <p>Pour découvrir l'écosystème du logiciel libre.</p></div></div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="thumbnail">
-                    <h3>Enjeux du libre</h3>
-                    <p>Qu'est-ce que le libre transforme dans notre société.</p></div></div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="thumbnail">
-                    <h3>Cryptoparty : défendre sa vie privée</h3>
-                    <p>Autohébergement, chiffrement, contribuons à libérer les Internets.</p></div></div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="thumbnail">
-                    <h3>Culture libre et multimedia</h3>
-                      <p>Les arts et la culture libres, la MAO, la vidéo.</p></div></div>
-		<div class="clearfix visible-md-block visible-lg-block"></div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="thumbnail">
-                    <h3>Poste de travail</h3>
-                    <p>Environnement de travail, bureautique, utilitaires.</p></div></div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="thumbnail">
-                    <h3>Technique</h3>
-                    <p>Développement, bases de données, pour la beauté du code.</p></div></div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="thumbnail">
-                    <h3>DevOps</h3>
-                    <p>Inaugurée en 2014, sera renouvelée et abordera Docker, le cloud libre.</p></div></div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="thumbnail">
-                    <h3>Internet Of Things & embarqué</h3>
-                    <p>(re)découverte des Arduino, Raspberry Pi, objets connectés, mais aussi l'embarqué.</p></div></div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="thumbnail">
-                    <h3>Technologies Web</h3>
-                    <p>NodeJS, ReactJS, AngularJS, le Web change tous les jours.</p></div></div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="thumbnail">
-                    <h3>Création graphique avec des outils libres</h3>
-                    <p>Blender, Krita, Gimp, Inkscape, FreeCad, Synfig, la réalisation d’œuvres artistiques avec
-                des outils libres.</p></div></div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="thumbnail">
-                    <h3>AkademyFR</h3>
-                    <p>Le rendez-vous de la communauté francophone de KDE et de Qt.</p></div></div>
-              </div>
-                  <p>Si votre communauté souhaite se réunir à l'occasion de cet événement, <a href="mailto:contact@capitoledulibre.org">écrivez-nous</a> !
+
+                {% include "proposals/_categories_list.html" %}
+
+              <p>Si votre communauté souhaite se réunir à l'occasion de cet événement, <a href="mailto:contact@capitoledulibre.org">écrivez-nous</a> !
                     Comme pour <strong>AkademyFR</strong>, nous avons la possibilité de vous mettre à disposition des salles pour des conférences et des ateliers et vous accueillir en tant qu'événement hébergé.</p>
             </div>
           </section>
