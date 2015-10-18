@@ -1,0 +1,234 @@
+[
+    {
+        "fields": {
+            "order": 10,
+            "name": "A001",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 11,
+            "name": "A002",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 15,
+            "name": "A201",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 20,
+            "name": "A202",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 25,
+            "name": "A203",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 30,
+            "name": "A301",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 35,
+            "name": "A302",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 40,
+            "name": "A303",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 45,
+            "name": "A304",
+            "schedule": 9
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 12,
+            "name": "C002",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 50,
+            "name": "C101",
+            "schedule": 2
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 55,
+            "name": "C102",
+            "schedule": 2
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 60,
+            "name": "C103",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 65,
+            "name": "Hall C",
+            "schedule": 2
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 70,
+            "name": "Hall C +1",
+            "schedule": 2
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 2,
+            "name": "B00",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 100,
+            "name": "B104",
+            "schedule": 2
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 105,
+            "name": "B105",
+            "schedule": 2
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 115,
+            "name": "B206",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 120,
+            "name": "B207",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 125,
+            "name": "B208",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 130,
+            "name": "B209",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 135,
+            "name": "B306",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 140,
+            "name": "B307",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 145,
+            "name": "B308",
+            "schedule": 4
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 1,
+            "name": "Hall B",
+            "schedule": 2
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 5,
+            "name": "Hall B+1",
+            "schedule": 2
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 6,
+            "name": "Hall B+2",
+            "schedule": 2
+        },
+        "model": "symposion_schedule.room"
+    },
+    {
+        "fields": {
+            "order": 7,
+            "name": "Hall B+3",
+            "schedule": 2
+        },
+        "model": "symposion_schedule.room"
+    }
+]
