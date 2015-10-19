@@ -1,5 +1,6 @@
 {% extends "site_base.html" %}
 
+{% load i18n %}
 {% load sitetree %}
 
 {% block head_title %}Presentation: {{ presentation.title }}{% endblock %}
@@ -7,29 +8,40 @@
 {% block breadcrumbs %}{% sitetree_breadcrumbs from "main" %}{% endblock %}
 
 {% block body %}
-    {% if presentation.slot %}
-        <h4>
-            {{ presentation.slot.day.date|date:"l" }}
-            {{ presentation.slot.start}}&ndash;{{ presentation.slot.end }}
-        </h4>
-    {% endif %}
-    <h2>{{ presentation.title }}</h2>
+    <h1>{{ presentation.title }}</h1>
 
-    <h4>
+    <h2><small>
         {% for speaker in presentation.speakers %}
-            <a href="{% url "speaker_profile" speaker.pk %}">{{ speaker }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
-    </h4>
+            <a href="{% url "speaker_profile" speaker.pk %}">{{ speaker }}</a>
+            {% if not forloop.last %}, {% endif %}{% endfor %}
+    </small></h2>
 
     <dl class="dl-horizontal">
-        <dt>Audience level:</dt>
-        <dd style="margin-bottom: 0;">{{ presentation.proposal.get_audience_level_display }}</dd>
+        {% if presentation.proposal.category %}
+        <dt>Th&eacute;matique</dt>
+          <dd>{{ presentation.proposal.category }}</dd>
+        {% endif %}
+        {% if presentation.proposal.get_audience_level_display %}
+        <dt>Niveau</dt>
+          <dd>{{ presentation.proposal.get_audience_level_display }}</dd>
+        {% endif %}
+        {% if presentation.slot %}
+        <dt>Horaire</dt>
+          <dd><span class="date">{{ presentation.slot.day.date|date:"l d b" }}</span>,
+              <span class="time">{{ presentation.slot.start|date:"H:i" }} &ndash;
+                {{ presentation.slot.end|date:"H:i" }}</span></dd>
+        <dt>Salle</dt>
+          <dd><span class="label label-danger">{{ presentation.slot.rooms|join:", " }}</span></dd>
+        {% endif %}
     </dl>
 
-    <h3>Description</h3>
+    <h2>Description</h2>
 
     <div class="description">{{ presentation.description }}</div>
 
-    <h3>Abstract</h3>
-
+    <div class="clearfix"></div>
+    {% if presentation.abstract %}
+    <h2>{% trans "Abstract" %}</h2>
     <div class="abstract">{{ presentation.abstract|safe }}</div>
+    {% endif %}
 {% endblock %}

@@ -29,7 +29,9 @@
         </ul>
         {% if category  %}
             <h2>{{ category }}</h2>
-            {% if not presentations %}<p>Pas de pr&eacute;sentations dans cette th&eacute;matique. <a href="{% url "schedule_list" schedule.section.slug %}">Retour &agrave; toutes les th&eacute;matiques</a></p>{% endif %}
+            {% if not presentations %}
+            <p>Pas de pr&eacute;sentations dans cette th&eacute;matique.
+              <a href="{% url "schedule_list" schedule.section.slug %}">Retour &agrave; toutes les th&eacute;matiques</a></p>{% endif %}
 
         {% else %}
             <h2>Toutes th&eacute;matiques</h2>
@@ -50,23 +52,17 @@
                   <span class="label label-primary">{{ presentation.proposal.get_audience_level_display }}</span>{% endif %}
                 </div>
 
-                {% if presentation.session %}
+                {% if presentation.slot %}
                 <p class="session">
-                  <span class="date">{{ presentation.session.day.date|date:"l d b" }}</span>,
-                  <span class="time label label-warning"><span class="start">{{ presentation.session.start|date:"H:i" }}</span> &ndash; <span class="start">{{ presentation.session.end|date:"H:i" }}</span></span>
-                  <span class="label label-default">{{ presentation.session.room }}</span>
-                </p>
+                  <span class="date">{{ presentation.slot.day.date|date:"l" }}</span>,
+                  <span class="time label label-warning">
+                    <span class="start">{{ presentation.slot.start|date:"H:i" }}</span> &ndash;
+                    <span class="end">{{ presentation.slot.end|date:"H:i" }}</span></span>
+                    <span class="label label-default">{{ presentation.slot.rooms|join:", " }}</span>
+                  </p>
                 {% endif %}
 
                 {{ presentation.description }}
-                {% if presentation.slot %}
-                    <h4>
-                        {{ presentation.slot.day.date|date:"l" }}
-                        {{ presentation.slot.start}}&ndash;{{ presentation.slot.end }}
-                        in
-                        {{ presentation.slot.rooms|join:", " }}
-                    </h4>
-                {% endif %}
 
                 {% if presentation.coverages.count > 0 %}
                     <div class="coverages text-right text-muted">

@@ -3,39 +3,45 @@
 {% load i18n %}
 {% load thumbnail %}
 
+{% block body_class %}page-speaker{% endblock %}
 
 {% block head_title %}{{ speaker.name }}{% endblock %}
 
 {% block body %}
     <div class="row">
-        <div class="col-md-2">
-            {% if speaker.photo %}
-                <img src="{% thumbnail speaker.photo '128x128' %}" alt="{{ speaker.name }}" />
-            {% else %}
-                &nbsp;
-            {% endif %}
+        {% if speaker.photo %}
+        <div class="col-sm-2">
+            <img src="{% thumbnail speaker.photo '128x128' %}" alt="{{ speaker.name }}" />
         </div>
-        <div class="col-md-6">
+        {% endif %}
+        <div class="col-sm-6">
             {% if speaker.user == request.user or request.user.is_staff %}
                 <a class="btn btn-default pull-right" href="{% url "speaker_edit" speaker.pk %}">Edit</a>
             {% endif %}
             <h1>{{ speaker.name }}</h1>
+            <h2 class="sr-only">Biographie</h2>
             <div class="bio">{{ speaker.biography|safe }}</div>
 
+        </div>
+        <div class="col-sm-12">
             <h2>Presentations</h2>
             {% for presentation in presentations %}
-                <h3><a href="{% url "schedule_presentation_detail" presentation.pk %}">{{ presentation.title }}</a></h3>
+                <h3 class="h4"><small>{{ presentation.proposal.kind }}</small> <a href="{% url "schedule_presentation_detail" presentation.pk %}">{{ presentation.title }}</a></h3>
                 {% if presentation.slot %}
-                    <p>
-                        {{ presentation.slot.day.date|date:"l" }}
-                        {{ presentation.slot.start}}&ndash;{{ presentation.slot.end }}
-                        in
-                        {{ presentation.slot.rooms|join:", " }}
-                    </p>
+                <p class="session">
+                  <span class="date">{{ presentation.slot.day.date|date:"l d b" }}</span>,
+                  <span class="time">{{ presentation.slot.start|date:"H:i" }} &ndash;
+                  {{ presentation.slot.end|date:"H:i" }}</span>
+                  <span class="label label-danger">{{ presentation.slot.rooms|join:", " }}</span>
+                </p>
                 {% endif %}
+
             {% empty %}
                 <p>No presentations. This page is only visible to staff until there is a presentation.<p>
             {% endfor %}
         </div>
     </div>
+{% endblock %}
+
+{% block sidebar %}
 {% endblock %}
