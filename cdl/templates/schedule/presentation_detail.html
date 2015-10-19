@@ -8,7 +8,7 @@
 {% block breadcrumbs %}{% sitetree_breadcrumbs from "main" %}{% endblock %}
 
 {% block body %}
-    <h1>{{ presentation.title }}</h1>
+    <h1><small>{{ presentation.proposal.kind }}</small><br />{{ presentation.title }}</h1>
 
     <h2><small>
         {% for speaker in presentation.speakers %}
