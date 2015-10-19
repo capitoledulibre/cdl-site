@@ -18,11 +18,17 @@
       </a>
     </div>
     <div class="col-md-4">
+      <a class="btn btn-lg btn-cta" href="{% url "schedule_base" %}">
+      <span class="glyphicon glyphicon-bullhorn"></span>
+      Le programme !
+      </a>
+    </div>
+    <!-- <div class="col-md-4">
       <a class="btn btn-lg btn-cta" href="{% url "cms_page" "propositions/" %}">
         <span class="glyphicon glyphicon-bullhorn"></span>
         Appel &agrave; propositions
       </a>
-    </div>
+    </div> -->
     <!-- <div class="col-md-4">
       <a class="btn btn-lg btn-cta" href="{% url "cms_page" "communication/" %}">
         <span class="glyphicon glyphicon-bullhorn"></span>
@@ -74,8 +80,8 @@
                   <p>Comme chaque ann&eacute;e, les thèmes seront aussi bien orientés vers le grand public que vers les plus techniques. Conférences, ateliers,
                     animations seront au programme, ainsi que quelques surprises !</p>
                   <p>
-                    <a href="{% url "cms_page" "propositions/" %}" title="Appel à propositions">
-                      L'appel à conférences et ateliers est ouvert.</a></p>
+                    <a href="{% url "schedule_base" %}" title="Le programme est en ligne">
+                      Le programme est en ligne !</a></p>
                 </div>
               </div>
             </div>

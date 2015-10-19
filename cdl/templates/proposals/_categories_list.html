@@ -4,13 +4,11 @@
   <div class="thumbnail">
     <h3>{{ category.name }}</h3>
     <p>{{ category.description }}</p>
-    {% comment %}
     <p>
       <a href="{% url "schedule_list" "conferences" category.slug %}">Conférences</a>
         |
       <a href="{% url "schedule_list" "ateliers" category.slug %}">Ateliers</a>
     </p>
-    {% endcomment %}
   </div>
 </div><div class="{% cycle '' 'clearfix visible-xs' '' 'clearfix' %}"></div>
 {% endfor %}
