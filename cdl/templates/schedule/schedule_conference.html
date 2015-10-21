@@ -1,4 +1,4 @@
-{% extends "site_base.html" %}
+{% extends "site_base_onecolumn.html" %}
 
 {% load i18n %}
 {% load boxes_tags %}
@@ -6,12 +6,14 @@
 
 {% block head_title %}Conference Schedule{% endblock %}
 
+{% block container_type %}container-fluid{% endblock %}
 {% block body_class %}full{% endblock %}
 
 {% block right %}
 {% endblock %}
 
 {% block body_outer %}
+
     <div class="page-head">
         <h1>Conference Schedule</h1>
         {% block breadcrumbs %}{% endblock %}
@@ -26,4 +28,5 @@
     {% endfor %}
 
     {% box "schedule_bottom" %}
+
 {% endblock %}

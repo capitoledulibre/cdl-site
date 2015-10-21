@@ -30,7 +30,7 @@
 {% endblock %}
 
 {% block body_base %}
-    <div class="container">
+    <div class="{% block container_type %}container{% endblock %}">
     {% block breadcrumbs %}{% endblock %}
         {% include "_messages.html" %}
         {% block body_outer %}
