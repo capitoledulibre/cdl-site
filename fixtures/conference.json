@@ -13,9 +13,9 @@
     "fields": {
         "conference": 1,
         "start_date": "2015-11-21",
-        "name": "Tutorials",
+        "name": "Ateliers",
         "end_date": "2015-11-22",
-        "slug": "tutorials"
+        "slug": "ateliers"
     },
     "model": "symposion_conference.section",
     "pk": 1
@@ -24,9 +24,9 @@
     "fields": {
         "conference": 1,
         "start_date": "2015-11-21",
-        "name": "General Sessions",
+        "name": "Conf\u00e9rences",
         "end_date": "2015-11-22",
-        "slug": "general-sessions"
+        "slug": "conferences"
     },
     "model": "symposion_conference.section",
     "pk": 2
@@ -35,9 +35,9 @@
     "fields": {
         "conference": 1,
         "start_date": "2015-11-21",
-        "name": "Stand",
+        "name": "Stands",
         "end_date": "2015-11-22",
-        "slug": "stand"
+        "slug": "stands"
     },
     "model": "symposion_conference.section",
     "pk": 3
