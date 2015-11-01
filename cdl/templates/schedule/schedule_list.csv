@@ -1,2 +1,2 @@
 "#","Day","Start","End","Room","Section","Category","Title","Speakers","Description"{% for p in presentations %}
-{{p.pk}},"{{p.slot.day.date|date:'d/m'}}",{{p.slot.start|date:"H:i"}},{{p.slot.end|date:"H:i"}},"{{p.slot.room.name}}","{{p.section.name}}","{{p.proposal.category.name}}","{{p.title}}","{{p.speakers|join:"\n"}}","{{p.description|striptags|addslashes}}"{% endfor %}
+{{p.pk}},"{{p.slot.day.date|date:'d/m'}}",{{p.slot.start|date:"H:i"}},{{p.slot.end|date:"H:i"}},"{{ p.slot.rooms|join:", " }}","{{p.section.name}}","{{p.proposal.category.name}}","{{p.title}}","{{p.speakers|join:"\n"}}","{{p.description|striptags|addslashes}}"{% endfor %}
