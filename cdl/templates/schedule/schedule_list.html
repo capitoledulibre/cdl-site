@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load cache %}
+{% load boxes_tags %}
 {% load sitetree %}
 
 {% block head_title %}Presentations Listing{% endblock %}
@@ -28,6 +29,9 @@
       {% endif %}</small>
     {% endif %}
   </h1>
+  <p>{{ category.description }}</p>
+
+    {% box "schedule_top_"|add:schedule.section.name|slugify %}
 
     {% if schedule.section.slug != "stands" %}
         <ul class="nav nav-pills">
@@ -39,7 +43,7 @@
             {% endfor %}
         </ul>
         {% if not presentations %}
-        <p>Pas de pr&eacute;sentations dans cette th&eacute;matique.
+        <p class="text-muted">Pas de pr&eacute;sentations dans cette th&eacute;matique.
           <a href="{% url "schedule_list" schedule.section.slug %}">Retour &agrave; toutes les th&eacute;matiques</a></p>{% endif %}
     {% endif %}
 
@@ -95,4 +99,7 @@
         {% endfor %}
 
     </div>
+
+    {% box "schedule_top_"|add:schedule.section.name|slugify %}
+
 {% endblock %}
