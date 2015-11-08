@@ -12,12 +12,12 @@
                     <span class="carret"></span></a></h3>
             </div>
 
-            <div id="collapseAttendees{{ proposal.presentation.pk }}" class="panel-collapse collapse">
+            <div id="collapseAttendees{{ proposal.presentation.pk }}" class="panel-body collapse">
                 <a class="btn btn-default btn-sm pull-right" href="{% url "registration_edit" proposal.presentation.pk %}">{% trans "Edit registration" %}</a>
                 <ul>
                     {% for attendee in proposal.presentation.registration.all_attendees %}
                     <li>{{ attendee }} &mdash; {{ attendee.email }}
-                        <p>{{ attendee.insterests }}</p>
+                        <p>{{ attendee.interests|linebreaks }}</p>
                     </li>
                     {% endfor %}
                 </ul>
