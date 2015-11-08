@@ -79,8 +79,7 @@
 
     {% endfor %}
     <div class="clearfix"></div>
-    {% if user.speaker in presentation.speakers %}affiche{% endif %}
-    {% if user.is_staff %}
+    {% if user.is_staff or user.speaker_profile in presentation.speakers %}
         <h2>Admin</h2>
         <p>
         {% if presentation.registration %}
