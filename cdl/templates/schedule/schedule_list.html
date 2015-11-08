@@ -16,9 +16,23 @@
 {% endblock %}
 
 {% block body %}
-    <h1>{{ schedule.section.name }}</h1>
+    <h1>{{ schedule.section.name }}
 
-    {% if schedule.section.slug != "stand-associatif" %}
+
+    {% if schedule.section.slug != "stands" %}
+      {% if category  %}
+          &mdash; {{ category }}
+          {% if not presentations %}
+          <p>Pas de pr&eacute;sentations dans cette th&eacute;matique.
+            <a href="{% url "schedule_list" schedule.section.slug %}">Retour &agrave; toutes les th&eacute;matiques</a></p>{% endif %}
+
+      {% else %}
+          &mdash; Toutes th&eacute;matiques
+      {% endif %}
+    {% endif %}
+  </h1>
+
+    {% if schedule.section.slug != "stands" %}
         <ul class="nav nav-tabs">
             <li {% if not category %}class="active"{% endif %}>
               <a href="{% url "schedule_list" schedule.section.slug %}"><small>&laquo;</small></a></li>
@@ -27,15 +41,6 @@
               <a href="{% url "schedule_list" schedule.section.slug categ.slug %}">{{ categ }}</a></li>
             {% endfor %}
         </ul>
-        {% if category  %}
-            <h2>{{ category }}</h2>
-            {% if not presentations %}
-            <p>Pas de pr&eacute;sentations dans cette th&eacute;matique.
-              <a href="{% url "schedule_list" schedule.section.slug %}">Retour &agrave; toutes les th&eacute;matiques</a></p>{% endif %}
-
-        {% else %}
-            <h2>Toutes th&eacute;matiques</h2>
-        {% endif %}
     {% endif %}
 
     <div class="row">
