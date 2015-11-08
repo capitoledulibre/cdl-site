@@ -1,9 +1,10 @@
 {% extends "site_base.html" %}
 
 {% load i18n %}
+{% load thumbnail %}
 {% load sitetree %}
 
-{% block head_title %}Presentation: {{ presentation.title }}{% endblock %}
+{% block head_title %}{{ presentation.title }}{% endblock %}
 
 {% block breadcrumbs %}{% sitetree_breadcrumbs from "main" %}{% endblock %}
 
@@ -33,6 +34,16 @@
         <dt>Salle</dt>
           <dd><span class="label label-danger">{{ presentation.slot.rooms|join:", " }}</span></dd>
         {% endif %}
+
+        {% if presentation.registration %}
+        <dt>Acc&egrave;s</dt>
+            {% if presentation.registration.is_closed %}
+            <dd>Sur inscription. <span class="text-danger">Les inscriptions sont closes</span>.</dd>
+            {% else %}
+            <dd><a href="{% url "register_to_presentation" presentation.pk %}">Sur inscription</a></dd>
+            {% endif %}
+        {% endif %}
+
     </dl>
 
     <h2>Description</h2>
@@ -44,4 +55,40 @@
     <h2>{% trans "Abstract" %}</h2>
     <div class="abstract">{{ presentation.abstract|safe }}</div>
     {% endif %}
+
+    {% if presentation.registration %}
+        {% if not presentation.registration.is_closed %}
+        <p class="text-info">L'inscription &agrave; cet atelier est n&eacute;cessaire, il reste {{ presentation.registration.places_left }} places.
+            <a class="btn btn-default" href="{% url "register_to_presentation" presentation.pk %}">Je m'inscris !</a></p>
+        {% endif %}
+    {% endif %}
+
+{% endblock %}
+
+{% block sidebar %}
+<section class="media">
+
+    <h2 class="text-hide">Intervenant(es)</h2>
+    {% for speaker in presentation.speakers %}
+        <h3><em>{{ speaker }}</em></h3>
+        {% if speaker.photo %}
+        <img src="{% thumbnail "speaker.photo" '128x128' %}" class="pull-right media-object" alt="{{ speaker.name }}" />
+        {% endif %}
+        <div class="speaker-bio">{{ speaker.biography|truncatewords_html:20 }}</div>
+        <p><a href="{% url "speaker_profile" speaker.pk %}">{% trans "See more" %}</a></p>
+
+    {% endfor %}
+    <div class="clearfix"></div>
+    {% if user.speaker in presentation.speakers %}affiche{% endif %}
+    {% if user.is_staff %}
+        <h2>Admin</h2>
+        <p>
+        {% if presentation.registration %}
+        <a class="btn btn-sm btn-default" href="{% url "registration_edit" presentation.pk %}">&Eacute;diter le formulaire</a>
+        {% else %}
+        <a class="btn btn-sm btn-default" href="{% url "registration_add" presentation.pk %}">Ajouter un formulaire</a>
+        {% endif %}
+        </p>
+    {% endif %}
+</section>
 {% endblock %}

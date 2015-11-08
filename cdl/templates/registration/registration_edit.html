@@ -1,0 +1,28 @@
+{% extends "site_base.html" %}
+
+{% load bootstrap %}
+{% load i18n %}
+{% load boxes_tags %}
+
+{% block page_title %}{% trans "Subscription form to" %} &ldquo;{{ presentation.title }}&rdquo;{% endblock %}
+
+{% block body %}
+
+<form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <legend>{% trans "Subscription form to" %} &ldquo;{{ presentation.title }}&rdquo;</legend>
+    <fieldset>
+        {{ form|bootstrap }}
+    </fieldset>
+    <div class="form-actions">
+        <input class="btn btn-primary" type="submit" value="{% trans "Save" %}" />
+        <a class="btn" href="{% url "dashboard" %}">{% trans "Cancel" %}</a>
+    </div>
+</form>
+
+{% endblock %}
+
+{% block sidebar %}
+    {% box "subscribe_info" %}
+    <p class="text-muted">Ce message sera affich&eacute; sur le formulaire d'inscription. Les pr&eacute;requis seront affich&eacute;s dessous.</p>
+{% endblock %}

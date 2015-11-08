@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-04 15:48+0200\n"
+"POT-Creation-Date: 2015-11-08 15:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgstr "Confirmé"
 msgid "Audience level"
 msgstr "Niveau du Public"
 
-#: proposals/models.py:50
+#: proposals/models.py:50 templates/registration/register_to.html:29
 msgid "Prerequistes"
 msgstr "Prérequis"
 
@@ -55,13 +55,21 @@ msgstr ""
 "Indiquez si des pré-requis sont nécessaires pour suivre cette conférence ou "
 "atelier."
 
+#: proposals/models.py:56
+msgid "Video output"
+msgstr "Sortie vidéo"
+
+#: proposals/models.py:58
+msgid "Specify video output."
+msgstr "Indiquez les sorties vidéo"
+
 #: proposals/models.py:63
 msgid "Broadcast audio"
-msgstr ""
+msgstr "Diffusion sonore"
 
 #: proposals/models.py:65
 msgid "Do you need audio material to broadcast audio ?"
-msgstr ""
+msgstr "Avez-vous besoin de matériel pour diffuser du son ?"
 
 #: proposals/models.py:69
 msgid "Recording release"
@@ -92,6 +100,7 @@ msgstr "Je préfère un créneau de 50 minutes"
 
 #: proposals/models.py:89 proposals/models.py:103
 #: templates/proposals/_proposal_fields.html:13
+#: templates/reviews/_review_table.html:10
 msgid "Duration"
 msgstr "Durée"
 
@@ -162,7 +171,7 @@ msgstr "Mot de passe oublié ?"
 msgid "Editing content:"
 msgstr "Éditer le contenu :"
 
-#: templates/cms/file_create.html:13
+#: templates/cms/file_create.html:14
 msgid "Upload"
 msgstr "Téléverser"
 
@@ -176,9 +185,52 @@ msgstr "Modifier la page à :"
 
 #: templates/cms/page_edit.html:22
 #: templates/proposals/proposal_submit_kind.html:23
+#: templates/registration/register_to.html:20
+#: templates/registration/registration_edit.html:18
 #: templates/sponsorship/detail.html:39
 msgid "Save"
 msgstr "Sauvegarder"
+
+#: templates/conference/speaker_list.html:59
+#: templates/reviews/_review_table.html:7
+#, fuzzy
+#| msgid "Speaker Bio"
+msgid "Speaker"
+msgstr "Biographie de l'Intervenant"
+
+#: templates/conference/speaker_list.html:60
+#: templates/conference/user_list.html:62
+msgid "Proposals"
+msgstr "Propositions"
+
+#: templates/conference/speaker_list.html:61
+#: templates/conference/user_list.html:63
+msgid "City"
+msgstr "Ville"
+
+#: templates/conference/speaker_list.html:62
+#: templates/conference/user_list.html:64
+msgid "Need travel ?"
+msgstr "Défraiement pour déplacement ?"
+
+#: templates/conference/speaker_list.html:64
+#, fuzzy
+#| msgid "Session type"
+msgid "Hosting type ?"
+msgstr "Type de session"
+
+#: templates/conference/speaker_list.html:76
+#: templates/conference/user_list.html:78
+msgid "Annotations"
+msgstr "Annotations"
+
+#: templates/conference/speaker_list.html:124
+msgid "homestay ok"
+msgstr "ok pour loger chez l'habitant"
+
+#: templates/conference/speaker_list.html:125
+msgid "hostel needed"
+msgstr "besoin d'hébergement"
 
 #: templates/conference/user_list.html:59
 msgid "Email"
@@ -192,110 +244,94 @@ msgstr "Profil d'intervenant"
 msgid "Organisation"
 msgstr "Organisation"
 
-#: templates/conference/user_list.html:62
-msgid "Proposals"
-msgstr "Propositions"
-
-#: templates/conference/user_list.html:63
-msgid "City"
-msgstr "Ville"
-
-#: templates/conference/user_list.html:64
-msgid "Need travel ?"
-msgstr "Défraiement pour déplacement ?"
-
 #: templates/conference/user_list.html:65
 msgid "Need hosting ?"
 msgstr "Besoin d'un hébergement ?"
 
-#: templates/conference/user_list.html:77
-msgid "Annotations"
-msgstr "Annotations"
-
-#: templates/dashboard.html:19
+#: templates/dashboard.html:21
 msgid "Speaking"
 msgstr "Conférence"
 
-#: templates/dashboard.html:27
+#: templates/dashboard.html:29
 msgid "Create a speaker profile"
 msgstr "Créer votre profil d'intervenant"
 
-#: templates/dashboard.html:31
+#: templates/dashboard.html:33
 msgid "Edit your speaker profile"
 msgstr "Modifier votre profil d'intervenant"
 
-#: templates/dashboard.html:34
+#: templates/dashboard.html:36
 msgid "Submit a new proposal"
 msgstr "Soumettre une proposition"
 
-#: templates/dashboard.html:41
+#: templates/dashboard.html:43
 msgid "Your Proposals"
 msgstr "Vos propositions"
 
-#: templates/dashboard.html:46 templates/dashboard.html.py:70
-#: templates/dashboard.html:88
+#: templates/dashboard.html:48 templates/dashboard.html.py:72
+#: templates/dashboard.html:90 templates/reviews/_review_table.html:8
 msgid "Title"
 msgstr "Titre"
 
-#: templates/dashboard.html:47 templates/dashboard.html.py:71
-#: templates/dashboard.html:89
+#: templates/dashboard.html:49 templates/dashboard.html.py:73
+#: templates/dashboard.html:91
 msgid "Session type"
 msgstr "Type de session"
 
-#: templates/dashboard.html:48 templates/dashboard.html.py:72
-#: templates/dashboard.html:90 templates/reviews/result_notification.html:47
+#: templates/dashboard.html:50 templates/dashboard.html.py:74
+#: templates/dashboard.html:92 templates/reviews/_review_table.html:12
+#: templates/reviews/result_notification.html:47
 msgid "Status"
 msgstr "Statut"
 
-#: templates/dashboard.html:49 templates/dashboard.html.py:73
-#: templates/dashboard.html:91
+#: templates/dashboard.html:51 templates/dashboard.html.py:75
+#: templates/dashboard.html:93
 msgid "Actions"
 msgstr "Actions"
 
-#: templates/dashboard.html:61
+#: templates/dashboard.html:63
 msgid "No proposals submitted yet."
 msgstr "Aucune proposition pour le moment."
 
-#: templates/dashboard.html:66
+#: templates/dashboard.html:68
 msgid "Proposals you have joined as an additional speaker"
 msgstr ""
 "Propositions auxquelles vous avez participé en tant qu'intervenant addionnel"
 
-#: templates/dashboard.html:84
+#: templates/dashboard.html:86
 msgid "Proposals you have been invited to join"
 msgstr "Propositions que vous avez été invité(e) à rejoindre"
 
-#: templates/dashboard.html:109 templates/reviews/review_detail.html:76
+#: templates/dashboard.html:117 templates/reviews/review_detail.html:76
 msgid "Reviews"
 msgstr "Votes"
 
-#: templates/dashboard.html:114
+#: templates/dashboard.html:122
 msgid "Review Sections"
 msgstr "Types de propositions"
 
-#: templates/dashboard.html:126
+#: templates/dashboard.html:134
 msgid "Proposals you have reviewed"
 msgstr "Propositions que vous avez évaluées"
 
-#: templates/dashboard.html:134 templates/reviews/_review_table.html:6
-#: templates/reviews/result_notification.html:45
+#: templates/dashboard.html:142 templates/reviews/result_notification.html:45
 msgid "Speaker / Title"
 msgstr "Intervenant / Titre"
 
-#: templates/dashboard.html:135
+#: templates/dashboard.html:143
 msgid "Your Vote"
 msgstr "Votre Vote"
 
-#: templates/dashboard.html:188 templates/sponsorship/detail.html:8
+#: templates/dashboard.html:198 templates/sponsorship/detail.html:8
 #: templates/sponsorship/list.html:8
 msgid "Sponsorship"
 msgstr "Partenariat"
 
-#: templates/dashboard.html:196
+#: templates/dashboard.html:206
 msgid "Apply to be a sponsor"
 msgstr "Devenir Sponsor"
 
-#: templates/dashboard.html:202
+#: templates/dashboard.html:212
 #, python-format
 msgid ""
 "If you or your organization would be interested in sponsorship "
@@ -306,27 +342,27 @@ msgstr ""
 "voustrouverez toutes les informations sur <a href=\"%(SITE_BASE)s/partenariat"
 "\">la page partenariats</a>."
 
-#: templates/dashboard.html:204
+#: templates/dashboard.html:214
 msgid "Your Sponsorship"
 msgstr "Votre partenariat"
 
-#: templates/dashboard.html:218
+#: templates/dashboard.html:228
 msgid "As staff, you can directly"
 msgstr "En tant que membre de l'équipe, vous pouvez directement"
 
-#: templates/dashboard.html:221
+#: templates/dashboard.html:231
 msgid "All Sponsorship"
 msgstr "Tous les partenaires"
 
-#: templates/dashboard.html:246
+#: templates/dashboard.html:259
 msgid "Teams"
 msgstr "Équipes"
 
-#: templates/dashboard.html:252
+#: templates/dashboard.html:265
 msgid "Your Teams"
 msgstr "Équipes dont vous faîtes partie"
 
-#: templates/dashboard.html:275
+#: templates/dashboard.html:288
 msgid "Available Teams"
 msgstr "Équipes disponibles"
 
@@ -378,6 +414,20 @@ msgstr "Propositions que vous avez été invité(e) à rejoindre"
 msgid "Welcome"
 msgstr "Bienvenue"
 
+#: templates/pagination/builtin_pagination.html:10
+#: templates/pagination/builtin_pagination.html:13
+#: templates/pagination/django_pagination_pagination.html:9
+#: templates/pagination/django_pagination_pagination.html:12
+msgid "Previous"
+msgstr "Précédent"
+
+#: templates/pagination/builtin_pagination.html:20
+#: templates/pagination/builtin_pagination.html:22
+#: templates/pagination/django_pagination_pagination.html:22
+#: templates/pagination/django_pagination_pagination.html:24
+msgid "Next"
+msgstr "Suivant"
+
 #: templates/proposals/_pending_proposal_row.html:12
 #: templates/proposals/_proposal_row.html:12
 #: templates/proposals/proposal_detail.html:28
@@ -419,6 +469,7 @@ msgid "Track"
 msgstr "Thématique"
 
 #: templates/proposals/_proposal_fields.html:10
+#: templates/reviews/_review_table.html:11
 msgid "Audience Level"
 msgstr "Niveau du Public"
 
@@ -435,6 +486,7 @@ msgid "Description"
 msgstr "Description"
 
 #: templates/proposals/_proposal_fields.html:34
+#: templates/schedule/presentation_detail.html:55
 msgid "Abstract"
 msgstr "Description détaillée"
 
@@ -541,8 +593,10 @@ msgstr "Valider"
 msgid "Manage speakers"
 msgstr "Gérer les intervenants"
 
-#: templates/proposals/proposal_edit.html:23 templates/sponsorship/add.html:19
-#: templates/sponsorship/detail.html:40
+#: templates/proposals/proposal_edit.html:23
+#: templates/registration/register_to.html:21
+#: templates/registration/registration_edit.html:19
+#: templates/sponsorship/add.html:19 templates/sponsorship/detail.html:40
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -599,36 +653,59 @@ msgstr ""
 msgid "Save and Add Additional Speakers"
 msgstr "Sauvegarder et ajouter des intervenants"
 
-#: templates/reviews/_review_table.html:7
+#: templates/registration/_presentation_attendees.html:11
+msgid "Attendees:"
+msgstr "Inscrits&nbsp;:"
+
+#: templates/registration/_presentation_attendees.html:16
+#: templates/registration/_presentation_attendees.html:28
+msgid "Edit subscription"
+msgstr "Éditer le formulaire d'inscription"
+
+#: templates/registration/register_to.html:7
+#: templates/registration/register_to.html:15
+msgid "Subscribe to"
+msgstr "S'inscrire à"
+
+#: templates/registration/register_to.html:11
+msgid "Subscribe form"
+msgstr "Formulaire d'inscription"
+
+#: templates/registration/registration_edit.html:7
+#: templates/registration/registration_edit.html:13
+msgid "Subscription form to"
+msgstr "Inscription à"
+
+#: templates/reviews/_review_table.html:9
 #: templates/reviews/result_notification.html:46
 msgid "Category"
 msgstr "Catégorie"
 
-#: templates/reviews/_review_table.html:9
+#: templates/reviews/_review_table.html:14
 msgid "+1"
 msgstr ""
 
-#: templates/reviews/_review_table.html:10
+#: templates/reviews/_review_table.html:15
 msgid "+0"
 msgstr ""
 
-#: templates/reviews/_review_table.html:11
+#: templates/reviews/_review_table.html:16
 msgid "-0"
 msgstr ""
 
-#: templates/reviews/_review_table.html:12
+#: templates/reviews/_review_table.html:17
 msgid "-1"
 msgstr ""
 
-#: templates/reviews/_review_table.html:13
+#: templates/reviews/_review_table.html:18
 msgid "Your Rating"
 msgstr "Votre Vote"
 
-#: templates/reviews/base.html:64
+#: templates/reviews/base.html:71
 msgid "All Reviews"
 msgstr "Toutes les évaluations"
 
-#: templates/reviews/base.html:77
+#: templates/reviews/base.html:84
 msgid "Voting Status"
 msgstr "Statut du vote"
 
@@ -676,6 +753,24 @@ msgstr ""
 msgid "Edit Slot"
 msgstr "Modifier"
 
+#: templates/schedule/base.html:8
+msgid "Schedule"
+msgstr ""
+
+#: templates/schedule/base.html:15
+#, fuzzy
+#| msgid "Organisation"
+msgid "Programmation"
+msgstr "Organisation"
+
+#: templates/schedule/presentation_detail.html:78
+msgid "See more"
+msgstr "Voir plus"
+
+#: templates/schedule/schedule_list.html:75
+msgid "Coverage"
+msgstr "Medias"
+
 #: templates/speakers/speaker_create.html:7
 #: templates/speakers/speaker_create.html:14
 msgid "Create Speaker Profile"
@@ -710,191 +805,3 @@ msgstr "avantages"
 #: templates/sponsorship/list.html:13
 msgid "About Our Sponsors"
 msgstr "Partenariat"
-
-#~ msgid "Technical information"
-#~ msgstr "Informations techniques"
-
-#~ msgid ""
-#~ "Specify definition screen, computer output, if you need a computer. Won't "
-#~ "be public."
-#~ msgstr ""
-#~ "Indiquez si vous avez besoin d'un PC, et sinon la définition d'écran, la "
-#~ "sortie vidéo."
-
-#~ msgid "Learn how to become a sponsor"
-#~ msgstr "Découvrez comment devenir Sponsor"
-
-#~ msgid "I prefer a 3h slot"
-#~ msgstr "Je préfère un créneau de 3h"
-
-#~ msgid "Need travel?"
-#~ msgstr "Défraiement pour déplacement ?"
-
-#~ msgid "Need hosting?"
-#~ msgstr "Besoin d'un hébergement ?"
-
-#~ msgid "Name"
-#~ msgstr "Nom"
-
-#~ msgid "sponsor section"
-#~ msgstr "Partenariat"
-
-#~ msgid "Link"
-#~ msgstr "Lien"
-
-#~ msgid "Video"
-#~ msgstr "Vidéo"
-
-#~ msgid "Audio"
-#~ msgstr "Audio"
-
-#~ msgid "Photos"
-#~ msgstr "Photos"
-
-#~ msgid "Write-up"
-#~ msgstr "Document"
-
-#~ msgid "Slides"
-#~ msgstr "Diaporama"
-
-#~ msgid "Transcription"
-#~ msgstr "Transcription"
-
-#~ msgid "Url to licence text"
-#~ msgstr "Url vers le texte de la licence"
-
-#~ msgid "Licence"
-#~ msgstr "Licence"
-
-#~ msgid "Link text"
-#~ msgstr "Texte de lien"
-
-#~ msgid "Coverage type"
-#~ msgstr "Type de media"
-
-#~ msgid "Coverage licence"
-#~ msgstr "Licence du media"
-
-#~ msgid "Url to another format for audio or video media."
-#~ msgstr "URL vers un autre format pour les media audio ou vidéo"
-
-#~ msgid "Coverage file"
-#~ msgstr "Fichier de media"
-
-#~ msgid "How much 3 + 4 makes?"
-#~ msgstr "Combien font 3 + 4 ?"
-
-#~ msgid "Softwares to be installed, version, etc."
-#~ msgstr "Logiciels à installer, version, etc."
-
-#~ msgid "Max attendees"
-#~ msgstr "Nombre maximum d'inscrits"
-
-#~ msgid "Subscription to %s"
-#~ msgstr "Inscription à %s"
-
-#~ msgid "Used in case of cancelling"
-#~ msgstr "En cas d'annulation"
-
-#~ msgid "Your name"
-#~ msgstr "Votre nom"
-
-#~ msgid "Your project"
-#~ msgstr "Votre projet"
-
-#~ msgid "Interests"
-#~ msgstr "Intérêts"
-
-#~ msgid "You subscribed successfully."
-#~ msgstr "Votre inscription a bien été prise en compte."
-
-#~ msgid "Subscription form has been created successfully."
-#~ msgstr "Le formulaire d'inscription a bien été créé."
-
-#~ msgid "Subscription form has been updated successfully."
-#~ msgstr "Le formulaire d'inscription a bien été mis à jour."
-
-#~ msgid "Previous"
-#~ msgstr "Précédent"
-
-#~ msgid "Next"
-#~ msgstr "Suivant"
-
-#~ msgid "Coverage for"
-#~ msgstr "Medias"
-
-#~ msgid ""
-#~ "\n"
-#~ "Sorry, you do not have permission to access this page. If you \n"
-#~ "believe this is a bug, please contact us immediately.\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Désolé, vous n'avez pas la permission d'accéder à cette page. \n"
-#~ "Si vous pensez que ceci est un bug, n'hésitez pas à contacter "
-#~ "l'administrateur.\n"
-
-#~ msgid "Result Notification"
-#~ msgstr "Notification des résultats"
-
-#~ msgid "accepted"
-#~ msgstr "acceptée"
-
-#~ msgid "rejected"
-#~ msgstr "rejetée"
-
-#~ msgid "standby"
-#~ msgstr "en suspens"
-
-#~ msgid "Reviewer"
-#~ msgstr "Relecteur"
-
-#~ msgid "Proposals Reviewed"
-#~ msgstr "Propositions évaluées"
-
-#~ msgid "Comments"
-#~ msgstr "Commentaires"
-
-#~ msgid "You do not have any assignments."
-#~ msgstr "Vous n'avez pas encore de vote assigné"
-
-#~ msgid "Rejected"
-#~ msgstr "Rejetée"
-
-#~ msgid "Standby"
-#~ msgstr "En suspens"
-
-#~ msgid "Undecided"
-#~ msgstr "En attente de décision"
-
-#~ msgid "Review"
-#~ msgstr "Évaluations"
-
-#~ msgid "Proposal Review"
-#~ msgstr "Détail de la proposition"
-
-#~ msgid "Comment"
-#~ msgstr "Commentaire"
-
-#~ msgid "Coverage"
-#~ msgstr "Medias"
-
-#~ msgid "See more"
-#~ msgstr "Voir plus"
-
-#~ msgid "Nos partenaires"
-#~ msgstr "Nos partenaires"
-
-#~ msgid "Attendees:"
-#~ msgstr "Inscrits&nbsp;:"
-
-#~ msgid "Edit subscription"
-#~ msgstr "Éditer le formulaire d'inscription"
-
-#~ msgid "Subscribe to"
-#~ msgstr "S'inscrire à"
-
-#~ msgid "Subscribe form"
-#~ msgstr "Formulaire d'inscription"
-
-#~ msgid "Subscription form to"
-#~ msgstr "Inscription à"

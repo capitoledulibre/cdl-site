@@ -1,0 +1,33 @@
+{% load i18n %}
+
+<tr>
+    <td>&nbsp;</td>
+    <td colspan="3">
+        {% if proposal.presentation.registration.attendees_nb > 0 %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="icon-bullhorn"></i>
+                <h3 class="panel-title"><a data-toggle="collapse" href="#collapseAttendees{{ proposal.presentation.pk }}">
+                    {% trans "Attendees:" %} {{ proposal.presentation.registration.attendees_nb }} / {{ proposal.presentation.registration.max_attendees }} max
+                    <span class="carret"></span></a></h3>
+            </div>
+
+            <div id="collapseAttendees{{ proposal.presentation.pk }}" class="panel-collapse collapse">
+                <a class="btn btn-default btn-sm pull-right" href="{% url "registration_edit" proposal.presentation.pk %}">{% trans "Edit registration" %}</a>
+                <ul>
+                    {% for attendee in proposal.presentation.registration.all_attendees %}
+                    <li>{{ attendee }} &mdash; {{ attendee.email }}
+                        <p>{{ attendee.insterests }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% else %}
+        <p>Insription ouvertes pour {{ proposal.presentation.registration.max_attendees }} personnes. Pas d'inscrit pour le moment.
+        <a class="btn btn-default btn-sm" href="{% url "registration_edit" proposal.presentation.pk %}">{% trans "Edit registration" %}</a></p>
+        {% endif %}
+
+
+    </td>
+</tr>

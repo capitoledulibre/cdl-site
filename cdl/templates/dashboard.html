@@ -54,8 +54,8 @@
                         </thead>
                         {% for proposal in user.speaker_profile.proposals.all %}
                             {% include "proposals/_proposal_row.html" %}
-                            {% if proposal.presentation.subscription %}
-                                {% include "subscription/_presentation_attendees.html" %}
+                            {% if proposal.presentation.registration %}
+                                {% include "registration/_presentation_attendees.html" %}
                             {% endif %}
                         {% endfor %}
                     </table>
