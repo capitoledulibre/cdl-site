@@ -58,7 +58,7 @@
 
     {% if presentation.registration %}
         {% if not presentation.registration.is_closed %}
-        <p class="text-info">L'inscription &agrave; cet atelier est n&eacute;cessaire, il reste {{ presentation.registration.places_left }} places.
+        <p class="alert alert-info">L'inscription &agrave; cet atelier est n&eacute;cessaire, il reste {{ presentation.registration.places_left }} places.
             <a class="btn btn-default" href="{% url "register_to_presentation" presentation.pk %}">Je m'inscris !</a></p>
         {% endif %}
     {% endif %}
