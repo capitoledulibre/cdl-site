@@ -78,5 +78,6 @@ def schedule_xml(request):
             result += "    </room>\n"
         result += "  </day>\n"
     result += "</schedule>\n"
+    result = result.replace('&','&amp;')
     return HttpResponse(result, content_type="application/xml")
 
