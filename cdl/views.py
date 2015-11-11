@@ -35,7 +35,7 @@ def schedule_xml(request):
                 duration = end_at - start_at
                 result += """      <event id="%(id)s">
         <start>%(start)s</start>
-        <duration>0%(duration)s</duration>
+        <duration>%(duration)s</duration>
         <room>%(room)s</room>
         <slug>%(slug)s</slug>
         <title>%(title)s</title>
@@ -53,7 +53,7 @@ def schedule_xml(request):
       </event>\n""" % {
                     'id': p.id,
                     'start': p.slot.start.strftime('%H:%M'),
-                    'duration': '%d:%d' % (duration.total_seconds() / 3600, duration.total_seconds() % 3600 / 60),
+                    'duration': '%02d:%02d' % (duration.total_seconds() / 3600, duration.total_seconds() % 3600 / 60),
                     'room': room,
                     'slug': slugify(p.title),
                     'title': escape(p.title),
