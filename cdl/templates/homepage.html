@@ -62,28 +62,7 @@
         <div id="content">
           <section class="banner" id="apropos">
             <div class="container">
-              <h2 class="text-center">Le Capitole du Libre, <small>L'événement du Logiciel Libre à Toulouse</small></h2>
-              <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                  <p>Cet &eacute;vènement autour du logiciel libre a lieu tous les ans fin novembre à l'<a href="http://www.enseeiht.fr/fr/index.html"
-                    title="ENSEEIHT" target="_blank">INP-ENSEEIHT</a>, il est gratuit et <strong>ouvert &agrave; toutes et &agrave; tous.</strong></p>
-                  <p>Cette ann&eacute;e il se d&eacute;roulera les <strong>samedi 21 et dimanche 22 novembre 2015</strong>. </p>
-                  <p>Organisé par l'association <a target="_blank" href="http://toulibre.org/">Toulibre</a>,
-                    avec la participation active des clubs étudiants de l'N7 : <a
-                      href="http://tvn7.fr/" title="TVn7" target="_blank">TVn7</a>, <a
-                      href="http://www.bde.enseeiht.fr/clubs/net7/" target="_blank">Net7</a>
-                    <a href="http://www.bde.enseeiht.fr/clubs/animation/" title="CAN7"
-                      target="_blank">CAn7</a> et <a href="http://www.bde.enseeiht.fr/clubs/photo/" title="CAN7"
-                      target="_blank">Photo7</a>.</p>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                  <p>Comme chaque ann&eacute;e, les thèmes seront aussi bien orientés vers le grand public que vers les plus techniques. Conférences, ateliers,
-                    animations seront au programme, ainsi que quelques surprises !</p>
-                  <p>
-                    <a href="{% url "schedule_base" %}" title="Le programme est en ligne">
-                      Le programme est en ligne !</a></p>
-                </div>
-              </div>
+              {% box "home_apropos" %}
             </div>
           </section>
           <section class="banner" id="programme">
@@ -99,53 +78,7 @@
           </section>
           <section class="banner" id="animations">
             <div class="container">
-              <h2>Animations</h2>
-              <p>Pour illustrer le logiciel libre et au-delà, rien de tel que des animations ludiques.</p>
-              <div class="media">
-                <div class="media-left">
-                  <img class="media-object" alt="Stand Libre Office" src="{% static "images/Cdl_samedi_17-photo-freetux-cc-by-sa.jpg" %}" />
-                </div>
-                <div class="media-body">
-                  <h3>Village associatif</h3>
-                  <p>Venez rencontrer les associations qui œuvrent pour le bien commun numérique telles que l'April,
-                    Wikimedia France, Framasoft, Tetaneutral.net, ainsi que les associations supportrices des distributions GNU/Linux.</p>
-                </div>
-              </div>
-              <div class="media">
-                <div class="media-body">
-                  <h3>Install party</h3>
-                  <p>Vous souhaitez utiliser un système libre sur votre ordinateur, mais vous
-                  aimeriez être guidé pour vos premiers pas ? Vous avez déjà installé
-                  GNU/Linux et avez besoin d’aide pour une mise à jour ou la résolution
-                  d’un problème ?</p>
-                  <p>Alors l'Install Party est faite pour vous : apportez votre ordinateur
-                  et un expert GNU/Linux des associations <strong>Toulibre</strong>, <strong>Net7</strong> vous guidera pour procéder à l’installation
-                  et à la découverte du système libre de votre choix !</p>
-                </div>
-                <div class="media-right">
-                  <img class="media-object" alt="Installation GNU/Linux" src="{% static "images/CDL2014-2976-install-party-photo-jeanZ.jpg" %}" />
-                </div>
-              </div>
-              <div class="media">
-                <div class="media-left">
-                  <img class="media-object" alt="Imprimante 3D" src="{% static "images/CDL2014-3003-imprimante3D-photo-jeanZ.jpg" %}" />
-                </div>
-                <div class="media-body">
-                  <h3>Imprimantes 3D</h3>
-                  <p>Vous ne savez pas encore ce qu'est une imprimante 3D, venez les découvrir au Capitole du Libre, des passionnés vous montreront les dessous de cette technologie qui fait exploser l'open source des objets.
-                </div>
-              </div>
-              <div class="media">
-                <div class="media-body">
-                  <h3>Jeux vidéo libre</h3>
-                  <p>Venez jouer en réseau avec nous ! Vous allez être étonnés de l'aboutissement des jeux vidéo libres.</p>
-                  <h3>Animations pour les enfants</h3>
-                  <p>L'an dernier un espace jeux vidéo était proposé aux enfants, l'année précédente un bac à sable en réalité augmentée réalisé par Science Animations. Cette année encore des nouveautés !</p>
-                </div>
-                <div class="media-right">
-                  <img class="media-object" alt="Jeux vidéo" src="{% static "images/Cdl_samedi_14-photo-freetux-cc-by-sa.jpg" %}" />
-                </div>
-              </div>
+              {% box "home_animations" %}
             </div>
           </section>
           <section class="banner" id="sponsoring">
@@ -168,18 +101,12 @@
 
 
               <div class="row">
-                <div class="col-xs-6 col-sm-2">
+                <div class="col-xs-6 col-sm-3">
                     <h3>Organisation</h3>
                     <a href="http://toulibre.org/" class="thumbnail" target="_blank">
                     <img src="{% static "images/logo-toulibre.svg" %}" alt="Toulibre" class="logo-150px" title="Toulibre"></a>
                 </div>
-                <div class="col-xs-6 col-sm-2">
-                    <h3>Institutionnels</h3>
-                    <a href="http://enseeiht.fr/" class="thumbnail" target="_blank">
-                        <img src="{% static "images/inpn7logo.svg" %}" alt="ENSEEIHT" class="logo-150px" title="ENSEEIHT">
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-2">
+                <div class="col-xs-6 col-sm-3">
                     <h3>Communication</h3>
                     <div class="row">
                     <div class="col-xs-12">
@@ -196,32 +123,7 @@
           </section>
           <section id="participer">
             <div class="container">
-              <h2>Participer</h2>
-
-              <div class="media">
-                <div class="media-body">
-                  <p>Le Capitole du Libre est un événement <strong>entièrement organisé par des bénévoles</strong>.
-                    Cet événement n'aurait pas lieu sans les quelques 80 personnes
-                    qui sont présentes à chaque édition.</p>
-                  <p>Pour participer comme bénévole au Capitole du Libre,
-                    rien de plus simple, <a href="/account/signup/" title="S'inscrire">inscrivez-vous</a>
-                    (si ce n'est déjà fait) sur le site.</p>
-                  <p>Ensuite, il suffit de rejoindre
-                    <a href="/teams/benevoles/" title="Équipe bénévoles">l'équipe "Bénévoles"</a>,
-                    dans la section "Équipes" de votre tableau de bord.</p>
-
-                  <p>Si vous souhaitez participer à l'organisation, inscrivez-vous sur
-                    la <a href="http://www.toulibre.org/mailman/listinfo/capitoledulibre"
-                      title="Liste Capitole du Libre" target="_blank">liste de
-                      discussion dédiée</a>.</p>
-                  <p>Nous vous attendons nombreuses et nombreux !</p>
-                </div>
-                  <div class="media-right">
-                  <img src="{% static "images/benevoles-flev4081-photo-flev-cc-by-nc-sa-1024.png" %}"
-                      alt="Bénévoles 2014"
-                      class="media-object" />
-                  </div>
-                </div>
+              {% box "home_participer" %}
             </div>
           </section>
         </div>

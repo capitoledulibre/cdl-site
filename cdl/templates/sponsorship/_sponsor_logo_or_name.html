@@ -1,5 +1,5 @@
 {% spaceless %}
-<a href="{{ sponsor.external_url }}" target="_blank">
+<a href="{{ sponsor.external_url }}" target="_blank" class="thumbnail">
 {% if sponsor.website_logo %}
     <img src="{{ sponsor.website_logo.url }}" class="180 img-responsive" alt="{{ sponsor.name }}" width="{{ width }}" />
 {% else %}
