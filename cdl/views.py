@@ -57,27 +57,15 @@ def schedule_xml(request):
                     'room': room,
                     'slug': slugify(p.title),
                     'title': escape(p.title),
-                    'track': p.proposal.category,
+                    'track': escape(p.proposal.category),
                     'type': p.proposal.kind,
                     'abstract': escape(p.description),
                     'description': escape(p.abstract),
                     'person_id': p.speaker.id,
-                    'person': p.speaker,
+                    'person': escape(p.speaker),
                 }
-                # print p.id
-                # print p.slot.start
-                # print p.slot.end
-                # print room
-                # print p.title
-                # print p.title
-                # print p.proposal.category
-                # print p.proposal.kind
-                # print p.abstract
-                # print p.speaker
-                # print "*****************"
             result += "    </room>\n"
         result += "  </day>\n"
     result += "</schedule>\n"
-    result = result.replace('&','&amp;')
     return HttpResponse(result, content_type="application/xml")
 
