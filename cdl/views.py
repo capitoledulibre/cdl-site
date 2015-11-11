@@ -34,7 +34,7 @@ def schedule_xml(request):
                 end_at = datetime.datetime.combine(day, p.slot.end)
                 duration = end_at - start_at
                 result += """      <event id="%(id)s">
-        <start>%(start)s</start>
+        <start>0%(start)s</start>
         <duration>%(duration)s</duration>
         <room>%(room)s</room>
         <slug>%(slug)s</slug>
@@ -59,8 +59,8 @@ def schedule_xml(request):
                     'title': escape(p.title),
                     'track': p.proposal.category,
                     'type': p.proposal.kind,
-                    'abstract': escape(p.abstract),
-                    'description': escape(p.description),
+                    'abstract': escape(p.description),
+                    'description': escape(p.abstract),
                     'person_id': p.speaker.id,
                     'person': p.speaker,
                 }
