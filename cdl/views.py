@@ -26,7 +26,7 @@ def schedule_xml(request):
 
     days = [datetime.date(2015, 11, 21), datetime.date(2015, 11, 22)]
     for index, day in enumerate(days):
-        result += '  <day index="%s" date="%s">\n' % (index, day)
+        result += '  <day index="%s" date="%s">\n' % (index+1, day)
         for room in Room.objects.all():
             result += '    <room name="%s">\n' % room
             for p in Presentation.objects.filter(slot__day__date=day, slot__slotroom__room=room).distinct():
