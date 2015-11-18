@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {% load url from future %}
+{% load boxes_tags %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
     <head>
@@ -41,9 +42,7 @@
                           </a>
                         </div>
                         <div class="col-md-8 text-center">
-                          <h2 id="slogan" class="gray-lighter">L'événement du Logiciel Libre à Toulouse</h2>
-                          <h3 class="gray-lighter">21-22 novembre 2015</h3>
-                          <h3 class="yellow">ENSEEIHT, Toulouse, France</h3>
+                            {% box "disclaimer_annulation" %}
                         </div>
                     </header>
                     {% block header_extra %}{% endblock %}
