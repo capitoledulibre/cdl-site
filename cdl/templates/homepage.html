@@ -7,46 +7,9 @@
 
 {% block head_title %}{% trans "Welcome" %}{% endblock %}
 
-{% block body_class %}homepage{% endblock %}
+{% block body_class %}{% endblock %}
 
 {% block header_extra %}
-<div class="row text-center" id="cta" >
-    <div class="col-md-4">
-      <a class="btn btn-lg btn-cta" href="#apropos">
-      <span class="glyphicon glyphicon-question-sign"></span>
-      Qu'est-ce que c'est ?
-      </a>
-    </div>
-    <div class="col-md-4">
-      <a class="btn btn-lg btn-cta" href="{% url "schedule_base" %}">
-      <span class="glyphicon glyphicon-bullhorn"></span>
-      Le programme !
-      </a>
-    </div>
-    <!-- <div class="col-md-4">
-      <a class="btn btn-lg btn-cta" href="{% url "cms_page" "propositions/" %}">
-        <span class="glyphicon glyphicon-bullhorn"></span>
-        Appel &agrave; propositions
-      </a>
-    </div> -->
-    <!-- <div class="col-md-4">
-      <a class="btn btn-lg btn-cta" href="{% url "cms_page" "communication/" %}">
-        <span class="glyphicon glyphicon-bullhorn"></span>
-        Communiquez !
-      </a>
-    </div> -->
-    <div class="col-md-4">
-      <a class="btn btn-lg btn-cta" href="#participer">
-      <span class="glyphicon glyphicon-heart"></span>
-      Devenez bénévole</a>
-    </div>
-    <!--
-    <div class="col-md-4">
-      <a class="btn btn-lg btn-cta" href="#sponsoring">
-      <span class="glyphicon glyphicon-star"></span>
-      Devenez sponsor</a>
-    </div>-->
-</div>
 <div class="row" id="comm" >
     <div class="col-md-12 text-center">
       {% include "_comm.html" %}
@@ -60,70 +23,9 @@
 {% block body_base %}
         <!-- Main Content -->
         <div id="content">
-          <section class="banner" id="apropos">
+          <section class="banner" id="annulation">
             <div class="container">
-              {% box "home_apropos" %}
-            </div>
-          </section>
-          <section class="banner" id="programme">
-            <div class="container">
-              <h2>Programme des conférences et ateliers</h2>
-              <p>Plusieurs conférences et ateliers se déroulent tout le week-end, autour de thématiques aussi bien grand public que plus techniques.</p>
-
-                {% include "proposals/_categories_list.html" %}
-
-              <p>Si votre communauté souhaite se réunir à l'occasion de cet événement, <a href="mailto:contact@capitoledulibre.org">écrivez-nous</a> !
-                    Comme pour <strong>AkademyFR</strong>, nous avons la possibilité de vous mettre à disposition des salles pour des conférences et des ateliers et vous accueillir en tant qu'événement hébergé.</p>
-            </div>
-          </section>
-          <section class="banner" id="animations">
-            <div class="container">
-              {% box "home_animations" %}
-            </div>
-          </section>
-          <section class="banner" id="sponsoring">
-            <div class="container">
-              <div class="media">
-                <div class="media-body">
-                  <h2>Nos partenaires</h2>
-                  <p>Le Capitole du Libre fait venir des intervenants parfois de très loin, et nous tenons à ce que l’accès aux conférences et aux ateliers soit gratuit et ouvert à tous.</p>
-                  <p>Pour cela, <strong>nous remercions nos sponsors pour le soutien qu’ils apportent à cette manifestation</strong>. Certaines entreprises soutiennent le Capitole du Libre depuis le début ou presque : <a href="http://www.kdab.com/" title="KDAB">KDAB</a>, <a href="http://www.logilab.fr" title="Logilab">Logilab/a>, <a href="http://www.makina-corpus.com/" title="Makina Corpus">Makina Corpus</a>, <a href="http://www.objectif-libre.com/" title="Objectif Libre">Objectif Libre</a> et <a href="http://www.solulibre.com/" title="Solulibre">Solulibre</a>.</p>
-                  <p>Pour devenir partenaire du Capitole du Libre 2015, vous pouvez
-                    <a href="capitoledulibre-devenir-sponsor-2015.pdf">consulter notre dossier de sponsoring 2015</a> ou
-                    <a href="mailto:contact@capitoledulibre.org?subject=Partenariat">nous contacter par courriel</a></p>.
-                  <p><a class="btn btn-lg btn-bred" href="capitoledulibre-devenir-sponsor-2015.pdf">
-                    <span class="glyphicon glyphicon-download"></span> Téléchargez le dossier</a>
-                </div>
-                <div class="media-right">
-                  <img class="media-object" alt="Stand Logilab et Makina Corpus" src="{% static "images/CDL2014-2918-stand-sponsor-photo-jeanZ.jpg" %}" />
-                </div>
-              </div>
-
-
-              <div class="row">
-                <div class="col-xs-6 col-sm-3">
-                    <h3>Organisation</h3>
-                    <a href="http://toulibre.org/" class="thumbnail" target="_blank">
-                    <img src="{% static "images/logo-toulibre.svg" %}" alt="Toulibre" class="logo-150px" title="Toulibre"></a>
-                </div>
-                <div class="col-xs-6 col-sm-3">
-                    <h3>Communication</h3>
-                    <div class="row">
-                    <div class="col-xs-12">
-                    <a href="http://www.editions-diamond.fr/" class="thumbnail" target="_blank">
-                        <img src="{% static "images/logo-edition-diamonds.png" %}" alt="Éditions Diamonds" class="logo-100px" title="Éditions Diamonds">
-                    </a>
-                    </div>
-                    </div>
-                </div>
-            </div>
-              {% include "sponsorship/_horizontal_by_level.html" %}
-
-            </div>
-          </section>
-          <section id="participer">
-            <div class="container">
-              {% box "home_participer" %}
+              {% box "annulation" %}
             </div>
           </section>
         </div>
