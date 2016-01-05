@@ -1,0 +1,74 @@
+[
+    {
+        "pk": 2,
+        "model": "symposion_coverage.licence",
+        "fields": {
+            "url": "http://creativecommons.org/publicdomain/zero/1.0/",
+            "name": "CC-0",
+            "slug": "cc-0"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "symposion_coverage.licence",
+        "fields": {
+            "url": "http://creativecommons.org/licenses/by/4.0/deed.fr",
+            "name": "CC-By 4.0",
+            "slug": "cc-by-40"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "symposion_coverage.licence",
+        "fields": {
+            "url": "http://creativecommons.org/licenses/by-sa/4.0/",
+            "name": "CC-By-SA 4.0",
+            "slug": "cc-by-sa-40"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "symposion_coverage.licence",
+        "fields": {
+            "url": "http://creativecommons.org/licenses/by/3.0/fr/legalcode",
+            "name": "CC-By 3.0",
+            "slug": "cc-by-30"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "symposion_coverage.licence",
+        "fields": {
+            "url": "http://creativecommons.org/licenses/by-sa/3.0/fr/",
+            "name": "CC-By-SA 3.0",
+            "slug": "cc-by-sa-30"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "symposion_coverage.licence",
+        "fields": {
+            "url": "http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode",
+            "name": "CC-By-NC-SA 3.0",
+            "slug": "cc-by-nc-sa-30"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "symposion_coverage.licence",
+        "fields": {
+            "url": "http://artlibre.org/licence/lal/",
+            "name": "Licence Art Libre",
+            "slug": "licence-art-libre"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "symposion_coverage.licence",
+        "fields": {
+            "url": "http://fr.wikipedia.org/wiki/Licence_libre",
+            "name": "Licence non d\u00e9finie",
+            "slug": "non-definie"
+        }
+    }
+]

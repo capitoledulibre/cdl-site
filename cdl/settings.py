@@ -158,6 +158,7 @@ INSTALLED_APPS = [
     "symposion.boxes",
     "symposion.cms",
     "symposion.conference",
+    "symposion.coverage",
     "symposion.proposals",
     "symposion.registration",
     "symposion.reviews",

@@ -1,0 +1,6 @@
+<audio width="100%" controls="controls">
+    <source src="{{ coverage.url }}" type="audio/{{ coverage.url_extension }}"/>
+    {% if coverage.url2 %}
+        <source src="{{ coverage.url2 }}" type="audio/{{ coverage.url2_extension }}"/>
+    {% endif %}
+</audio>

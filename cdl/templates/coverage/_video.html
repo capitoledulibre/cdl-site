@@ -1,0 +1,14 @@
+<video width="360" height="200" controls="controls" {% if coverage.poster %}poster="{{ coverage.poster }}"{% endif %}>
+    <source src="{{ coverage.url }}" type="video/{{ coverage.url_extension }}"/>
+    {% if coverage.url2 %}
+        <source src="{{ coverage.url2 }}" type="video/{{ coverage.url2_extension }}"/>
+    {% endif %}
+    <object width="360" height="200" type="application/x-shockwave-flash"
+            data="http://2014.capitoledulibre.org/mezzanine_media/static/grappelli/tinymce/jscripts/tiny_mce/plugins/media/movieplayer.swf">
+        <param value="http://2014.capitoledulibre.org/mezzanine_media/static/grappelli/tinymce/jscripts/tiny_mce/plugins/media/movieplayer.swf"
+                name="src">
+        <param value="url={{ coverage.url }}&amp;poster={{ coverage.poster }}" name="flashvars">
+        <param value="true" name="allowfullscreen">
+        <param value="true" name="allowscriptaccess">
+    </object>
+</video>

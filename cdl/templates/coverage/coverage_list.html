@@ -1,0 +1,71 @@
+{% extends "site_base_onecolumn.html" %}
+
+{% load i18n %}
+{% load cache %}
+{% load boxes_tags %}
+{% load sitetree %}
+
+{% block head_title %}Presentation Listing{% endblock %}
+
+{% block breadcrumbs %}{% sitetree_breadcrumbs from "main" %}{% endblock %}
+
+{% block body %}
+    <h1>Media</h1>
+        {% box "coverage_top" %}
+        {% if coverage_type %}
+            <ul class="nav nav-tabs">
+                <li {% if not coverage_type %}class="active"{% endif %}><a href="{% url "coverage_list" %}"><small>&laquo;</small></a></li>
+                {% for type in coverage_types %}
+                <li {% if coverage_type and coverage_type == type.slug %}class="active type.slug"{% endif %}><a href="{% url "coverage_list" type.slug %}"><span class="badge">{{ type.count }}</span> {{ type.name }} </a></li>
+                {% endfor %}
+            </ul>
+            <h2>{{ coverage_type|capfirst }}</h2>
+            {% box "coverage_top_"|add:coverage_type %}
+            {% for result in results %}
+                <section>
+                    <h3>{{ result.category.name }}</h3>
+                    {% if result.coverages %}
+                        <div class="row">
+                        {% for coverage in result.coverages %}
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="coverage media-{{ coverage_type }}">
+                                {% if coverage.presentation %}
+                                    <header>
+                                    <h4><a href="{% url "schedule_presentation_detail" coverage.presentation.pk %}">{{ coverage.presentation.title }}</a>
+                                        <br/><small>{{ coverage.presentation.speakers|join:", " }}</small></h4>
+                                    </header>
+                                {% endif %}
+                                {% if coverage_type == 'video' %}
+                                  <a href="{% url "schedule_presentation_detail" coverage.presentation.pk %}" >
+                                    {% if coverage.poster %}
+                                      <img src="{{ coverage.poster }}" />
+                                    {% else %}Voir la vidéo{% endif %}
+                                  </a>
+                                {% elif coverage_type == 'audio' %}
+                                    {% include "coverage/_audio.html" %}
+                                {% else %}
+                                    <p>
+                                        {% if coverage.get_url %}<a href="{{ coverage.get_url }}" alt="{{ coverage.title }}">{{ coverage.title }}</a>
+                                        {% else %}{{ coverage.title }}
+                                        {% endif %}</p>
+                                {% endif %}
+                                <footer class="text-right"><a class="text-muted" href="{{ coverage.licence.url }}">{{ coverage.licence }}</a></footer>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    {% else %}
+                        <p>Pas encore de media {{ coverage_type }} pour cette cat&eacute;gorie.</p>
+                    {% endif %}
+                </section>
+            {% endfor %}
+        {% else %}
+
+        <ul class="list-group">
+            {% for type in coverage_types %}
+            <a class="list-group-item col-sm-4" href="{% url "coverage_list" type.slug %}">{{ type.name }} <span class="badge">{{ type.count }}</span></a>
+            {% endfor %}
+        </ul>
+        <div class="clearfix"></div>
+        {% endif %}
+{% endblock %}

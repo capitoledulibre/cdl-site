@@ -48,8 +48,19 @@
 
     <h2>Description</h2>
 
-    <div class="description">{{ presentation.description }}</div>
+    <div class="row media">
+        <div class="description media-body col-md-6">{{ presentation.description }}</div>
 
+        <div class="media-object col-md-6">
+        {% for coverage in presentation.coverages.all %}
+            {% if coverage.coverage_type == "video" %}
+                <div class="item">{% include "coverage/_video.html" %}</div>
+            {% elif coverage.coverage_type == "audio" %}
+                <div class="item">{% include "coverage/_audio.html" %}</div>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </div>
     <div class="clearfix"></div>
     {% if presentation.abstract %}
     <h2>{% trans "Abstract" %}</h2>
@@ -67,6 +78,15 @@
 
 {% block sidebar %}
 <section class="media">
+    {% if presentation.coverages.exists %}
+        <h2>{% trans "Coverage" %}</h2>
+    {% endif %}
+
+    {% if user.is_staff or user.speaker_profile == presentation.speaker or user.speaker in presentation.additionnal_speakers %}
+        <p class="text-right">
+        <a class="btn btn-sm btn-default" href="{% url "coverage_add" presentation.pk %}">Ajouter un media</a>
+        </p>
+    {% endif %}
 
     <h2 class="text-hide">Intervenant(es)</h2>
     {% for speaker in presentation.speakers %}
